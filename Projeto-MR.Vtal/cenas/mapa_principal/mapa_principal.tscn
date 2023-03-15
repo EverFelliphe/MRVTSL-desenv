@@ -407,11 +407,6 @@ position = Vector2( 945, 955 )
 rotation = 1.5708
 shape = SubResource( 5 )
 
-[node name="Poste27" type="CollisionShape2D" parent="Mapa_detalhes/Colisões"]
-position = Vector2( 1073, 1084 )
-rotation = 1.5708
-shape = SubResource( 5 )
-
 [node name="Poste28" type="CollisionShape2D" parent="Mapa_detalhes/Colisões"]
 position = Vector2( 1170, 1180 )
 rotation = 1.5708
@@ -567,6 +562,14 @@ polygon = PoolVector2Array( -384, -238, -384, -190, -352, -190, -352, -237, -358
 [node name="Carro5" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisões"]
 polygon = PoolVector2Array( -320, -254, -320, -190, -288, -190, -288, -254 )
 
+[node name="mini game 1" type="Area2D" parent="Mapa_detalhes/Colisões"]
+position = Vector2( 128, 32 )
+
+[node name="Poste27" type="CollisionShape2D" parent="Mapa_detalhes/Colisões/mini game 1"]
+position = Vector2( 945, 1052 )
+rotation = 1.5708
+shape = SubResource( 5 )
+
 [node name="Carro6" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisões"]
 polygon = PoolVector2Array( -278, -136, -264, -136, -252, -150, -222, -150, -209, -136, -196, -136, -191, -130, -191, -105, -193, -102, -200, -102, -200, -96, -202, -93, -210, -93, -212, -96, -212, -102, -260, -102, -260, -96, -262, -94, -270, -94, -272, -96, -272, -102, -282, -102, -286, -106, -286, -128 )
 
@@ -717,12 +720,13 @@ margin_right = 1140.0
 margin_bottom = 1087.0
 
 [node name="sec_mission" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 1077, 1005 )
+position = Vector2( 1077, 1006 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 23 )
 
+[connection signal="body_entered" from="Mapa_detalhes/Colisões/mini game 1" to="." method="_on_Area2D2_body_entered"]
+[connection signal="body_entered" from="Mapa_detalhes/Colisões/mini game 1" to="." method="_on_mini_game_1_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Personagem" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Situacao" to="." method="_on_Situacao_body_entered"]

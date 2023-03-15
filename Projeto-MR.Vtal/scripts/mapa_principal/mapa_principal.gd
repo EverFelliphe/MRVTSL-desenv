@@ -122,3 +122,7 @@ func _on_sit_2_timeout():
 
 func _on_Button_pressed():
 	Global.pontuacao +=2
+
+
+func _on_mini_game_1_body_entered(body):
+	get_tree().change_scene("res://cenas/flappy/flappy.tscn")
