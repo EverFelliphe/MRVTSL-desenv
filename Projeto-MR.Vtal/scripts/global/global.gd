@@ -26,6 +26,25 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 			4: {"text":"A opção mais ética seria recusar a proposta e reportar ao compliance, já que se trata de uma tentativa de suborno, portanto, aceitar o dinheiro seria totalmente contra o código de ética da empresa.", "feedback":"res://imagens/aten.png"}
 		}
 	},
+	'situacao2':{
+		'nome1':'',
+		'nome2':'',
+		0:'teste1',
+		1:'teste2',
+		2:'teste3',
+		3:'teste4',
+		4:'teste5',
+		5:{
+			1: {"text":"aaaaaaaaa", "feedback":"res://imagens/parabens.png"},
+			2: {"text":"bbbbbbbbb", "feedback":"res://imagens/parabens.png"},
+			3: {"text":"ccccccccc", "feedback":"res://imagens/aten.png"},
+			4: {"text":"ddddddddd", "feedback":"res://imagens/aten.png"}
+		},
+		6:'sem problemas',
+		7:'sem problemas',
+		8:'sem problemas',
+		9:'sem problemas',
+	},
 	"nathalia": {
 		0: "Olá, eu sou a Nathália, e sou funcionária da Vtal! E assim como o Fabrício, te auxiliarei na sua jornada. Te ajudarei passando instruções sobre o que fazer ao longo da sua jornada, por meio dessas ligações!",
 		1: "Como sua primeira tarefa, precisamos que você instale a fibra ótica de um cliente na casa do quarteirão abaixo!",
@@ -33,6 +52,8 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 		3:"a partir de agora você enfrentara dilemas mais sutis, porém não menos importantes. Dica. separe pessoal do profissional",
 		4:"teste3",
 		5:"teste4",
+		6:"teste 5",
+		7: "teste 6",
 	}
 }
 
@@ -41,6 +62,7 @@ var nivel_2= false#variavel de controle de nível
 var nivel_3= false#variavel de controle de nível
 var nivel_4= false#variavel de controle de nível
 var nivel_5= false#variavel de controle de nível
+var situation_2 = false
 var area_1_desbl = false #variavel de controle para areas já desbloqueadas
 var controle_nathalia = true # variavel de controle do dialogo inicial
 var nthalia_index = 0

@@ -18,17 +18,18 @@ func _ready():
 #		Global.pontuacao = 0
 	else: #quando ele voltar da situação ele esconde a exclamação, atualiza a posição do personagem e apaga o dialogo inicial
 		$Situacao.queue_free() #após dialogo o personagem fica na posição inicial 
-		$Personagem.position = Vector2(Global.posicaox,Global.posicaoy) 
+		$Personagem.position = Vector2(Global.posicaox , Global.posicaoy) 
 		$excl.hide()
 		$sec_mission.show()
 		$sec_mission.play()
 		$Quest.start()
-		print(Global.nthalia_index)
-	if Global.area_1_desbl == true:
-		$Sprite.queue_free()
-	if Global.pontuacao == 4 :
-		$nivel_1.start()
+		
+		print($Personagem.position)
+	
+#	if Global.pontuacao == 4 :
+#		$nivel_1.start()
 func _process(delta):
+	
 	if Global.controle_nathalia == true:
 			$hud.show()
 			$dialogo/Dialogo/texto.text = dialogo[Global.nthalia_index]
@@ -36,8 +37,8 @@ func _process(delta):
 			$dialogo.show()
 			Global.controle_nathalia  = false
 	if Global.pontuacao == 4 :
-		$nivel_1.start()
 		
+		$nivel_1.start()
 		Global.pontuacao = 0
 func _on_Situacao_body_entered(body): #inicia animação nathalia e começa o timer da cena 
 	$CanvasLayer.show()
@@ -56,6 +57,9 @@ func _on_passar_pressed(): #carrega dialogo com natalia
 	elif n == 4:
 		$dialogo.hide()
 		$dialogo/Dialogo/Timer2.start()
+	elif n == 8:
+		$dialogo.hide()
+		$dialogo/Dialogo/Timer2.start()
 	elif n==6:
 		$Personagem/Camera2D/AnimationPlayer.play("mover_2")
 		$dialogo.hide()
@@ -68,6 +72,7 @@ func _on_passar_pressed(): #carrega dialogo com natalia
 func _on_Timer_timeout(): #fim do timer do dialogo e da cena 
 	$Personagem/Camera2D/AnimationPlayer.play_backwards("mover")
 	$dialogo/Dialogo/Timer2.start()
+	
 	
 func _on_Timer2_timeout(): #personagem pode se mover dentro do mapa 
 	Global.velocity(300)
@@ -95,6 +100,8 @@ func _on_Timer4_timeout(): #carrega a hud
 	$dialogo.show()
 
 func _on_nivel_1_timeout():#ao subir de nivel inicia uma cutscene para mostrar a area liberando
+	Global.velocity(0)
+	$Personagem.hide()
 	$Personagem/Camera2D/AnimationPlayer.play("area_desb")
 	$area_desbloqueada.start()
 
@@ -106,9 +113,12 @@ func _on_area_desbloqueada_timeout(): # mostra os cones desaparecendo  e da queu
 func _on_nivel_12_timeout():# volta para a posição do personagem
 	$Personagem/Camera2D/AnimationPlayer.play_backwards("area_desb")
 	$area_reverso.start() 
-
+	$Personagem.show()
+	$Sprite.queue_free()
+	
 func _on_area_reverso_timeout():# deixa a camera na posição do personagem
 	$Personagem/Camera2D.position = Vector2(0,0)
+	Global.velocity(300)
 	Global.area_1_desbl = true
 	$Quest.start()
 	
@@ -118,6 +128,7 @@ func _on_sit_2_timeout():
 	$Personagem/Camera2D/AnimationPlayer.play_backwards("mover_2")
 	Global.velocity(300)
 	Global.controle_false()
+	$Quest.start()
 
 
 func _on_Button_pressed():
@@ -125,4 +136,12 @@ func _on_Button_pressed():
 
 
 func _on_mini_game_1_body_entered(body):
+#	Global.atualizar_posicao($Personagem.posicaox, $Personagem.posicaoy)
 	get_tree().change_scene("res://cenas/flappy/flappy.tscn")
+
+
+func _on_situation_2_body_entered(body):
+	if Global.situation_2 == false:
+		get_tree().change_scene("res://cenas/situacoes/Situacao_2.tscn")
+	else:
+		pass

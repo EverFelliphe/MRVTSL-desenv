@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://imagens/joy_stick/pixil-frame-0 (4).png" type="Texture" id=1]
 [ext_resource path="res://cenas/Jogador/Jogador.tscn" type="PackedScene" id=2]
@@ -111,6 +111,21 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( -421.414, -1748.24 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "teste-1"
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1025, 1019 ), Vector2( 38, 29 ) ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -227,7 +242,7 @@ scale = Vector2( 0.949037, 1 )
 
 [node name="Personagem" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 116, 186 )
+position = Vector2( 142, 201 )
 rotation = -0.000547229
 scale = Vector2( 1.0537, 1 )
 
@@ -239,6 +254,7 @@ anims/RESET = SubResource( 12 )
 anims/area_desb = SubResource( 15 )
 anims/mover = SubResource( 13 )
 anims/mover_2 = SubResource( 18 )
+anims/teste-1 = SubResource( 24 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 128, 34 )
@@ -528,8 +544,12 @@ polygon = PoolVector2Array( -638, -130, -633, -126, -512, -125, -511, -135, -512
 position = Vector2( 128, 34 )
 polygon = PoolVector2Array( -1152, -163, -1153, -511, -577, -512, -577, -193, -781, -192, -782, -161, -833, -160, -1150, -159 )
 
+[node name="bar_2" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisões"]
+polygon = PoolVector2Array( 65, -864, 63, -1183, -509, -1181, -511, -1014, -321, -1018, -323, -866, -321, -864, -289, -864, -288, -870, -294, -872, -293, -895, -188, -893, -187, -875, -194, -868, -193, -863, -161, -863, -162, -870, -167, -871, -167, -893, -91, -894, -91, -874, -99, -867, -97, -863, -63, -863, -64, -868, -71, -873, -70, -893, 37, -893, 38, -874, 32, -870, 30, -866, 33, -864 )
+
 [node name="bar" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisões"]
-polygon = PoolVector2Array( 65, -864, 63, -1183, -509, -1181, -512, -959, -322, -960, -323, -866, -321, -864, -289, -864, -288, -870, -294, -872, -293, -895, -188, -893, -187, -875, -194, -868, -193, -863, -161, -863, -162, -870, -167, -871, -167, -893, -91, -894, -91, -874, -99, -867, -97, -863, -63, -863, -64, -868, -71, -873, -70, -893, 37, -893, 38, -874, 32, -870, 30, -866, 33, -864 )
+position = Vector2( 1, -1 )
+polygon = PoolVector2Array( 65, -864, 63, -1183, -509, -1181, -511, -1014, -509, -957, -460, -958, -461, -1033, -371, -1035, -367, -957, -312, -957, -289, -864, -288, -870, -294, -872, -293, -895, -188, -893, -187, -875, -194, -868, -193, -863, -161, -863, -162, -870, -167, -871, -167, -893, -91, -894, -91, -874, -99, -867, -97, -863, -63, -863, -64, -868, -71, -873, -70, -893, 37, -893, 38, -874, 32, -870, 30, -866, 33, -864 )
 
 [node name="clube" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisões"]
 polygon = PoolVector2Array( 959, -124, 960, -95, 480, -95, 480, -169, 484, -170, 480, -175, 480, -179, 483, -187, 490, -190, 500, -191, 505, -189, 511, -193, 514, -197, 512, -208, 513, -216, 517, -219, 525, -223, 532, -223, 539, -222, 541, -217, 544, -222, 544, -228, 545, -231, 544, -237, 544, -243, 549, -248, 553, -253, 560, -254, 566, -253, 569, -252, 573, -250, 576, -252, 576, -255, 577, -256, 578, -257, 578, -261, 577, -264, 575, -267, 575, -270, 576, -273, 577, -278, 577, -283, 579, -285, 589, -287, 593, -287, 603, -286, 605, -285, 605, -282, 607, -289, 609, -292, 608, -305, 610, -312, 610, -313, 625, -317, 631, -320, 636, -318, 637, -317, 642, -325, 642, -326, 642, -332, 642, -334, 643, -343, 647, -346, 651, -348, 659, -350, 663, -348, 666, -346, 670, -344, 674, -343, 672, -370, 672, -445, 832, -446, 832, -510, 832, -606, 1216, -606, 1216, -447, 1377, -446, 1376, -287, 1378, -119, 1376, -94, 1089, -92, 1088, -123, 1089, -128, 1088, -164, 1088, -253, 1086, -254, 960, -255, 959.564, -197.841 )
@@ -583,14 +603,6 @@ polygon = PoolVector2Array( -721, -1139, -721, -1122, -716, -1106, -714, -1093, 
 position = Vector2( 95, 96 )
 polygon = PoolVector2Array( -721, -1139, -721, -1122, -716, -1106, -714, -1093, -718, -1087, -711, -1087, -707, -1095, -699, -1095, -694, -1088, -689, -1086, -686, -1093, -683, -1098, -655, -1101, -657, -1088, -648, -1086, -644, -1093, -637, -1093, -632, -1087, -628, -1086, -626, -1113, -621, -1132, -622, -1140, -628, -1140, -636, -1125, -640, -1125, -640, -1140, -656, -1147, -656, -1152, -661, -1156, -660, -1162, -660, -1174, -670, -1180, -674, -1181, -685, -1171, -685, -1160, -683, -1156, -689, -1149, -703, -1139, -704, -1126, -709, -1126, -713, -1137, -717, -1141 )
 
-[node name="Mesa3" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisões"]
-position = Vector2( 192, 193 )
-polygon = PoolVector2Array( -721, -1139, -721, -1122, -716, -1106, -714, -1093, -718, -1087, -711, -1087, -707, -1095, -699, -1095, -694, -1088, -689, -1086, -686, -1093, -683, -1098, -655, -1101, -657, -1088, -648, -1086, -647, -1098, -640, -1106, -640, -1125, -640, -1140, -656, -1147, -656, -1152, -661, -1156, -660, -1162, -660, -1174, -670, -1180, -674, -1181, -685, -1171, -685, -1160, -682, -1152, -688, -1148, -703, -1139, -704, -1126, -709, -1126, -713, -1137, -717, -1141 )
-
-[node name="Mesa4" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisões"]
-position = Vector2( 288, 192 )
-polygon = PoolVector2Array( -721, -1139, -721, -1122, -716, -1106, -714, -1093, -718, -1087, -711, -1087, -707, -1095, -699, -1095, -694, -1088, -689, -1086, -686, -1093, -683, -1098, -655, -1101, -657, -1088, -648, -1086, -644, -1093, -637, -1093, -632, -1087, -628, -1086, -626, -1113, -621, -1132, -622, -1140, -628, -1140, -636, -1125, -640, -1125, -640, -1140, -656, -1147, -656, -1152, -661, -1156, -660, -1162, -660, -1174, -670, -1180, -674, -1181, -685, -1171, -685, -1160, -683, -1156, -689, -1149, -703, -1139, -704, -1126, -709, -1126, -713, -1137, -717, -1141 )
-
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 753, 763 )
 rotation = 1.5708
@@ -603,11 +615,9 @@ shape = SubResource( 14 )
 layer = 2
 
 [node name="Situacao" type="Area2D" parent="."]
-visible = false
 position = Vector2( 254, 799 )
 
 [node name="Situacao1" type="CollisionShape2D" parent="Situacao"]
-visible = false
 position = Vector2( 31.5, -12.5 )
 shape = SubResource( 8 )
 
@@ -714,6 +724,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Button" type="Button" parent="."]
+visible = false
 margin_left = 1128.0
 margin_top = 1067.0
 margin_right = 1140.0
@@ -725,8 +736,14 @@ rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 23 )
 
+[node name="situation_2" type="Area2D" parent="."]
+
+[node name="bar" type="CollisionPolygon2D" parent="situation_2"]
+polygon = PoolVector2Array( -456, -961, -457, -1011, -371, -1012, -371, -961 )
+
 [connection signal="body_entered" from="Mapa_detalhes/Colisões/mini game 1" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="Mapa_detalhes/Colisões/mini game 1" to="." method="_on_mini_game_1_body_entered"]
+[connection signal="body_entered" from="Mapa_detalhes/Colisões/mini game 1" to="Personagem" method="_on_mini_game_1_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Personagem" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Situacao" to="." method="_on_Situacao_body_entered"]
@@ -753,3 +770,5 @@ frames = SubResource( 23 )
 [connection signal="timeout" from="Quest" to="smaho/Node2D" method="_on_Quest_timeout"]
 [connection signal="timeout" from="sit_2" to="." method="_on_sit_2_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="body_entered" from="situation_2" to="." method="_on_situation_2_body_entered"]
+[connection signal="body_entered" from="situation_2" to="Personagem" method="_on_situation_2_body_entered"]

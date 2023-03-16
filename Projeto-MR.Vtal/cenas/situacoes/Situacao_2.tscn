@@ -1,19 +1,20 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://imagens/spritesheet_player/arrow_right_icon_133719.png" type="Texture" id=1]
 [ext_resource path="res://cenas/Jogador/Jogador.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scripts/situacoes/Situação1.gd" type="Script" id=3]
+[ext_resource path="res://scripts/situacoes/Situacao2.gd" type="Script" id=3]
 [ext_resource path="res://fontes/OldSchoolAdventures-42j9.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://imagens/mapa_principal/mapa-vtal-2.0.png" type="Texture" id=5]
+[ext_resource path="res://WhatsApp Image 2023-03-12 at 21.14.21.jpeg" type="Texture" id=5]
 [ext_resource path="res://imagens/spritesheet_player/3ef35179c31986a (4).png" type="Texture" id=6]
 [ext_resource path="res://imagens/spritesheet_player/3ef35179c31986a (2).png" type="Texture" id=7]
 [ext_resource path="res://TransitionCasas.tscn" type="PackedScene" id=8]
 [ext_resource path="res://imagens/aten.png" type="Texture" id=9]
 [ext_resource path="res://imagens/parabens.png" type="Texture" id=10]
 [ext_resource path="res://fontes/PTSansNarrow-Regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://imagens/spritesheet_player/imagem (11).png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 17.5, 160 )
+extents = Vector2( 168, 129.25 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -54,6 +55,22 @@ tracks/0/keys = {
 "values": [ Vector2( 1155, 337 ), Vector2( 353, 337 ) ]
 }
 
+[sub_resource type="Animation" id=10]
+resource_name = "sit_2"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.1, 2.8, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 475, 567 ), Vector2( 477, 490 ), Vector2( 779, 505 ), Vector2( 797, 440 ) ]
+}
+
 [sub_resource type="DynamicFont" id=4]
 size = 25
 font_data = ExtResource( 11 )
@@ -73,30 +90,44 @@ font_data = ExtResource( 11 )
 [sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 11 )
 
-[node name="Situação1" type="Area2D"]
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 22, 36 )
+
+[node name="Situacao2" type="Area2D"]
 script = ExtResource( 3 )
 
 [node name="Mapa" type="Sprite" parent="."]
-position = Vector2( -40, -1154 )
-scale = Vector2( 1.9, 1.9 )
+position = Vector2( 508, 301 )
+scale = Vector2( 1.325, 1.35402 )
 texture = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="saida" type="Area2D" parent="."]
+position = Vector2( 171, 474.75 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saida"]
 light_mask = 3
-position = Vector2( 193, 239 )
 shape = SubResource( 1 )
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 722, 308 )
+scale = Vector2( 0.0704688, 0.0691666 )
+texture = ExtResource( 12 )
+
 [node name="NPC" type="AnimatedSprite" parent="."]
-position = Vector2( 1189, 331 )
-scale = Vector2( 2.39655, 2.39655 )
+position = Vector2( 475, 567 )
+scale = Vector2( 0.604137, 1.47845 )
 frames = SubResource( 7 )
 animation = "esquerda"
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NPC"]
-root_node = NodePath("../..")
 anims/RESET = SubResource( 2 )
 anims/Situacao1 = SubResource( 3 )
+anims/sit_2 = SubResource( 10 )
+
+[node name="Personagem" parent="." instance=ExtResource( 2 )]
+position = Vector2( 140, 303 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="CaixaDialogo" type="ColorRect" parent="."]
 margin_top = 424.0
@@ -192,16 +223,14 @@ underline = 1
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="Personagem" parent="." instance=ExtResource( 2 )]
-position = Vector2( 194, 190 )
-scale = Vector2( 1.2, 1.2 )
-
 [node name="atencao" type="Sprite" parent="."]
+visible = false
 position = Vector2( 539, 195 )
 scale = Vector2( 0.49862, 0.592794 )
 texture = ExtResource( 9 )
 
 [node name="passar" type="TouchScreenButton" parent="atencao"]
+visible = false
 position = Vector2( 262.564, 501.276 )
 scale = Vector2( 0.219298, 0.191462 )
 normal = ExtResource( 1 )
@@ -221,6 +250,7 @@ valign = 1
 autowrap = true
 
 [node name="parabens" type="Sprite" parent="."]
+visible = false
 position = Vector2( 464, 230 )
 scale = Vector2( 0.438477, 0.521291 )
 texture = ExtResource( 10 )
@@ -244,10 +274,31 @@ valign = 1
 autowrap = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="banco" type="Area2D" parent="."]
+position = Vector2( -1, 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="banco"]
+position = Vector2( 722, 440 )
+shape = SubResource( 11 )
+
+[node name="enemy" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="npc" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="resposta" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_Situao1_body_entered"]
 [connection signal="body_entered" from="." to="Personagem" method="_on_Situao1_body_entered"]
 [connection signal="body_exited" from="." to="Personagem" method="_on_Situao1_body_exited"]
+[connection signal="body_entered" from="saida" to="." method="_on_saida_body_entered"]
 [connection signal="pressed" from="CaixaDialogo/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CaixaDialogo/VBoxContainer/Escolha1" to="." method="_on_Escolha1_pressed"]
 [connection signal="pressed" from="CaixaDialogo/VBoxContainer/Escolha2" to="." method="_on_Escolha2_pressed"]
@@ -256,3 +307,7 @@ autowrap = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="atencao/passar" to="." method="_on_passar_pressed"]
 [connection signal="pressed" from="parabens/passar" to="." method="_on_passar_pressed"]
+[connection signal="body_entered" from="banco" to="." method="_on_banco_body_entered"]
+[connection signal="timeout" from="enemy" to="." method="_on_enemy_timeout"]
+[connection signal="timeout" from="npc" to="." method="_on_npc_timeout"]
+[connection signal="timeout" from="resposta" to="." method="_on_resposta_timeout"]

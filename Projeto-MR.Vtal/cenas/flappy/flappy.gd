@@ -74,5 +74,5 @@ func _on_Button_final_pressed():
 
 func _on_sair_ganho_pressed():
 	
-	Global.pontuacao +=1
+	Global.pontuacao +=2
 	get_tree().change_scene("res://cenas/mapa_principal/mapa_principal.tscn")

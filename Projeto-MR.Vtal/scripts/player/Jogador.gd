@@ -116,6 +116,21 @@ func _on_left_released():
 	left = false 
 
 func _on_Area2D_body_entered(body):
+	control = false
 	posicaox = position.x 
 	posicaoy = position.y +10
+	Global.atualizar_posicao(posicaox,posicaoy)
+
+
+func _on_situation_2_body_entered(body):
+	control = false
+	posicaox = position.x 
+	posicaoy = position.y +10
+	Global.atualizar_posicao(posicaox,posicaoy)
+
+
+func _on_mini_game_1_body_entered(body):
+	control = false
+	posicaox = position.x +30
+	posicaoy = position.y +30
 	Global.atualizar_posicao(posicaox,posicaoy)
