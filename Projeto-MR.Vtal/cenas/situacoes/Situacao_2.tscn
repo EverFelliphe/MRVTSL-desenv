@@ -11,7 +11,7 @@
 [ext_resource path="res://imagens/aten.png" type="Texture" id=9]
 [ext_resource path="res://imagens/parabens.png" type="Texture" id=10]
 [ext_resource path="res://fontes/PTSansNarrow-Regular.ttf" type="DynamicFontData" id=11]
-[ext_resource path="res://imagens/spritesheet_player/imagem (11).png" type="Texture" id=12]
+[ext_resource path="res://imagens/npc2 parado2.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 168, 129.25 )
@@ -109,8 +109,8 @@ light_mask = 3
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 722, 308 )
-scale = Vector2( 0.0704688, 0.0691666 )
+position = Vector2( 726, 317 )
+scale = Vector2( 2.81649, 3.00333 )
 texture = ExtResource( 12 )
 
 [node name="NPC" type="AnimatedSprite" parent="."]

@@ -343,11 +343,6 @@ position = Vector2( 208, 883 )
 rotation = 1.5708
 shape = SubResource( 5 )
 
-[node name="Poste11" type="CollisionShape2D" parent="Mapa_detalhes/Colisões"]
-position = Vector2( -15, 891 )
-rotation = 1.5708
-shape = SubResource( 5 )
-
 [node name="Poste12" type="CollisionShape2D" parent="Mapa_detalhes/Colisões"]
 position = Vector2( -271, 892 )
 rotation = 1.5708
@@ -582,11 +577,16 @@ polygon = PoolVector2Array( -384, -238, -384, -190, -352, -190, -352, -237, -358
 [node name="Carro5" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisões"]
 polygon = PoolVector2Array( -320, -254, -320, -190, -288, -190, -288, -254 )
 
+[node name="Poste27" type="CollisionShape2D" parent="Mapa_detalhes/Colisões"]
+position = Vector2( 1073, 1084 )
+rotation = 1.5708
+shape = SubResource( 5 )
+
 [node name="mini game 1" type="Area2D" parent="Mapa_detalhes/Colisões"]
 position = Vector2( 128, 32 )
 
-[node name="Poste27" type="CollisionShape2D" parent="Mapa_detalhes/Colisões/mini game 1"]
-position = Vector2( 945, 1052 )
+[node name="Poste11" type="CollisionShape2D" parent="Mapa_detalhes/Colisões/mini game 1"]
+position = Vector2( -143, 855 )
 rotation = 1.5708
 shape = SubResource( 5 )
 
@@ -731,7 +731,8 @@ margin_right = 1140.0
 margin_bottom = 1087.0
 
 [node name="sec_mission" type="AnimatedSprite" parent="."]
-position = Vector2( 1077, 1006 )
+visible = false
+position = Vector2( -14, 863 )
 rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 23 )

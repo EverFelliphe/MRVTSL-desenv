@@ -23,7 +23,7 @@ func _ready():
 		$sec_mission.show()
 		$sec_mission.play()
 		$Quest.start()
-		
+		$sec_mission.show()
 		print($Personagem.position)
 	
 #	if Global.pontuacao == 4 :

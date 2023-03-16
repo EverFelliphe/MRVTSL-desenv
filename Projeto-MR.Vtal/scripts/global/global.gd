@@ -56,7 +56,14 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 		7: "teste 6",
 	}
 }
-
+enum state_situations {INIT,SITUATION_1, SITUATION_2,  SITUATION_3}
+enum state_areas {AREA_1, AREEA_2,  AREA_3}
+enum state_person{FRENTE,TRAS,ESQUERDA,DIREITA,PARADO}
+enum state_nivel{N1,N2,N3,N4,N5}
+var current_area = state_areas.AREA_1
+var current_situations = state_situations.INIT
+var current_person = state_person.PARADO
+var current_nivel = state_nivel.N1
 var nivel_1= false #variavel de controle de nível
 var nivel_2= false#variavel de controle de nível
 var nivel_3= false#variavel de controle de nível
