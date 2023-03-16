@@ -12,6 +12,14 @@ var down = false
 var right = false
 var left = false
 
+enum State {
+	Defensor
+	Duque
+	General
+	Principe
+	Rei
+}
+
 func _ready() -> void:
 	screen_size = get_viewport_rect().size #define o tamanho da tela
 
@@ -67,6 +75,18 @@ func _physics_process(delta): #define os controles do jogo
 #			position.x = clamp(position.x, 0, screen_size.x) #Define o limite horizontal da tela
 #			position.y = clamp(position.y, 0, screen_size.y) #Define o limite vertical da tela
 		#Código comentado para poder instanciar o mapa principal diretamente sem definir a tela. Mas pro funcionamento do jogo, ele deve estar rodando
+		
+		match State:
+			State.Defensor:
+				pass
+			State.Duque:
+				pass
+			State.General:
+				pass
+			State.Principe:
+				pass
+			State.Rei:
+				pass
 
 func _on_Diamante_body_entered(body):
 	Global.velocity(0)
@@ -121,13 +141,11 @@ func _on_Area2D_body_entered(body):
 	posicaoy = position.y +10
 	Global.atualizar_posicao(posicaox,posicaoy)
 
-
 func _on_situation_2_body_entered(body):
 	control = false
 	posicaox = position.x 
 	posicaoy = position.y +10
 	Global.atualizar_posicao(posicaox,posicaoy)
-
 
 func _on_mini_game_1_body_entered(body):
 	control = false

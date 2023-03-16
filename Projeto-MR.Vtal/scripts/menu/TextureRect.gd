@@ -12,7 +12,6 @@ func _ready():
 func _on_TextureButton_pressed():
 	$clique_botao.play()
 	$Timer.start()
-	
 # ao pressionar o botão 1(play) troca para a tela de tutorial com o personagem principal
 
 func _on_Volume_pressed(): #ao clicar no botão de volume a música para e ao clicar novamente ela volta e assim sucessivamente
@@ -25,7 +24,6 @@ func _on_Volume_pressed(): #ao clicar no botão de volume a música para e ao cl
 		$musica_fundo.stream_paused = false
 		$Volume.texture_normal = load("res://imagens/menu/imagem (17).png")
 		music_status = true
-
 
 func _on_Timer_timeout():
 	get_tree().change_scene("res://cenas/tutorial/tutorial.tscn")

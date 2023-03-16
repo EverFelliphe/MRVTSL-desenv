@@ -3,11 +3,14 @@ extends Node
 var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do diamante no tutorial
 	'fabricio': {
 		"nome":"Fabricio",
-		0: 'Olá, tudo bem? Prazer em conhecê-lo, eu sou o Fabrício, e trabalho na V.Tal. Estarei aqui para te auxiliar!',
-		1: 'Será delegado a você algumas tarefas para serem cumpridas. Entretanto, haverão alguns desafios que irão tentar dificultar o seu trajeto.',
-		2: "Eles se resumem a conflitos que testarão o seu comportamento ético perante operações da empresa.",
-		3: "Para passar por eles com êxito, basta escolher a opção que mais condiz com nosso código de ética!",
-		4: "Conforme você acerta as respostas, sua reputação aumentará, e com isso conseguirá subir de nível, alcançando cargos cada vez mais altos!"
+		0: "Olá, tudo bem? Prazer em conhecê-lo, eu sou o Fabrício, e trabalho na V.Tal. Estarei aqui para te auxiliar!",
+		1: "Vi no seu currículo que você se formou no Inteli, um dos maiores institutos de tecnologia do mundo, e quem sabe do Brasil!",
+		2: "Vejo em você um enorme potencial para alcançar o cargo mais alto da V.Tal, o Rei das Fibras, e se tornar um grande funcionário da nossa empresa.",
+		3: "Entretanto, não basta ser um mestre da tecnologia. Precisamos que você também esteja alinhada aos nossos valores éticos, e pra isso precisamos que você domine nosso Código de Ética!",
+		4: "Poderíamos te passar um arquivo com 50 páginas para ler, mas sabemos o quão tedioso é isso. Então, em vez disso, vamos te passar algumas tarefas, nas quais sua conduta ética será testada!",
+		5: "Assim, você passará por situações que irão testar seu comportamento perante dilemas éticos e, de acordo com sua reação, você receberá pontos de reputação!",
+		6: "Ao conseguir uma certa quantidade de pontos de reputação, você subirá de nível, recebendo um novo título, até chegar ao tão sonhado Rei das Fibras!",
+		7: "Mas não se preocupe, todas as instruções de como fazer as tarefas serão passadas por minha colega Nathália! Ela irá te ajudar durante o seu trajeto na empresa."
 	},
 	'diamante': {
 		0: 'Use as setas no canto inferior esquerdo para se movimentar pelo mapa!',
