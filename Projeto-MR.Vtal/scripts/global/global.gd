@@ -67,6 +67,7 @@ var current_area = state_areas.AREA_1
 var current_situations = state_situations.INIT
 var current_person = state_person.PARADO
 var current_nivel = state_nivel.N1
+var nivel_index = 0
 var nivel_1= false #variavel de controle de nível
 var nivel_2= false#variavel de controle de nível
 var nivel_3= false#variavel de controle de nível

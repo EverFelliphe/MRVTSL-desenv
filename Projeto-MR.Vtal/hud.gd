@@ -3,12 +3,15 @@ onready var nivel_imag = $VBoxContainer/nivel
 
 func _ready(): #mostra a pontuação zerada ao iniciar o jogo
 	$VBoxContainer/pont_0.show()
-	
 func _process(delta): #atualiza a hud a medida que ganha pontuação
-	if Global.pontuacao == 4: #se subir de nivel, atualiza a moldura 
-		$VBoxContainer/nome_nivel.texture = load("res://imagens/níveis/MolduraDuquePronta.png")
+	match Global.current_nivel:
+		Global.state_nivel.N2:
+			$VBoxContainer/nome_nivel.texture = load("res://imagens/níveis/MolduraDuquePronta.png")
+		Global.state_nivel.N3:
+			$VBoxContainer/nome_nivel.texture = load("res://imagens/níveis/MolduraGeneralPronta.png")
+		Global.state_nivel.N4:
+			$VBoxContainer/nome_nivel.texture = load("res://imagens/níveis/MolduraGeneralPronta.png")
 	if Global.pontuacao == 1:
-		$Timer.start()
 		$VBoxContainer/pont_1.show()
 		$VBoxContainer/pont_2.hide()
 		$VBoxContainer/pont_0.hide()
@@ -30,25 +33,42 @@ func _process(delta): #atualiza a hud a medida que ganha pontuação
 		$VBoxContainer/pont_4.hide()
 		
 	elif Global.pontuacao == 4  :
+		Global.nivel_index += 1
 		$VBoxContainer/pont_1.hide()
 		$VBoxContainer/pont_0.hide()
 		$VBoxContainer/pont3.hide()	
 		$VBoxContainer/pont_2.hide()
 		$VBoxContainer/pont_4.show()
-		$Timer.start()
-	elif Global.pontuacao == 0 or Global.pontuacao <=0:
+		match Global.nivel_index:
+			1:
+				Global.current_nivel =  Global.state_nivel.N2
+			
+			2:
+				Global.current_nivel =  Global.state_nivel.N3
+			
+			3:
+				Global.current_nivel = Global.state_nivel.N4
+		$timer_hud.start()
+		
+		Global.pontuacao = 0
+		
+		
+	elif  Global.pontuacao <=0:
 		$VBoxContainer/pont_4.hide()
 		$VBoxContainer/pont_0.show()
 		$VBoxContainer/pont_1.hide()
 		$VBoxContainer/pont3.hide()
 		$VBoxContainer/pont_2.hide()
 	
-		
-func _on_Timer_timeout(): #mostra a hud nova quando tiver 4 pontos ou pontos negativos
-	if Global.pontuacao == 4: #se subir de nivel, atualiza a moldura 
-		$VBoxContainer/nome_nivel.texture = load("res://imagens/níveis/MolduraDuquePronta.png")
+	
+func _on_timer_hud_timeout():
+	
+	print(Global.nivel_index)
+	
 	$VBoxContainer/pont_4.hide()
 	$VBoxContainer/pont_0.show()
 	$VBoxContainer/pont_1.hide()
 	$VBoxContainer/pont3.hide()
 	$VBoxContainer/pont_2.hide()
+	
+	print(Global.current_nivel)

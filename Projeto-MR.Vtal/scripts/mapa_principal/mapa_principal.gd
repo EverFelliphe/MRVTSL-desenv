@@ -36,10 +36,12 @@ func _process(delta):
 			Global.velocity(0)
 			$dialogo.show()
 			Global.controle_nathalia  = false
-	if Global.pontuacao == 4 :
+	
+	match Global.current_nivel:
+		Global.state_nivel.N1:
+			$nivel_1.start()
 		
-		$nivel_1.start()
-		Global.pontuacao = 0
+		
 func _on_Situacao_body_entered(body): #inicia animação nathalia e começa o timer da cena 
 	$CanvasLayer.show()
 	esconder()

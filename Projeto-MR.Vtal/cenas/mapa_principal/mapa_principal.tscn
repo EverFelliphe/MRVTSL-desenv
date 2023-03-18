@@ -724,11 +724,10 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Button" type="Button" parent="."]
-visible = false
-margin_left = 1128.0
-margin_top = 1067.0
-margin_right = 1140.0
-margin_bottom = 1087.0
+margin_left = 95.0
+margin_top = 768.0
+margin_right = 107.0
+margin_bottom = 788.0
 
 [node name="sec_mission" type="AnimatedSprite" parent="."]
 visible = false
