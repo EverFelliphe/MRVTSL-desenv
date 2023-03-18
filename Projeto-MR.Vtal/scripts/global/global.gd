@@ -63,22 +63,39 @@ enum state_situations {INIT,SITUATION_1, SITUATION_2,  SITUATION_3}
 enum state_areas {AREA_1, AREEA_2,  AREA_3}
 enum state_person{FRENTE,TRAS,ESQUERDA,DIREITA,PARADO}
 enum state_nivel{N1,N2,N3,N4,N5}
+
+enum StateCameraClamp {
+	On
+	Off
+}
+var camera_state = StateCameraClamp.On
+
+enum State {
+	Inicio
+	Situacao1
+	Situacao1_finish
+	Situacao2
+	Mini_Game2
+}
+
+var current_state = State.Inicio
+
 var current_area = state_areas.AREA_1
 var current_situations = state_situations.INIT
 var current_person = state_person.PARADO
 var current_nivel = state_nivel.N1
 var nivel_index = 0
 var nivel_1= false #variavel de controle de nível
-var nivel_2= false#variavel de controle de nível
-var nivel_3= false#variavel de controle de nível
-var nivel_4= false#variavel de controle de nível
-var nivel_5= false#variavel de controle de nível
+var nivel_2= false #variavel de controle de nível
+var nivel_3= false #variavel de controle de nível
+var nivel_4= false #variavel de controle de nível
+var nivel_5= false #variavel de controle de nível
 var situation_2 = false
 var area_1_desbl = false #variavel de controle para areas já desbloqueadas
 var controle_nathalia = true # variavel de controle do dialogo inicial
 var nthalia_index = 0
-var posicaox
-var posicaoy
+var posicaox = 142
+var posicaoy = 201
 var pontuacao = 0 #pontuação do personagem
 var controle_tela = true
 var teste
@@ -99,7 +116,3 @@ var speed = 250
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	controle_nathalia = true
-	
-func controle_false():
-	controle_nathalia = false
-	print(controle_nathalia)

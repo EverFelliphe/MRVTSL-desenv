@@ -24,6 +24,7 @@ func _ready() -> void:
 	screen_size = get_viewport_rect().size #define o tamanho da tela
 
 func _physics_process(delta): #define os controles do jogo
+	var camera_state = Global.camera_state
 	var speed = Global.speed
 	if control == true: 
 		vel = Vector2.ZERO  #define a velocidade como uma variável de vetor
@@ -50,6 +51,7 @@ func _physics_process(delta): #define os controles do jogo
 			
 		if Input.is_action_pressed("ui_accept"):
 			vel.y-= 1
+			print()
 			
 		move_and_slide(vel.normalized() * speed, Vector2.ZERO) 
 		
@@ -65,16 +67,15 @@ func _physics_process(delta): #define os controles do jogo
 				$Animacao.animation = 'cima'
 			elif vel.y == 1:
 				$Animacao.animation = 'baixo'
-				
 		else:
 			$Animacao.stop()
 		
-		if controle_tela == false:
-			pass
-#		else:
-#			position.x = clamp(position.x, 0, screen_size.x) #Define o limite horizontal da tela
-#			position.y = clamp(position.y, 0, screen_size.y) #Define o limite vertical da tela
-		#Código comentado para poder instanciar o mapa principal diretamente sem definir a tela. Mas pro funcionamento do jogo, ele deve estar rodando
+		match camera_state:
+			Global.StateCameraClamp.On:
+				position.x = clamp(position.x, 0, screen_size.x) #Define o limite horizontal da tela
+				position.y = clamp(position.y, 0, screen_size.y) #Define o limite vertical da tela
+			Global.StateCameraClamp.Off:
+				pass
 		
 		match State:
 			State.Defensor:

@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 var pontuacao = Global.pontuacao #utilizando a variavel definida no script do global
 var dialogo = Global.falas['situacao2'] #utiliando a variavel definida no script do global
@@ -7,7 +7,9 @@ var timer = Timer.new() #tempo de transição
 var controle_situation = false
 onready var imagem = $atencao #carrega a imagem atenção 
 
-func _ready(): #
+func _ready(): 
+	Global.camera_state = Global.StateCameraClamp.On
+	$Personagem/Animacao.animation = "cima"
 	$CanvasLayer.comecar_reverso()
 	$CanvasLayer.timer() #inicia o tempo e animação reversa acima 
 	$CaixaDialogo/nome.text = dialogo.nome1
@@ -109,9 +111,7 @@ func _on_passar_pressed(): #volta o personagem para o mapa
 func _on_banco_body_entered(body):
 	$Timer.start()
 
-
 func _on_saida_body_entered(body):
-	Global.controle_false()
 	Global.atualizar_pontuacao(pontuacao)
 	get_tree().change_scene("res://cenas/mapa_principal/mapa_principal.tscn") 
 

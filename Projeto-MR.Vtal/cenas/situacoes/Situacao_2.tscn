@@ -1,11 +1,10 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://imagens/spritesheet_player/arrow_right_icon_133719.png" type="Texture" id=1]
 [ext_resource path="res://cenas/Jogador/Jogador.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/situacoes/Situacao2.gd" type="Script" id=3]
 [ext_resource path="res://fontes/OldSchoolAdventures-42j9.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://WhatsApp Image 2023-03-12 at 21.14.21.jpeg" type="Texture" id=5]
-[ext_resource path="res://imagens/spritesheet_player/3ef35179c31986a (4).png" type="Texture" id=6]
 [ext_resource path="res://imagens/spritesheet_player/3ef35179c31986a (2).png" type="Texture" id=7]
 [ext_resource path="res://TransitionCasas.tscn" type="PackedScene" id=8]
 [ext_resource path="res://imagens/aten.png" type="Texture" id=9]
@@ -14,11 +13,11 @@
 [ext_resource path="res://imagens/npc2 parado2.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 168, 129.25 )
+extents = Vector2( 88, 17.625 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "esquerda",
 "speed": 5.0
@@ -93,12 +92,19 @@ font_data = ExtResource( 11 )
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 22, 36 )
 
-[node name="Situacao2" type="Area2D"]
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 175.25, 133.5 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 553, 10 )
+
+[node name="Situacao2" type="Node2D"]
+position = Vector2( 0, -5 )
 script = ExtResource( 3 )
 
 [node name="Mapa" type="Sprite" parent="."]
-position = Vector2( 508, 301 )
-scale = Vector2( 1.325, 1.35402 )
+position = Vector2( 511.6, 304.65 )
+scale = Vector2( 1.33438, 1.33772 )
 texture = ExtResource( 5 )
 
 [node name="saida" type="Area2D" parent="."]
@@ -106,6 +112,7 @@ position = Vector2( 171, 474.75 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="saida"]
 light_mask = 3
+position = Vector2( -2, -120.75 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -126,10 +133,11 @@ anims/Situacao1 = SubResource( 3 )
 anims/sit_2 = SubResource( 10 )
 
 [node name="Personagem" parent="." instance=ExtResource( 2 )]
-position = Vector2( 140, 303 )
-scale = Vector2( 1.2, 1.2 )
+position = Vector2( 166, 296 )
+scale = Vector2( 1.3, 1.3 )
 
 [node name="CaixaDialogo" type="ColorRect" parent="."]
+visible = false
 margin_top = 424.0
 margin_right = 1024.0
 margin_bottom = 607.0
@@ -278,9 +286,11 @@ visible = false
 
 [node name="banco" type="Area2D" parent="."]
 position = Vector2( -1, 2 )
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="banco"]
-position = Vector2( 722, 440 )
+position = Vector2( 725, 399 )
 shape = SubResource( 11 )
 
 [node name="enemy" type="Timer" parent="."]
@@ -295,9 +305,59 @@ one_shot = true
 wait_time = 4.0
 one_shot = true
 
-[connection signal="body_entered" from="." to="." method="_on_Situao1_body_entered"]
-[connection signal="body_entered" from="." to="Personagem" method="_on_Situao1_body_entered"]
-[connection signal="body_exited" from="." to="Personagem" method="_on_Situao1_body_exited"]
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -18.0
+margin_top = 343.0
+margin_right = 342.0
+margin_bottom = 620.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Colisoes" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="parede" type="CollisionPolygon2D" parent="Colisoes"]
+position = Vector2( 3, 0 )
+polygon = PoolVector2Array( 0, 99, 637, 98, 638, 378, 1022, 379, 1024, 1, -6, 1 )
+
+[node name="mesa" type="CollisionPolygon2D" parent="Colisoes"]
+position = Vector2( 4, 0 )
+polygon = PoolVector2Array( 652, 532, 654, 585, 661, 589, 652, 602, 705, 603, 695, 590, 702, 579, 704, 532 )
+
+[node name="mesa2" type="CollisionPolygon2D" parent="Colisoes"]
+position = Vector2( 262, 0 )
+polygon = PoolVector2Array( 652, 532, 654, 585, 661, 589, 652, 602, 705, 603, 695, 590, 702, 579, 704, 532 )
+
+[node name="mesa3" type="CollisionPolygon2D" parent="Colisoes"]
+position = Vector2( 2, 0 )
+polygon = PoolVector2Array( 397, 532, 398, 580, 405, 590, 397, 604, 450, 603, 441, 590, 448, 579, 449, 532 )
+
+[node name="mesa4" type="CollisionPolygon2D" parent="Colisoes"]
+position = Vector2( 2, 0 )
+polygon = PoolVector2Array( 92, 103, 93, 139, 101, 155, 108, 155, 116, 134, 229, 133, 232, 156, 238, 157, 238, 148, 246, 137, 246, 101 )
+
+[node name="sinuca" type="CollisionPolygon2D" parent="Colisoes"]
+position = Vector2( 3, 0 )
+polygon = PoolVector2Array( 423, 148, 424, 263, 431, 276, 439, 279, 436, 267, 497, 268, 491, 281, 498, 281, 508, 262, 508, 147, 479, 128, 450, 128 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisoes"]
+position = Vector2( 167, 477 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colisoes"]
+position = Vector2( 495, 613 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Colisoes"]
+position = Vector2( 1035, 235 )
+rotation = 1.5708
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Colisoes"]
+position = Vector2( -10, 267 )
+rotation = 1.5708
+shape = SubResource( 13 )
+
 [connection signal="body_entered" from="saida" to="." method="_on_saida_body_entered"]
 [connection signal="pressed" from="CaixaDialogo/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CaixaDialogo/VBoxContainer/Escolha1" to="." method="_on_Escolha1_pressed"]

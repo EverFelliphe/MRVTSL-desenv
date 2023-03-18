@@ -7,6 +7,7 @@ var timer = Timer.new() #tempo de transição
 onready var imagem = $atencao #carrega a imagem atenção 
 
 func _ready(): #
+	Global.current_state = Global.State.Situacao1_finish
 	$CanvasLayer.comecar_reverso()
 	$CanvasLayer.timer() #inicia o tempo e animação reversa acima 
 	$CaixaDialogo/nome.text = dialogo.nome
@@ -24,8 +25,9 @@ func _on_Situao1_body_entered(body): #quando o jogador entra na área definida i
 	$NPC.show()
 	$NPC/AnimationPlayer.play("Situacao1")
 	$Timer.start()
-
+	
 func _on_Timer_timeout(): #carrega caixa de diálogo
+
 	$Timer.queue_free()
 	$CaixaDialogo.show()
 	$NPC.animation = "esquerda"[0]
@@ -87,6 +89,5 @@ func clear(): #encerra a cena
 	$CaixaDialogo/Button.show()
 	
 func _on_passar_pressed(): #volta o personagem para o mapa 
-	Global.controle_false()
 	Global.atualizar_pontuacao(pontuacao)
 	get_tree().change_scene("res://cenas/mapa_principal/mapa_principal.tscn") 

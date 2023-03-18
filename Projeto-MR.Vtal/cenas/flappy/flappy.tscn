@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://cenas/flappy/flappy.gd" type="Script" id=1]
 [ext_resource path="res://imagens/flappy/sprite_fio_cima.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://imagens/flappy/button_start.png" type="Texture" id=7]
 [ext_resource path="res://imagens/flappy/continuar_jogando.png" type="Texture" id=8]
 [ext_resource path="res://fontes/PTSansNarrow-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://BarreiraMG1.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Shader" id=4]
 
@@ -67,12 +68,17 @@ size = 30
 font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=14]
+size = 40
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=15]
 size = 30
 font_data = ExtResource( 9 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 70, -1 )
 script = ExtResource( 1 )
+Barreira = ExtResource( 10 )
 
 [node name="background" type="Sprite" parent="."]
 material = SubResource( 5 )
@@ -81,10 +87,10 @@ scale = Vector2( 1.12741, 1 )
 texture = ExtResource( 3 )
 
 [node name="columns" type="Area2D" parent="."]
+visible = false
 position = Vector2( 65, -1 )
 
 [node name="fiocompleto" type="Sprite" parent="columns"]
-visible = false
 position = Vector2( 239, 325 )
 scale = Vector2( 2.40625, 2.42187 )
 
@@ -101,50 +107,46 @@ texture = ExtResource( 2 )
 [node name="colision_baixo" type="CollisionShape2D" parent="columns"]
 position = Vector2( 240.5, 127.125 )
 shape = SubResource( 1 )
+disabled = true
 
 [node name="colision_cima" type="CollisionShape2D" parent="columns"]
 position = Vector2( 241.75, 484.563 )
 shape = SubResource( 1 )
+disabled = true
 
 [node name="colision_certo" type="CollisionShape2D" parent="columns"]
 position = Vector2( 256.25, 303 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="game_over" type="TextureButton" parent="."]
-margin_left = -42.0
-margin_top = 328.0
-margin_right = 119.0
-margin_bottom = 417.0
+margin_left = 364.0
+margin_top = 467.0
+margin_right = 525.0
+margin_bottom = 556.0
 texture_normal = ExtResource( 7 )
 expand = true
 
-[node name="ferramenta" type="KinematicBody2D" parent="."]
-position = Vector2( -8, 195 )
+[node name="ferramenta" type="Area2D" parent="."]
+position = Vector2( -23, 300 )
 
 [node name="sprite_personagem" type="AnimatedSprite" parent="ferramenta"]
 position = Vector2( 2, -1 )
 scale = Vector2( 0.460938, 0.460938 )
 frames = SubResource( 12 )
-frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ferramenta"]
 position = Vector2( 2.5, -3 )
 shape = SubResource( 3 )
 
-[node name="sair_ganho" type="TextureButton" parent="."]
-margin_left = 62.0
-margin_top = 259.0
-margin_right = 250.0
-margin_bottom = 303.0
-texture_normal = ExtResource( 6 )
-
-[node name="Button_final" type="TextureButton" parent="."]
-margin_left = 49.0
-margin_top = 174.0
-margin_right = 257.0
-margin_bottom = 218.0
+[node name="reiniciar" type="TextureButton" parent="."]
+margin_left = 297.0
+margin_top = 478.0
+margin_right = 628.0
+margin_bottom = 548.0
 texture_normal = ExtResource( 8 )
+expand = true
 
 [node name="score" type="Label" parent="."]
 margin_left = 374.0
@@ -152,20 +154,47 @@ margin_top = -2.0
 margin_right = 550.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 13 )
-text = "SCORE"
+text = "PONTUAÇÃO"
 align = 1
 valign = 1
 
 [node name="passou" type="Label" parent="."]
-margin_left = 516.0
-margin_top = 18.0
-margin_right = 687.0
-margin_bottom = 95.0
+margin_left = 279.0
+margin_top = 226.0
+margin_right = 651.0
+margin_bottom = 391.0
 custom_fonts/font = SubResource( 14 )
-text = "Passou"
+text = "Parabéns, você conseguiu! 
+
+"
+
+[node name="spawnBarreira" type="Timer" parent="."]
+wait_time = 1.9
+
+[node name="instrucao" type="Label" parent="."]
+margin_left = 193.0
+margin_top = 192.0
+margin_right = 726.0
+margin_bottom = 318.0
+custom_fonts/font = SubResource( 15 )
+text = "Use as setas para cima e para baixo para se mover
+Conecte as fibras passando pelo meio delas!
+Consiga 10 pontos para instalar a fibra com sucesso"
+align = 1
+valign = 1
+
+[node name="sair" type="TextureButton" parent="."]
+margin_left = 293.0
+margin_top = 479.0
+margin_right = 618.0
+margin_bottom = 555.0
+texture_normal = ExtResource( 6 )
+expand = true
 
 [connection signal="body_shape_entered" from="columns" to="." method="_on_columns_body_shape_entered"]
 [connection signal="body_shape_exited" from="columns" to="." method="_on_columns_body_shape_exited"]
 [connection signal="pressed" from="game_over" to="." method="_on_game_over_pressed"]
-[connection signal="pressed" from="sair_ganho" to="." method="_on_sair_ganho_pressed"]
-[connection signal="pressed" from="Button_final" to="." method="_on_Button_final_pressed"]
+[connection signal="area_entered" from="ferramenta" to="." method="_on_ferramenta_area_entered"]
+[connection signal="pressed" from="reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="timeout" from="spawnBarreira" to="." method="_on_spawnBarreira_timeout"]
+[connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]
