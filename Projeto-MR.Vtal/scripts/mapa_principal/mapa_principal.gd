@@ -55,10 +55,6 @@ func _process(delta):
 		Global.state_nivel.N1:
 			$nivel_1.start()
 		
-	if Global.pontuacao == 4 :
-
-		$nivel_1.start()
-		Global.pontuacao = 0
 		
 func _on_Situacao_body_entered(body): #inicia animação nathalia e começa o timer da cena 
 	$CanvasLayer.show()
