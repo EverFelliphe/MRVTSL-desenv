@@ -22,17 +22,12 @@ func _ready():
 	$NPC.hide()
 	$atencao.hide()
 	$parabens.hide()
+	$Transition.hide()
 
 func _on_Situao1_body_entered(body): #quando o jogador entra na área definida inicia a cena 
 	$NPC.show()
 	$Timer.start()
 
-func _on_Timer_timeout(): #carrega caixa de diálogo
-	$Timer.queue_free()
-	$NPC.show()
-	$CaixaDialogo.show()
-	$NPC.animation = "esquerda"[0]
-	$banco.queue_free()
 	
 func _on_Button_pressed(): #após a apresentação da pergunta as escolhas aparecem 
 	n += 1 
@@ -44,6 +39,7 @@ func _on_Button_pressed(): #após a apresentação da pergunta as escolhas apare
 		$CaixaDialogo/VBoxContainer/Escolha3.show()
 		$CaixaDialogo/VBoxContainer/Escolha4.show()
 		print(n)
+		
 	elif n ==2:
 		$CaixaDialogo.hide()
 		$npc.start()
@@ -106,31 +102,42 @@ func _on_passar_pressed(): #volta o personagem para o mapa
 	dialogo = Global.falas['situacao2']
 	$resposta.start()
 	
-
-
 func _on_banco_body_entered(body):
+	$Transition.show()
+	$Transition.comecar()
+	$transicaoTimer.start()
+	Global.speed = 0
+	
+func _on_transicaoTimer_timeout():
+	$Transition.comecar_reverso()
 	$Timer.start()
+
+func _on_Timer_timeout(): #carrega caixa de diálogo
+	$Transition.queue_free()
+	$Timer.queue_free()
+	$NPC.show()
+#	$CaixaDialogo.show()
+	$banco.queue_free()
+	$NPC/AnimationPlayer.play("sit_2_ida")
+	$animacao_player.start()
+	
+func _on_animacao_player_timeout():
+	$CaixaDialogo.show()
 
 func _on_saida_body_entered(body):
 	Global.atualizar_pontuacao(pontuacao)
 	get_tree().change_scene("res://cenas/mapa_principal/mapa_principal.tscn") 
 
-
 func _on_npc_timeout():
 	$NPC/AnimationPlayer.play("sit_2")
-	
 	$enemy.start()
-	
-	
-
 
 func _on_enemy_timeout():
 	$CaixaDialogo.show()
 	$CaixaDialogo/conversa.text = dialogo[n]
 
-
 func _on_resposta_timeout():
 	$CaixaDialogo.show()
 	$CaixaDialogo/conversa.show()
 	$CaixaDialogo/conversa.text = dialogo[n]
-	n +=(10-n)
+	n += (10-n)

@@ -99,6 +99,7 @@ var posicaoy = 201
 var pontuacao = 0 #pontuação do personagem
 var controle_tela = true
 var teste
+
 func tela():
 	controle_tela = false
 

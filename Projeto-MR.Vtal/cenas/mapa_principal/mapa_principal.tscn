@@ -223,6 +223,7 @@ position = Vector2( 125, 33 )
 texture = ExtResource( 8 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TransicaoCasa" parent="CanvasLayer" instance=ExtResource( 12 )]
 
@@ -714,19 +715,6 @@ one_shot = true
 wait_time = 3.0
 one_shot = true
 
-[node name="Button" type="Button" parent="."]
-<<<<<<< Updated upstream
-margin_left = 95.0
-margin_top = 768.0
-margin_right = 107.0
-margin_bottom = 788.0
-=======
-margin_left = 1128.0
-margin_top = 1067.0
-margin_right = 1140.0
-margin_bottom = 1087.0
->>>>>>> Stashed changes
-
 [node name="sec_mission" type="AnimatedSprite" parent="."]
 position = Vector2( 336, 691 )
 rotation = 3.14159
@@ -779,7 +767,6 @@ shape = SubResource( 25 )
 [connection signal="timeout" from="area_reverso" to="." method="_on_area_reverso_timeout"]
 [connection signal="timeout" from="Quest" to="smaho/Node2D" method="_on_Quest_timeout"]
 [connection signal="timeout" from="sit_2" to="." method="_on_sit_2_timeout"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="body_entered" from="situation_2" to="." method="_on_situation_2_body_entered"]
 [connection signal="body_entered" from="situation_2" to="Personagem" method="_on_situation_2_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="." method="_on_mini_game_1_body_entered"]

@@ -90,6 +90,8 @@ func _on_ferramenta_area_entered(area):
 		$score.text = ("PONTUAÇÃO\n %d" % [score])
 		
 func game_over():
+	score = 0
+	$score.text = ("PONTUAÇÃO\n %d" % [score])
 	status = 0 #muda o status para "parado"
 	$reiniciar.show()
 	$spawnBarreira.stop()

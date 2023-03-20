@@ -35,34 +35,30 @@ func _ready():
 			#após dialogo o personagem fica na posição inicial 
 			$mini_game_1.queue_free()
 			$excl.hide()
-			$sec_mission.show()
 			$sec_mission.play()
 			$Quest.start()
-			$sec_mission.show()
 	
 #	if Global.pontuacao == 4 :
 #		$nivel_1.start()
 
 func _process(delta):
 
+	current_state = Global.current_state
 	if Global.controle_nathalia == true:
 			$hud.show()
 			$dialogo/Dialogo/texto.text = dialogo[Global.nthalia_index]
 			Global.velocity(0)
 			$dialogo.show()
 			Global.controle_nathalia  = false
-<<<<<<< Updated upstream
 	
 	match Global.current_nivel:
 		Global.state_nivel.N1:
 			$nivel_1.start()
 		
-=======
 	if Global.pontuacao == 4 :
 
 		$nivel_1.start()
 		Global.pontuacao = 0
->>>>>>> Stashed changes
 		
 func _on_Situacao_body_entered(body): #inicia animação nathalia e começa o timer da cena 
 	$CanvasLayer.show()
@@ -75,7 +71,7 @@ func _on_Situacao_body_entered(body): #inicia animação nathalia e começa o ti
 func _on_passar_pressed(): #carrega dialogo com natalia 
 	n += 1 
 	Global.nthalia_index = n
-	print(n)
+	
 	if n == 2:
 		$Personagem/Camera2D/AnimationPlayer.play("mover")
 		$dialogo.hide()
@@ -154,8 +150,8 @@ func _on_sit_2_timeout():
 	Global.controle_false()
 	$Quest.start()
 
-func _on_Button_pressed():
-	Global.pontuacao +=2
+#func _on_Button_pressed():
+#	Global.pontuacao +=2
 
 func _on_mini_game_1_body_entered(body):
 #	Global.atualizar_posicao($Personagem.posicaox, $Personagem.posicaoy)
