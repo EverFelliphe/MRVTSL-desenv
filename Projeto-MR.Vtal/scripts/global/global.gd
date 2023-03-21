@@ -48,14 +48,32 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 		8:'sem problemas',
 		9:'sem problemas',
 	},
+	"situcao3":{
+		'nome1':'',
+		0:'teste1',
+		1:'teste2',
+		2:'teste3',
+		3:'teste4',
+		4:'teste5',
+		5:{
+			1: {"text":"aaaaaaaaa", "feedback":"res://imagens/parabens.png"},
+			2: {"text":"bbbbbbbbb", "feedback":"res://imagens/parabens.png"},
+			3: {"text":"ccccccccc", "feedback":"res://imagens/aten.png"},
+			4: {"text":"ddddddddd", "feedback":"res://imagens/aten.png"}
+		},
+		6:'sem problemas',
+		7:'sem problemas',
+		8:'sem problemas',
+		9:'sem problemas',
+	},
 	"nathalia": {
 		0: "Olá, eu sou a Nathália, e sou funcionária da Vtal! E assim como o Fabrício, te auxiliarei na sua jornada. Te ajudarei passando instruções sobre o que fazer ao longo da sua jornada, por meio dessas ligações!",
 		1: "Como sua primeira tarefa, precisamos que você instale a fibra ótica de um cliente na casa do quarteirão abaixo!",
-		2: "Parabéns por ter passado pela primeira fase! Para comemorar, vá até o bar, à noroeste do prédio da V.Tal, para pedir uma bebida!",
-		3: "Afinal, nada melhor do que uma breja depois de um árduo dia de trabalho!",
-		4: "teste3",
-		5: "teste4",
-		6: "teste 5",
+		2:"Olá novamente, estou aqui para indicar a sua 2 mssão",
+		3:"a partir de agora você enfrentara dilemas mais sutis, porém não menos importantes. Dica. separe pessoal do profissional",
+		4:"teste3",
+		5:"teste4",
+		6:"teste 5",
 		7: "teste 6",
 	}
 }
@@ -75,11 +93,16 @@ enum State {
 	Situacao1
 	Situacao1_finish
 	Situacao2
+	Situacao2_finish
 	Mini_Game2
+	Situacao3
+	Situacao3_finish
+	Mini_Game3
+	Final
 }
 
 var current_state = State.Inicio
-
+var call_index = 0
 var current_area = state_areas.AREA_1
 var current_situations = state_situations.INIT
 var current_person = state_person.PARADO
