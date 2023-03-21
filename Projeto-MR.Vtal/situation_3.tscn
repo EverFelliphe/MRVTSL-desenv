@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://imagens/hud/clube.png" type="Texture" id=1]
 [ext_resource path="res://cenas/Jogador/Jogador.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://imagens/parabens.png" type="Texture" id=8]
 [ext_resource path="res://imagens/icon.png" type="Texture" id=9]
 [ext_resource path="res://imagens/aten.png" type="Texture" id=10]
+[ext_resource path="res://clube2 (1).png" type="Texture" id=11]
+[ext_resource path="res://hud.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CapsuleShape2D" id=5]
 height = 42.0
@@ -144,6 +146,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( -197, 387 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("CanvasLayer:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=10]
 resource_name = "npc_enemy"
@@ -211,6 +225,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="DynamicFont" id=11]
@@ -466,7 +492,6 @@ text = "d) Aceitar o dinheiro e instalar a fibra"
 underline = 1
 
 [node name="NPC" type="Sprite" parent="."]
-visible = false
 position = Vector2( -197, 387 )
 scale = Vector2( 0.609375, 0.5625 )
 texture = ExtResource( 9 )
@@ -476,6 +501,7 @@ wait_time = 3.5
 one_shot = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 19, 468, 26, 461, 39, 460, 46, 468, 49, 467, 50, 457, 60, 443, 61, 433, 61, 398, 64, 393, 65, 383, 60, 378, 58, 350, 55, 350, 44, 352, 32, 354, 17, 354, 15, 360, 15, 458 )
@@ -518,6 +544,15 @@ polygon = PoolVector2Array( -251, 596, 319, 596, 321, 601, -251, 601 )
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 460, 592, 458, 600, 1028, 600, 1028, 592 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 390, -124 )
+texture = ExtResource( 11 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Node2D2" parent="CanvasLayer" instance=ExtResource( 12 )]
 
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="CanvasLayer3/parabens/passar" to="." method="_on_passar_pressed"]
