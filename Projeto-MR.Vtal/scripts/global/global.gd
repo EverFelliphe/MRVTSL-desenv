@@ -32,21 +32,26 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 	'situacao2':{
 		'nome1':'',
 		'nome2':'',
-		0:'teste1',
-		1:'teste2',
-		2:'teste3',
-		3:'teste4',
-		4:'teste5',
-		5:{
-			1: {"text":"aaaaaaaaa", "feedback":"res://imagens/parabens.png"},
-			2: {"text":"bbbbbbbbb", "feedback":"res://imagens/parabens.png"},
-			3: {"text":"ccccccccc", "feedback":"res://imagens/aten.png"},
-			4: {"text":"ddddddddd", "feedback":"res://imagens/aten.png"}
+		0:'Ei, cara, há quanto tempo não te vejo! Vi que você foi contratado pela V.Tal, como tem sido o seu trabalho lá até então?',
+		1:'Ah, oi Paulo! Tem sido bem interessante, estou aprendendo bastante. E você, ainda está trabalhando na 	Boa Comunicações?',
+		2:'Sim, sigo firme e forte lá! Inclusive, estamos pensando em lançar um novo produto, que irá explodir a mente dos clientes. E vocês, trabalhando em algo novo?',
+		3: {
+			1: "Esquece o trabalho cara, vamos falar sobre outra coisa! Viu o último jogo do Flamengo?",
+			2: "Ah sabe como é, prefiro não comentar assuntos sobre o trabalho",
+			3: "Estamos trabalhando para conseguir oferecer um pacote de 1 GB para nossos clientes, além de expandir nosso mercado no Centro-Oeste",
+			4: "Posso até te contar sobre o que estamos fazendo, mas tudo tem o seu preço"
 		},
-		6:'sem problemas',
-		7:'sem problemas',
-		8:'sem problemas',
-		9:'sem problemas',
+		4:{
+			1: "Ótima escolha! Você mudou de assunto para não violar o código de ética, já que divulgar informações confidenciais de clientes é contrário aos valores da V.Tal.",
+			2: "Ótima escolha! Você se recusou a divulgar informações sigilosas da empresa para a concorrência.",
+			3: "Apesar de estar em um momento descontraído, você não pode divulgar informações de cliente para pessoas de fora, especialmente concorrentes, já que isso viola o Código de Ética e Conduta da V.Tal.",
+			4: "Você escolheu uma opção antiética. Divulgar informações confidenciais de clientes é contrário aos valores da V.Tal e receber dinheiro para fazê-lo é pior ainda, constituindo um crime. Você deveria ter mudado de assunto ou se recusar a fornecer as informações ao amigo."
+		},
+		5: "Que jogo feio foi aquele! Minha bisavó jogaria futebol melhor do que aqueles caras!",
+		6: "Tudo bem, te entendo! Às vezes é realmente melhor não comentar esses tipos de dados com os outros",
+		7: "Ótima proposta, aposto que será uma grande inovação no mercado. E até que ela me deu uma ideia muito boa...",
+		8: "Eu até estaria disposto a pagar por isso, mas estou sem dinheiro no momento! Fica para a próxima.",
+		9: "Mas enfim, tenho que ir embora para ficar com a família. Até a próxima, foi um prazer te encontrar de novo!",
 	},
 	"situcao3":{
 		'nome1':'',
@@ -61,19 +66,19 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 			3: {"text":"ccccccccc", "feedback":"res://imagens/aten.png"},
 			4: {"text":"ddddddddd", "feedback":"res://imagens/aten.png"}
 		},
-		6:'sem problemas',
-		7:'sem problemas',
-		8:'sem problemas',
-		9:'sem problemas',
+		6: 'sem problemas',
+		7: 'sem problemas',
+		8: 'sem problemas',
+		9: 'sem problemas',
 	},
 	"nathalia": {
 		0: "Olá, eu sou a Nathália, e sou funcionária da Vtal! E assim como o Fabrício, te auxiliarei na sua jornada. Te ajudarei passando instruções sobre o que fazer ao longo da sua jornada, por meio dessas ligações!",
 		1: "Como sua primeira tarefa, precisamos que você instale a fibra ótica de um cliente na casa do quarteirão abaixo!",
-		2:"Olá novamente, estou aqui para indicar a sua 2 mssão",
-		3:"a partir de agora você enfrentara dilemas mais sutis, porém não menos importantes. Dica. separe pessoal do profissional",
-		4:"teste3",
-		5:"teste4",
-		6:"teste 5",
+		2: "Olá novamente, estou aqui para indicar a sua 2 mssão",
+		3: "a partir de agora você enfrentara dilemas mais sutis, porém não menos importantes. Dica. separe pessoal do profissional",
+		4: "teste3",
+		5: "teste4",
+		6: "teste 5",
 		7: "teste 6",
 	}
 }

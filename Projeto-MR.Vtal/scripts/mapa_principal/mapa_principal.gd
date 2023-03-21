@@ -7,6 +7,7 @@ var nivel_2 = Global.nivel_2#verifica se o player passou de nível para iniciar 
 var current_state = Global.current_state
 var i = Global.call_index
 func _ready(): 
+	print(Global.current_state)
 	Global.camera_state = Global.StateCameraClamp.Off
 	$Personagem.position = Vector2(Global.posicaox , Global.posicaoy) 
 	$dialogo.hide() #esconde dialogo e falas durante início da cena 
@@ -32,20 +33,24 @@ func _ready():
 				$Situacao.queue_free()
 				$excl.queue_free()
 				$sec_mission.show()
-				$sec_mission.play()
-				$Quest.start()
+#				$Quest.start()
 			else:
 				$Situacao.queue_free()
 				$excl.queue_free()
 				$sec_mission.show()
-				$sec_mission.play()
+				
 		Global.State.Situacao2:
-			#após dialogo o personagem fica na posição inicial 
-				$mini_game_1.queue_free()
-				$excl.hide()
-				$sec_mission.play()
-				$Quest.start()
-		
+			$mini_game_1.queue_free()
+			$excl.hide()
+			$sec_mission.play()
+			$Quest.start()
+			
+		Global.State.Situacao2_finish:
+			$Sprite.queue_free()
+			$Situacao.queue_free()
+			$excl.queue_free()
+			$mini_game_1.queue_free()
+			$sec_mission.queue_free()
 
 #	if Global.pontuacao == 4 :
 #		$nivel_1.start()
@@ -59,11 +64,11 @@ func _process(delta):
 			Global.velocity(0)
 			$dialogo.show()
 			Global.controle_nathalia  = false
+			
 	
 	match Global.current_nivel:
 		Global.state_nivel.N1:
 			$nivel_1.start()
-		
 		
 func _on_Situacao_body_entered(body): #inicia animação nathalia e começa o timer da cena 
 	$CanvasLayer.show()
@@ -84,13 +89,16 @@ func _on_passar_pressed(): #carrega dialogo com natalia
 	elif n == 4:
 		$dialogo.hide()
 		$dialogo/Dialogo/Timer2.start()
-	elif n == 8:
-		$dialogo.hide()
-		$dialogo/Dialogo/Timer2.start()
+		$Personagem/Camera2D/AnimationPlayer.play("bar_desbloq")
+		$bar_desbloq.start()
 	elif n == 6:
 		$Personagem/Camera2D/AnimationPlayer.play("mover_2")
 		$dialogo.hide()
 		$sit_2.start()
+	elif n == 8:
+		$dialogo.hide()
+		$dialogo/Dialogo/Timer2.start()
+	
 		
 	else:
 		$dialogo/Dialogo/texto.text = dialogo[n]
@@ -166,3 +174,7 @@ func _on_situation_2_body_entered(body):
 		get_tree().change_scene("res://cenas/situacoes/Situacao_2.tscn")
 	else:
 		pass
+
+func _on_bar_desbloq_timeout():
+	$Personagem/Camera2D/AnimationPlayer.play_backwards("bar_desbloq")
+	Global.speed = 250

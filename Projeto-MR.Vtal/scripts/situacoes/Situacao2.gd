@@ -19,75 +19,90 @@ func _ready():
 	$CaixaDialogo/VBoxContainer/Escolha3.hide()
 	$CaixaDialogo/VBoxContainer/Escolha4.hide()
 	$CaixaDialogo.hide()
-	$NPC.hide()
+	$NPC.position = Vector2(0,0)
+	$NPC/NPC.stop()
+	$NPC.show()
 	$atencao.hide()
 	$parabens.hide()
 	$Transition.hide()
+	match Global.current_state:
+		Global.State.Situacao2_finish:
+			$banco.queue_free()
+			$exclamacao.queue_free()
 
 func _on_Situao1_body_entered(body): #quando o jogador entra na área definida inicia a cena 
-	$NPC.show()
 	$Timer.start()
-
 	
 func _on_Button_pressed(): #após a apresentação da pergunta as escolhas aparecem 
 	n += 1 
-	if n == 5:
+	if n == 3:
+		var escolhas = dialogo[n]
 		$CaixaDialogo/conversa.hide()
 		$CaixaDialogo/Button.hide()
 		$CaixaDialogo/VBoxContainer/Escolha1.show()
 		$CaixaDialogo/VBoxContainer/Escolha2.show()
 		$CaixaDialogo/VBoxContainer/Escolha3.show()
 		$CaixaDialogo/VBoxContainer/Escolha4.show()
-		print(n)
+		$CaixaDialogo/VBoxContainer/Escolha1.text = str(escolhas[1])
+		$CaixaDialogo/VBoxContainer/Escolha2.text = str(escolhas[2])
+		$CaixaDialogo/VBoxContainer/Escolha3.text = str(escolhas[3])
+		$CaixaDialogo/VBoxContainer/Escolha4.text = str(escolhas[4])
 		
-	elif n ==2:
+#	elif n == 2:
+#		$CaixaDialogo.hide()
+#		$npc.start()
+	elif n > 4 and n < 10:
+		n = 9
+		$CaixaDialogo/conversa.text = dialogo[n]
+	
+	elif n >= 10:
 		$CaixaDialogo.hide()
-		$npc.start()
-		
-	elif n >=10:
-		$CaixaDialogo.hide()
-		$NPC/AnimationPlayer.play_backwards("sit_2")
-		print("sucesso")
-		
+		Global.speed = 250
+		$NPC/NPC/AnimationPlayer.play("sit_2_volta")
+		Global.current_state = Global.State.Situacao2_finish
+
 	else:
 		$CaixaDialogo/conversa.text = dialogo[n]
-		
 	
 func _on_Escolha1_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
+	n += 1
 	dialogo = dialogo[n][1]
 	pontuacao += 2
 	clear() 
 	$CaixaDialogo.hide()
 	$parabens.visible = true
-	$parabens/feedback.text = dialogo.text
-	n += 1
+	$parabens/feedback.text = dialogo
+	n = 5
 	
 func _on_Escolha2_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
+	n += 1
 	dialogo = dialogo[n][2]
 	pontuacao += 1
 	clear()
 	$CaixaDialogo.hide()
 	$parabens.show()
-	$parabens/feedback.text = dialogo.text
-	n += 2
+	$parabens/feedback.text = dialogo
+	n = 6
 	
 func _on_Escolha3_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
+	n += 1
 	dialogo = dialogo[n][3]
 	pontuacao += 0
 	clear()
 	$CaixaDialogo.hide()
 	$atencao.show()
-	$atencao/feedback.text = dialogo.text
-	n += 3
+	$atencao/feedback.text = dialogo
+	n = 7
 	
 func _on_Escolha4_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
+	n += 1
 	dialogo = dialogo[n][4]
 	pontuacao += -1
 	clear()
 	$CaixaDialogo.hide()
 	$atencao.show()
-	$atencao/feedback.text = dialogo.text
-	n += 4 #controle de ordem de fala de acordo com o dicionário global 
+	$atencao/feedback.text = dialogo #controle de ordem de fala de acordo com o dicionário global 
+	n = 8
 	
 func clear(): #encerra a cena 
 	$CaixaDialogo/VBoxContainer/Escolha1.queue_free()
@@ -100,7 +115,9 @@ func _on_passar_pressed(): #volta o personagem para o mapa
 	$atencao.hide()
 	$parabens.hide()
 	dialogo = Global.falas['situacao2']
-	$resposta.start()
+	$CaixaDialogo.show()
+	$CaixaDialogo/conversa.show()
+	$CaixaDialogo/conversa.text = dialogo[n]
 	
 func _on_banco_body_entered(body):
 	$Transition.show()
@@ -116,9 +133,9 @@ func _on_Timer_timeout(): #carrega caixa de diálogo
 	$Transition.queue_free()
 	$Timer.queue_free()
 	$NPC.show()
-#	$CaixaDialogo.show()
 	$banco.queue_free()
-	$NPC/AnimationPlayer.play("sit_2_ida")
+	$exclamacao.queue_free()
+	$NPC/NPC/AnimationPlayer.play("sit_2_ida")
 	$animacao_player.start()
 	
 func _on_animacao_player_timeout():
@@ -129,15 +146,10 @@ func _on_saida_body_entered(body):
 	get_tree().change_scene("res://cenas/mapa_principal/mapa_principal.tscn") 
 
 func _on_npc_timeout():
-	$NPC/AnimationPlayer.play("sit_2")
+	$NPC/NPC/AnimationPlayer.play("sit_2")
 	$enemy.start()
 
 func _on_enemy_timeout():
 	$CaixaDialogo.show()
 	$CaixaDialogo/conversa.text = dialogo[n]
 
-func _on_resposta_timeout():
-	$CaixaDialogo.show()
-	$CaixaDialogo/conversa.show()
-	$CaixaDialogo/conversa.text = dialogo[n]
-	n += (10-n)

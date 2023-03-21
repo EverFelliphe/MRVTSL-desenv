@@ -17,6 +17,7 @@
 [ext_resource path="res://cenas/forca/imagens_forca/confirmar.png" type="Texture" id=15]
 [ext_resource path="res://cenas/forca/forca.gd" type="Script" id=16]
 
+
 [node name="forca" type="Node2D"]
 script = ExtResource( 16 )
 

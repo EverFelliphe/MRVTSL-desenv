@@ -6,6 +6,7 @@ func _on_TextureButton_pressed():
 	
 func _on_Quest_timeout():
 	$descida.start()	
+	Global.speed = 0
 
 func _on_descida_timeout():
 	$Sprite/TextureButton/AnimationPlayer.play("slide")

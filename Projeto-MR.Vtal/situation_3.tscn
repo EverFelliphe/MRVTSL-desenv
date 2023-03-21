@@ -245,7 +245,7 @@ extents = Vector2( 662.5, 22.5 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 390, -125 )
+position = Vector2( 391, -124 )
 texture = ExtResource( 1 )
 
 [node name="Camera2D2" type="Camera2D" parent="."]
@@ -255,10 +255,10 @@ zoom = Vector2( 0.5, 0.5 )
 limit_bottom = 595
 
 [node name="Personagem" parent="." instance=ExtResource( 2 )]
-position = Vector2( 400, 496 )
+position = Vector2( 196, 282 )
 
 [node name="Camera2D" type="Camera2D" parent="Personagem"]
-position = Vector2( -2, 9 )
+position = Vector2( 60, 28 )
 current = true
 limit_left = -250
 limit_top = -845
@@ -277,6 +277,7 @@ position = Vector2( -66, 381 )
 shape = SubResource( 5 )
 
 [node name="transition" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="transition"]
 material = SubResource( 2 )
@@ -478,28 +479,28 @@ one_shot = true
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 19, 468, 26, 461, 39, 460, 46, 468, 49, 467, 50, 457, 60, 443, 61, 433, 61, 398, 64, 393, 65, 383, 60, 378, 58, 350, 55, 350, 44, 352, 32, 354, 17, 354, 15, 360, 15, 458 )
+polygon = PoolVector2Array( 60, 432, 61, 398, 64, 393, 65, 383, 60, 378, 58, 350, 52, 344, 42, 344, 33, 351, 17, 354, 15, 360, 15, 431 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 581, 275, 582, 370, 648, 371, 711, 341, 772, 340, 828, 365, 889, 371, 903, 369, 901, 279, 922, 277 )
+polygon = PoolVector2Array( 583, 254, 583, 338, 649, 338, 708, 310, 777, 311, 835, 342, 902, 342, 901, 279, 901, 232 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( -198, 465, -199, 459, -194, 456, -193, 358, -201, 352, -215, 350, -222, 343, -233, 344, -239, 358, -239, 382, -244, 384, -244, 393, -238, 399, -238, 440, -228, 465, -222, 465, -217, 459, -207, 459, -203, 469 )
+polygon = PoolVector2Array( -194, 432, -193, 358, -201, 352, -215, 350, -222, 343, -233, 344, -239, 358, -239, 382, -244, 384, -244, 393, -240, 398, -240, 432 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 582, 276, 454, 277, 437, 272, 421, 261, 426, 165, 423, 150, 912, 148, 1023, 147, 1031, 148, 1029, 273, 902, 275 )
+polygon = PoolVector2Array( 584, 254, 454, 244, 438, 250, 424, 241, 426, 165, 423, 150, 912, 148, 1023, 147, 1031, 148, 1031, 245, 902, 245 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( -141, 480, -153, 494, -148, 512, -137, 529, -129, 524, -50, 523, -44, 532, -37, 518, -31, 508, -28, 499, -29, 488, -39, 477, -49, 486, -75, 484, -86, 476, -99, 479, -108, 483, -123, 488 )
+polygon = PoolVector2Array( -141, 480, -153, 494, -152, 499, -128, 497, -127, 491, -43, 491, -43, 497, -28, 499, -29, 488, -39, 477, -49, 486, -75, 484, -86, 476, -99, 479, -108, 483, -123, 488 )
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 360, 255, 359, 160, 359, 150, -250, 150, -248, 311, -185, 308, -184, 284, 0, 286, 5, 304, 72, 304, 71, 271, 166, 273, 169, 285, 174, 296, 177, 304, 181, 304, 181, 291, 203, 292, 218, 287, 213, 294, 217, 306, 224, 302, 223, 295, 227, 283, 227, 273, 323, 273, 339, 272 )
+polygon = PoolVector2Array( 356, 241, 359, 160, 359, 150, -250, 150, -248, 272, -186, 272, -186, 253, 6, 253, 6, 270, 70, 271, 70, 239, 168, 238, 169, 266, 179, 266, 185, 259, 213, 260, 217, 267, 227, 268, 227, 239, 328, 241, 328, 251, 341, 251 )
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 370, 464, 376, 461, 370, 450, 391, 454, 400, 453, 412, 449, 410, 457, 409, 464, 414, 465, 414, 457, 417, 448, 420, 438, 422, 432, 417, 423, 403, 417, 398, 416, 395, 415, 402, 409, 405, 404, 405, 394, 402, 383, 388, 378, 375, 383, 372, 398, 377, 404, 381, 415, 381, 416, 373, 418, 368, 424, 361, 428, 360, 434, 362, 445, 363, 452 )
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 518, 435, 518, 560, 560, 562, 565, 559, 565, 437 )
+polygon = PoolVector2Array( 518, 435, 518, 528, 565, 528, 565, 437 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -262.5, -130.5 )
@@ -518,6 +519,9 @@ polygon = PoolVector2Array( -251, 596, 319, 596, 321, 601, -251, 601 )
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 460, 592, 458, 600, 1028, 600, 1028, 592 )
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -186, -109, -154, -109, -154, -45, -123, -45, -122, 19, 103, 19, 102, -44, 135, -45, 135, -109, 164, -109, 167, -589, 133, -589, 134, -653, 102, -652, 102, -718, -122, -717, -122, -654, -154, -653, -154, -588, -186, -589 )
 
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="CanvasLayer3/parabens/passar" to="." method="_on_passar_pressed"]
