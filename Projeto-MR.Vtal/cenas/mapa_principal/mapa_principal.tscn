@@ -233,10 +233,10 @@ layer = 2
 [node name="Node2D" parent="hud" instance=ExtResource( 9 )]
 position = Vector2( 281, 50 )
 
-[node name="smaho" type="CanvasLayer" parent="."]
+[node name="telefone" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="Node2D" parent="smaho" instance=ExtResource( 15 )]
+[node name="Node2D" parent="telefone" instance=ExtResource( 15 )]
 position = Vector2( 19, -12 )
 rotation = 0.000576615
 scale = Vector2( 0.949037, 1 )
@@ -267,20 +267,16 @@ texture = ExtResource( 11 )
 position = Vector2( -128, -34 )
 polygon = PoolVector2Array( 215, -1316, 193, -1282.69, 193, -287, 364, -286, 379, -286, 391, -270, 385, -255, 414, -252, 422, -235, 417, -223, 440, -221, 455, -205, 451, -190, 449, 223, 1315, 1089, 1537, 1090, 1536, 1062, 1329, 1063, 468, 191, 480, -238, 391, -319, 229, -315, 223, -1312 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="cone_esquerda" type="Sprite" parent="."]
 position = Vector2( 128, 34 )
 texture = ExtResource( 10 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+[node name="StaticBody2D" type="StaticBody2D" parent="cone_esquerda"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/StaticBody2D"]
-polygon = PoolVector2Array( -1313, 1030, -1301, 1028, -1299, 1022, -1294, 1021, -1293, 1028, -1266, 1031, -1267, 1021, -1261, 1020, -1259, 1028, -1234, 1028, -1234, 1020, -1228, 1020, -1228, 1025, -1204, 1027, -307, 135, -317, -67, -318, -264, -279.07, -304.409, -239, -346, -178, -348, -60, -349, -64, -1315, -69, -1347, -50, -1353, -35, -1318, -33, -324, -221, -321, -233, -313, -224, -288, -253.575, -287.414, -267, -280, -256, -256, -287, -256, -300, -248, -293, -227, -303, -223, -291.837, -196.461, -303, -191, -290.57, -163.223, -303, -158, -289.242, -128.352, -301, -125, -288, -96, -301, -91, -286, -64, -286, -64, -306, -65, -289, -35, -304, -30, -288.691, -4.29779, -303, 0, -288.35, 29.6476, -303, 33, -288.043, 60.2513, -303, 67, -288, 94, -304, 98, -287.544, 125.925, -302, 130, -289, 158, -316, 167, -321, 191, -353, 199, -351.857, 221.857, -383, 230, -384.268, 254.268, -414, 263, -417.38, 287.38, -450, 294, -449.371, 319.371, -480, 325, -480.098, 350.098, -515, 357, -513.351, 383.351, -544, 394, -545.622, 415.622, -574, 423, -576.91, 446.91, -609, 454, -608.62, 478.62, -644, 485, -641.031, 511.031, -678, 518, -672.6, 542.6, -705, 550, -705.853, 575.853, -740, 581, -737.001, 607.002, -776, 610, -769.553, 639.553, -809, 643, -801.403, 671.403, -839, 674, -832.551, 702.551, -873, 707, -866.365, 736.365, -903, 738, -896.251, 766.251, -932, 774, -929.784, 799.784, -963, 804, -959.841, 829.841, -993, 838, -993.959, 863.959, -1027, 869, -1026.13, 896.132, -1059, 902, -1057.24, 927.245, -1090, 933, -1089.06, 959.065, -1123, 963, -1121.06, 991.061, -1158, 997, -1153.59, 1023.59, -1188, 1028, -1186, 1056, -1313, 1056 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cone_esquerda/StaticBody2D"]
+polygon = PoolVector2Array( -1350, 1026, -1301, 1028, -1299, 1022, -1294, 1021, -1293, 1028, -1266, 1031, -1267, 1021, -1261, 1020, -1259, 1028, -1234, 1028, -1234, 1020, -1228, 1020, -1228, 1025, -1204, 1027, -307, 135, -317, -67, -318, -264, -279.07, -304.409, -239, -346, -178, -348, -60, -349, -64, -1315, -69, -1347, -50, -1353, -35, -1318, -33, -324, -221, -321, -233, -313, -224, -288, -253.575, -287.414, -267, -280, -256, -256, -287, -256, -300, -248, -293, -227, -303, -223, -291.837, -196.461, -303, -191, -290.57, -163.223, -303, -158, -289.242, -128.352, -301, -125, -288, -96, -301, -91, -286, -64, -286, -64, -306, -65, -289, -35, -304, -30, -288.691, -4.29779, -303, 0, -288.35, 29.6476, -303, 33, -288.043, 60.2513, -303, 67, -288, 94, -304, 98, -287.544, 125.925, -302, 130, -289, 158, -316, 167, -321, 191, -353, 199, -351.857, 221.857, -383, 230, -384.268, 254.268, -414, 263, -417.38, 287.38, -450, 294, -449.371, 319.371, -480, 325, -480.098, 350.098, -515, 357, -513.351, 383.351, -544, 394, -545.622, 415.622, -574, 423, -576.91, 446.91, -609, 454, -608.62, 478.62, -644, 485, -641.031, 511.031, -678, 518, -672.6, 542.6, -705, 550, -705.853, 575.853, -740, 581, -737.001, 607.002, -776, 610, -769.553, 639.553, -809, 643, -801.403, 671.403, -839, 674, -832.551, 702.551, -873, 707, -866.365, 736.365, -903, 738, -896.251, 766.251, -932, 774, -929.784, 799.784, -963, 804, -959.841, 829.841, -993, 838, -993.959, 863.959, -1027, 869, -1026.13, 896.132, -1059, 902, -1057.24, 927.245, -1090, 933, -1089.06, 959.065, -1123, 963, -1121.06, 991.061, -1158, 997, -1153.59, 1023.59, -1188, 1028, -1186, 1056, -1355, 1055 )
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite/StaticBody2D"]
-position = Vector2( -128, -34 )
-polygon = PoolVector2Array( -1184, 1089, -1214, 1090, -1214, 1055, -1185, 1056, -1181, 1063 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cone_esquerda"]
 anims/RESET = SubResource( 16 )
 anims/sumir = SubResource( 17 )
 
@@ -708,7 +704,6 @@ one_shot = true
 one_shot = true
 
 [node name="Quest" type="Timer" parent="."]
-wait_time = 2.0
 one_shot = true
 
 [node name="sit_2" type="Timer" parent="."]
@@ -720,6 +715,7 @@ position = Vector2( 336, 691 )
 rotation = 3.14159
 scale = Vector2( 0.990868, 0.990868 )
 frames = SubResource( 23 )
+frame = 3
 playing = true
 
 [node name="situation_2" type="Area2D" parent="."]
@@ -764,10 +760,10 @@ shape = SubResource( 25 )
 [connection signal="timeout" from="nivel_1" to="." method="_on_nivel_1_timeout"]
 [connection signal="timeout" from="area_desbloqueada" to="." method="_on_area_desbloqueada_timeout"]
 [connection signal="timeout" from="area_reverso" to="." method="_on_area_reverso_timeout"]
-[connection signal="timeout" from="Quest" to="smaho/Node2D" method="_on_Quest_timeout"]
+[connection signal="timeout" from="Quest" to="telefone/Node2D" method="_on_Quest_timeout"]
 [connection signal="timeout" from="sit_2" to="." method="_on_sit_2_timeout"]
 [connection signal="body_entered" from="situation_2" to="." method="_on_situation_2_body_entered"]
 [connection signal="body_entered" from="situation_2" to="Personagem" method="_on_situation_2_body_entered"]
-[connection signal="body_entered" from="mini_game_1" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="." method="_on_mini_game_1_body_entered"]
+[connection signal="body_entered" from="mini_game_1" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="Personagem" method="_on_mini_game_1_body_entered"]

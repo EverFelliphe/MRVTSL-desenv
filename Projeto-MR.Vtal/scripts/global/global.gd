@@ -51,11 +51,11 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 	"nathalia": {
 		0: "Olá, eu sou a Nathália, e sou funcionária da Vtal! E assim como o Fabrício, te auxiliarei na sua jornada. Te ajudarei passando instruções sobre o que fazer ao longo da sua jornada, por meio dessas ligações!",
 		1: "Como sua primeira tarefa, precisamos que você instale a fibra ótica de um cliente na casa do quarteirão abaixo!",
-		2:"Olá novamente, estou aqui para indicar a sua 2 mssão",
-		3:"a partir de agora você enfrentara dilemas mais sutis, porém não menos importantes. Dica. separe pessoal do profissional",
-		4:"teste3",
-		5:"teste4",
-		6:"teste 5",
+		2: "Parabéns por ter passado pela primeira fase! Para comemorar, vá até o bar, à noroeste do prédio da V.Tal, para pedir uma bebida!",
+		3: "Afinal, nada melhor do que uma breja depois de um árduo dia de trabalho!",
+		4: "teste3",
+		5: "teste4",
+		6: "teste 5",
 		7: "teste 6",
 	}
 }

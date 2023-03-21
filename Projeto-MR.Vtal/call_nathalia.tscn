@@ -134,6 +134,7 @@ custom_fonts/normal_font = SubResource( 1 )
 text = "Nathalia"
 
 [node name="descida" type="Timer" parent="."]
+wait_time = 0.001
 one_shot = true
 
 [node name="pisca" type="Timer" parent="."]

@@ -32,12 +32,11 @@ func _ready():
 			$sec_mission.show()
 			
 		Global.State.Situacao2:
-			#após dialogo o personagem fica na posição inicial 
 			$mini_game_1.queue_free()
-			$excl.hide()
-			$sec_mission.play()
+			$sec_mission.queue_free()
 			$Quest.start()
-	
+			$cone_esquerda.queue_free()
+			
 #	if Global.pontuacao == 4 :
 #		$nivel_1.start()
 
@@ -54,7 +53,6 @@ func _process(delta):
 	match Global.current_nivel:
 		Global.state_nivel.N1:
 			$nivel_1.start()
-		
 		
 func _on_Situacao_body_entered(body): #inicia animação nathalia e começa o timer da cena 
 	$CanvasLayer.show()
@@ -124,15 +122,16 @@ func _on_nivel_1_timeout():#ao subir de nivel inicia uma cutscene para mostrar a
 	$area_desbloqueada.start()
 
 func _on_area_desbloqueada_timeout(): # mostra os cones desaparecendo  e da queue free neles para que de para entrar na area
-	$Sprite/AnimationPlayer.play("sumir")
-	$Sprite/StaticBody2D.queue_free()
+	$cone_esquerda/AnimationPlayer.play("sumir")
 	$nivel_1_2.start()
+	Global.current_state = Global.State.Situacao2
 	
 func _on_nivel_12_timeout():# volta para a posição do personagem
 	$Personagem/Camera2D/AnimationPlayer.play_backwards("area_desb")
 	$area_reverso.start() 
 	$Personagem.show()
-	$Sprite.queue_free()
+	
+	_ready()
 	
 func _on_area_reverso_timeout():# deixa a camera na posição do personagem
 	$Personagem/Camera2D.position = Vector2(0,0)
@@ -158,3 +157,8 @@ func _on_situation_2_body_entered(body):
 		get_tree().change_scene("res://cenas/situacoes/Situacao_2.tscn")
 	else:
 		pass
+
+
+func _on_teste_pressed():
+	Global.pontuacao += 2
+	print('hey')
