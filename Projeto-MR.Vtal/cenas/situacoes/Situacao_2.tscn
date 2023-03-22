@@ -363,6 +363,7 @@ position = Vector2( 460, 563 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 7 )
 animation = "direita"
+frame = 2
 playing = true
 flip_h = true
 

@@ -9,7 +9,7 @@ onready var imagem = $atencao #carrega a imagem atenção
 
 func _ready(): 
 	Global.camera_state = Global.StateCameraClamp.On
-	$Personagem/Animacao.animation = "cima"
+#	$Personagem/Animacao.animation = ""
 	$CanvasLayer.comecar_reverso()
 	$CanvasLayer.timer() #inicia o tempo e animação reversa acima 
 	$CaixaDialogo/nome.text = dialogo.nome1

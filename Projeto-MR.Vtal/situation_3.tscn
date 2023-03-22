@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://imagens/hud/clube.png" type="Texture" id=1]
 [ext_resource path="res://cenas/Jogador/Jogador.tscn" type="PackedScene" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://imagens/parabens.png" type="Texture" id=8]
 [ext_resource path="res://imagens/icon.png" type="Texture" id=9]
 [ext_resource path="res://imagens/aten.png" type="Texture" id=10]
+[ext_resource path="res://imagens/baixados-removebg-preview.png" type="Texture" id=11]
+[ext_resource path="res://imagens/clube2 (1) (1).png" type="Texture" id=12]
+[ext_resource path="res://hud.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CapsuleShape2D" id=5]
 height = 42.0
@@ -254,8 +257,13 @@ scale = Vector2( 0.279794, 0.771136 )
 zoom = Vector2( 0.5, 0.5 )
 limit_bottom = 595
 
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 199, 258 )
+scale = Vector2( 0.371769, 0.356362 )
+texture = ExtResource( 11 )
+
 [node name="Personagem" parent="." instance=ExtResource( 2 )]
-position = Vector2( 196, 282 )
+position = Vector2( 390, 481 )
 
 [node name="Camera2D" type="Camera2D" parent="Personagem"]
 position = Vector2( 60, 28 )
@@ -477,6 +485,7 @@ wait_time = 3.5
 one_shot = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 60, 432, 61, 398, 64, 393, 65, 383, 60, 378, 58, 350, 52, 344, 42, 344, 33, 351, 17, 354, 15, 360, 15, 431 )
@@ -522,6 +531,14 @@ polygon = PoolVector2Array( 460, 592, 458, 600, 1028, 600, 1028, 592 )
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( -186, -109, -154, -109, -154, -45, -123, -45, -122, 19, 103, 19, 102, -44, 135, -45, 135, -109, 164, -109, 167, -589, 133, -589, 134, -653, 102, -652, 102, -718, -122, -717, -122, -654, -154, -653, -154, -588, -186, -589 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 391, 187 )
+texture = ExtResource( 12 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Node2D2" parent="CanvasLayer" instance=ExtResource( 13 )]
 
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="CanvasLayer3/parabens/passar" to="." method="_on_passar_pressed"]

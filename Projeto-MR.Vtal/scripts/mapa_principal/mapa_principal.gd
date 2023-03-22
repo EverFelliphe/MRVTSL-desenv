@@ -20,6 +20,7 @@ func _ready():
 			$sec_mission.hide()
 			$hud.hide()
 			$dialogo.hide()
+			$Transition.show()
 			$Transition/Fill/animation.play_backwards("transicao")
 			$Timer4.start()
 			$mini_game_1/poste.set_disabled(true)
@@ -35,18 +36,22 @@ func _ready():
 				$Situacao.queue_free()
 				$excl.queue_free()
 				$sec_mission.show()
+				$Transition.show()
+				$Transition/Fill/animation.play_backwards("transicao")
 #				$Quest.start()
 			else:
 				$Situacao.queue_free()
 				$excl.queue_free()
 				$sec_mission.show()
+				$Transition.show()
+				$Transition/Fill/animation.play_backwards("transicao")
 				
 		Global.State.Situacao2:
 			$mini_game_1.queue_free()
 			$excl.hide()
 			$sec_mission.play()
 			$Quest.start()
-			
+			$Transition.hide()
 		Global.State.Situacao2_finish:
 			$Sprite.queue_free()
 			$Situacao.queue_free()
@@ -100,9 +105,9 @@ func _process(delta):
 			Global.controle_nathalia  = false
 			
 	
-	match Global.current_nivel:
-		Global.state_nivel.N1:
-			$nivel_1.start()
+#	match Global.current_nivel:
+#		Global.state_nivel.N1:
+#			$nivel_1.start()
 		
 func _on_Situacao_body_entered(body): #inicia animação nathalia e começa o timer da cena 
 	$CanvasLayer.show()
@@ -215,7 +220,7 @@ func _on_bar_desbloq_timeout():
 
 func _on_nivel_2_timeout():
 	Global.velocity(0)
-	$Personagem.hide()
+#	$Personagem.hide()
 	$Personagem/Camera2D/AnimationPlayer.play("area_2")
 	$area_desb_3.start()
 
@@ -229,4 +234,4 @@ func _on_sumir_2_timeout():
 	$area_reverso.start() 
 	$Personagem.show()
 	$Sprite2.queue_free()
-	Global.current_area = Global.state_areas.AREA_2
+	Global.current_area = Global.state_areas.AREA_3
