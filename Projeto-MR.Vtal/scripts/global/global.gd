@@ -13,9 +13,9 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 		7: "Mas não se preocupe, todas as instruções de como fazer as tarefas serão passadas por minha colega Nathália! Ela irá te ajudar durante o seu trajeto na empresa."
 	},
 	'diamante': {
-		0: 'Use as setas no canto inferior esquerdo para se movimentar pelo mapa!',
-		1: 'Clique no botão “X” para abrir o minimapa. Ele irá mostrar sua localização na cidade e seu próximo destino',
-		2: 'No canto da tela, você pode clicar no botão “Y” para ligar ou desligar o som do jogo.'
+		0: "Use as setas no canto inferior esquerdo para se movimentar pelo mapa!",
+		1: "Aperte o botão A para interagir com os personagens no jogo ",
+		2: 'sla'
 	},
 	'situacao1': {
 		"nome":"Robert",
@@ -105,7 +105,18 @@ enum State {
 	Mini_Game3
 	Final
 }
+<<<<<<< Updated upstream
 var moldura  = "res://imagens/níveis/MolduraDefensorPronta.png"
+=======
+
+enum State_skin {
+	Defensor
+	General
+	Rei
+}
+
+var current_state_skin = State_skin.Defensor
+>>>>>>> Stashed changes
 var current_state = State.Inicio
 var call_index = 0
 var cutscene_index = 0

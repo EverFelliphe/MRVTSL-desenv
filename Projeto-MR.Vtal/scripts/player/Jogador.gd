@@ -11,17 +11,23 @@ var up = false
 var down = false
 var right = false
 var left = false
-
-enum State {
-	Defensor
-	Duque
-	General
-	Principe
-	Rei
-}
+onready var animacao = get_node("Animacao")
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size #define o tamanho da tela
+	match Global.current_state_skin:
+		Global.State_skin.Defensor:
+			animacao = get_node("Animacao_defensor")
+			$Animacao_general.queue_free()
+			$Animacao_rei.queue_free()
+		Global.State_skin.General:
+			animacao = get_node("Animacao_general")
+			$Animacao_defensor.queue_free()
+			$Animacao_rei.queue_free()
+		Global.State_skin.Rei:
+			animacao = get_node("Animacao_rei")
+			$Animacao_defensor.queue_free()
+			$Animacao_general.queue_free()
 
 func _physics_process(delta): #define os controles do jogo
 	var camera_state = Global.camera_state
@@ -32,22 +38,22 @@ func _physics_process(delta): #define os controles do jogo
 		if Input.is_action_pressed('ui_up') or up:
 			vel.y-= 1
 		elif Input.is_action_just_released('ui_up') or up:
-			$Animacao.play("paradoc")
+			animacao.play("paradoc")
 			
 		if Input.is_action_pressed("ui_left") or left:
 			vel.x -= 1 
 		elif Input.is_action_just_released("ui_left") or left:
-			$Animacao.play("paradod")
+			animacao.play("paradod")
 			
 		if Input.is_action_pressed("ui_right") or right:
 			vel.x += 1
 		elif Input.is_action_just_released("ui_right") or right:
-			$Animacao.play("paradod")
+			animacao.play("paradod")
 			
 		if Input.is_action_pressed("ui_down") or down:
 			vel.y += 1
 		elif Input.is_action_just_released("ui_down") or down:
-			$Animacao.play("parado")
+			animacao.play("parado")
 			
 		if Input.is_action_pressed("ui_accept"):
 			vel.y-= 1
@@ -56,19 +62,19 @@ func _physics_process(delta): #define os controles do jogo
 		move_and_slide(vel.normalized() * speed, Vector2.ZERO) 
 		
 		if vel.x != 0: 
-			$Animacao.play()
-			$Animacao.animation = 'direita'
-			$Animacao.flip_v = false
-			$Animacao.flip_h = vel.x < 0
+			animacao.play()
+			animacao.animation = 'direita'
+			animacao.flip_v = false
+			animacao.flip_h = vel.x < 0
 			
 		elif vel.y != 0:
-			$Animacao.play()
+			animacao.play()
 			if vel.y < 0: 	
-				$Animacao.animation = 'cima'
+				animacao.animation = 'cima'
 			elif vel.y == 1:
-				$Animacao.animation = 'baixo'
+				animacao.animation = 'baixo'
 		else:
-			$Animacao.stop()
+			animacao.stop()
 		
 		match camera_state:
 			Global.StateCameraClamp.On:
@@ -76,23 +82,11 @@ func _physics_process(delta): #define os controles do jogo
 				position.y = clamp(position.y, 0, screen_size.y) #Define o limite vertical da tela
 			Global.StateCameraClamp.Off:
 				pass
-		
-		match State:
-			State.Defensor:
-				pass
-			State.Duque:
-				pass
-			State.General:
-				pass
-			State.Principe:
-				pass
-			State.Rei:
-				pass
 
 func _on_Diamante_body_entered(body):
 	Global.velocity(0)
 	control = false
-	$Animacao.stop()
+	animacao.stop()
 	Global.tela()
 	
 func _on_Situacao_body_entered(body):
@@ -100,11 +94,11 @@ func _on_Situacao_body_entered(body):
 	posicaoy = position.y
 	Global.atualizar_posicao(posicaox,posicaoy)
 	control = false
-	$Animacao.stop()
+	animacao.stop()
 
 func _on_Situao1_body_entered(body):
 	control = false
-	$Animacao.stop()
+	animacao.stop()
 
 func _on_Situao1_body_exited(body):
 	queue_free()

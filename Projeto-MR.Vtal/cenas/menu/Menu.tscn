@@ -2,7 +2,7 @@
 
 [ext_resource path="res://imagens/menu/Captura_de_tela_2023-02-08_142458-removebg-preview_resized.png" type="Texture" id=1]
 [ext_resource path="res://imagens/menu/Captura_de_tela_2023-02-08_140340-removebg-preview_resized (2).png" type="Texture" id=2]
-[ext_resource path="res://imagens/menu/2297940.jpg" type="Texture" id=3]
+[ext_resource path="res://imagens/backgrounds/939716.png" type="Texture" id=3]
 [ext_resource path="res://imagens/menu/image-removebg-preview_resized.png" type="Texture" id=4]
 [ext_resource path="res://fontes/OldSchoolAdventures-42j9.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://scripts/menu/TextureRect.gd" type="Script" id=6]
@@ -39,10 +39,13 @@ font_data = ExtResource( 5 )
 material = SubResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1920.0
-margin_bottom = 1080.0
+margin_left = 1.0
+margin_top = -3.0
+margin_right = 2491.0
+margin_bottom = 1095.0
 rect_scale = Vector2( 0.537753, 0.558408 )
 texture = ExtResource( 3 )
+expand = true
 stretch_mode = 2
 script = ExtResource( 6 )
 
@@ -57,7 +60,7 @@ expand = true
 
 [node name="musica_fundo" type="AudioStreamPlayer" parent="TextureRect"]
 stream = ExtResource( 7 )
-volume_db = -33.681
+volume_db = -26.689
 autoplay = true
 
 [node name="clique_botao" type="AudioStreamPlayer2D" parent="TextureRect"]
