@@ -6,11 +6,8 @@ var controle = Global.controle_nathalia #controla se está no diálogo da nathal
 var nivel_2 = Global.nivel_2#verifica se o player passou de nível para iniciar a cutscene 
 var current_state = Global.current_state
 var i = Global.call_index
-<<<<<<< Updated upstream
 var j = Global.cutscene_index
-=======
 
->>>>>>> Stashed changes
 func _ready(): 
 	
 	Global.camera_state = Global.StateCameraClamp.Off
@@ -56,6 +53,7 @@ func _ready():
 			$excl.queue_free()
 			$mini_game_1.queue_free()
 			$sec_mission.queue_free()
+			
 	match Global.current_nivel:
 				Global.state_nivel.N2:
 					if j == 0 :
@@ -215,8 +213,6 @@ func _on_bar_desbloq_timeout():
 	$Personagem/Camera2D/AnimationPlayer.play_backwards("bar_desbloq")
 	Global.speed = 250
 
-<<<<<<< Updated upstream
-
 func _on_nivel_2_timeout():
 	Global.velocity(0)
 	$Personagem.hide()
@@ -234,6 +230,3 @@ func _on_sumir_2_timeout():
 	$Personagem.show()
 	$Sprite2.queue_free()
 	Global.current_area = Global.state_areas.AREA_2
-=======
-	
->>>>>>> Stashed changes

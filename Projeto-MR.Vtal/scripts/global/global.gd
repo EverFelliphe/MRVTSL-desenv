@@ -105,9 +105,9 @@ enum State {
 	Mini_Game3
 	Final
 }
-<<<<<<< Updated upstream
+
 var moldura  = "res://imagens/níveis/MolduraDefensorPronta.png"
-=======
+
 
 enum State_skin {
 	Defensor
@@ -116,7 +116,6 @@ enum State_skin {
 }
 
 var current_state_skin = State_skin.Defensor
->>>>>>> Stashed changes
 var current_state = State.Inicio
 var call_index = 0
 var cutscene_index = 0

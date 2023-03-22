@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=39 format=2]
-=======
-[gd_scene load_steps=36 format=2]
->>>>>>> Stashed changes
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://imagens/joy_stick/pixil-frame-0 (4).png" type="Texture" id=1]
 [ext_resource path="res://cenas/Jogador/Jogador.tscn" type="PackedScene" id=2]
@@ -17,6 +13,7 @@
 [ext_resource path="res://imagens/mapa_principal/cones_area-3.png" type="Texture" id=11]
 [ext_resource path="res://TransitionCasas.tscn" type="PackedScene" id=12]
 [ext_resource path="res://excl.tscn" type="PackedScene" id=13]
+[ext_resource path="res://fontes/OldSchoolAdventures-42j9.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://call_nathalia.tscn" type="PackedScene" id=15]
 [ext_resource path="res://exclamação_sec.png" type="Texture" id=16]
 
@@ -46,9 +43,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
-
-[sub_resource type="Animation" id=27]
-resource_name = "area_2"
 
 [sub_resource type="Animation" id=15]
 resource_name = "area_desb"
@@ -193,10 +187,6 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.94615 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=28]
-resource_name = "sumir_2"
-length = 2.0
-
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 9.0
 height = 3.99999
@@ -215,8 +205,8 @@ size = 28
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=11]
-size = 33
-font_data = ExtResource( 4 )
+size = 24
+font_data = ExtResource( 14 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
@@ -290,7 +280,6 @@ current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Personagem/Camera2D"]
 anims/RESET = SubResource( 12 )
-anims/area_2 = SubResource( 27 )
 anims/area_desb = SubResource( 15 )
 anims/bar_desbloq = SubResource( 26 )
 anims/mover = SubResource( 13 )
@@ -323,7 +312,6 @@ polygon = PoolVector2Array( -1184, 1089, -1214, 1090, -1214, 1055, -1185, 1056, 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/RESET = SubResource( 16 )
 anims/sumir = SubResource( 17 )
-anims/sumir_2 = SubResource( 28 )
 
 [node name="Mapa_detalhes" type="Sprite" parent="."]
 position = Vector2( 125, 33 )
@@ -690,10 +678,10 @@ margin_bottom = 604.0
 
 [node name="texto" type="Label" parent="dialogo/Dialogo"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 11.0
-margin_top = 49.0
-margin_right = 960.0
-margin_bottom = 175.0
+margin_left = 15.0
+margin_top = 51.0
+margin_right = 964.0
+margin_bottom = 177.0
 custom_fonts/font = SubResource( 10 )
 text = "asdasdasdasd"
 align = 3
@@ -701,18 +689,18 @@ autowrap = true
 
 [node name="nome" type="Label" parent="dialogo/Dialogo"]
 modulate = Color( 0.482353, 0.407843, 0.407843, 1 )
-margin_left = 14.0
-margin_top = 6.0
-margin_right = 358.0
-margin_bottom = 53.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 360.0
+margin_bottom = 63.0
 custom_fonts/font = SubResource( 11 )
 text = "Nathália "
 
 [node name="passar" type="TextureButton" parent="dialogo/Dialogo"]
-margin_left = 970.0
-margin_top = 134.0
-margin_right = 1030.0
-margin_bottom = 191.0
+margin_left = 962.0
+margin_top = 132.0
+margin_right = 1022.0
+margin_bottom = 189.0
 texture_normal = ExtResource( 6 )
 expand = true
 
@@ -761,10 +749,7 @@ position = Vector2( 336, 691 )
 rotation = 3.14159
 scale = Vector2( 0.990868, 0.990868 )
 frames = SubResource( 23 )
-<<<<<<< Updated upstream
-=======
-frame = 1
->>>>>>> Stashed changes
+frame = 3
 playing = true
 
 [node name="situation_2" type="Area2D" parent="."]
@@ -788,15 +773,6 @@ shape = SubResource( 25 )
 
 [node name="bar_desbloq" type="Timer" parent="."]
 wait_time = 1.5
-one_shot = true
-
-[node name="sumir_2" type="Timer" parent="."]
-one_shot = true
-
-[node name="area_desb_3" type="Timer" parent="."]
-one_shot = true
-
-[node name="nivel_2" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
@@ -830,6 +806,3 @@ one_shot = true
 [connection signal="body_entered" from="mini_game_1" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="Personagem" method="_on_mini_game_1_body_entered"]
 [connection signal="timeout" from="bar_desbloq" to="." method="_on_bar_desbloq_timeout"]
-[connection signal="timeout" from="sumir_2" to="." method="_on_sumir_2_timeout"]
-[connection signal="timeout" from="area_desb_3" to="." method="_on_area_desb_3_timeout"]
-[connection signal="timeout" from="nivel_2" to="." method="_on_nivel_2_timeout"]
