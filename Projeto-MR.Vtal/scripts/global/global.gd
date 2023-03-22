@@ -83,7 +83,7 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 	}
 }
 enum state_situations {INIT,SITUATION_1, SITUATION_2,  SITUATION_3}
-enum state_areas {AREA_1, AREEA_2,  AREA_3}
+enum state_areas {AREA_1, AREA_2,  AREA_3}
 enum state_person{FRENTE,TRAS,ESQUERDA,DIREITA,PARADO}
 enum state_nivel{N1,N2,N3,N4,N5}
 
@@ -105,9 +105,10 @@ enum State {
 	Mini_Game3
 	Final
 }
-
+var moldura  = "res://imagens/níveis/MolduraDefensorPronta.png"
 var current_state = State.Inicio
 var call_index = 0
+var cutscene_index = 0
 var current_area = state_areas.AREA_1
 var current_situations = state_situations.INIT
 var current_person = state_person.PARADO

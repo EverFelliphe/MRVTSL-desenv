@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://imagens/joy_stick/pixil-frame-0 (4).png" type="Texture" id=1]
 [ext_resource path="res://cenas/Jogador/Jogador.tscn" type="PackedScene" id=2]
@@ -43,6 +43,9 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+
+[sub_resource type="Animation" id=27]
+resource_name = "area_2"
 
 [sub_resource type="Animation" id=15]
 resource_name = "area_desb"
@@ -187,6 +190,10 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.94615 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="Animation" id=28]
+resource_name = "sumir_2"
+length = 2.0
+
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 9.0
 height = 3.99999
@@ -280,6 +287,7 @@ current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Personagem/Camera2D"]
 anims/RESET = SubResource( 12 )
+anims/area_2 = SubResource( 27 )
 anims/area_desb = SubResource( 15 )
 anims/bar_desbloq = SubResource( 26 )
 anims/mover = SubResource( 13 )
@@ -312,6 +320,7 @@ polygon = PoolVector2Array( -1184, 1089, -1214, 1090, -1214, 1055, -1185, 1056, 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/RESET = SubResource( 16 )
 anims/sumir = SubResource( 17 )
+anims/sumir_2 = SubResource( 28 )
 
 [node name="Mapa_detalhes" type="Sprite" parent="."]
 position = Vector2( 125, 33 )
@@ -749,7 +758,6 @@ position = Vector2( 336, 691 )
 rotation = 3.14159
 scale = Vector2( 0.990868, 0.990868 )
 frames = SubResource( 23 )
-frame = 2
 playing = true
 
 [node name="situation_2" type="Area2D" parent="."]
@@ -773,6 +781,15 @@ shape = SubResource( 25 )
 
 [node name="bar_desbloq" type="Timer" parent="."]
 wait_time = 1.5
+one_shot = true
+
+[node name="sumir_2" type="Timer" parent="."]
+one_shot = true
+
+[node name="area_desb_3" type="Timer" parent="."]
+one_shot = true
+
+[node name="nivel_2" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
@@ -806,3 +823,6 @@ one_shot = true
 [connection signal="body_entered" from="mini_game_1" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="Personagem" method="_on_mini_game_1_body_entered"]
 [connection signal="timeout" from="bar_desbloq" to="." method="_on_bar_desbloq_timeout"]
+[connection signal="timeout" from="sumir_2" to="." method="_on_sumir_2_timeout"]
+[connection signal="timeout" from="area_desb_3" to="." method="_on_area_desb_3_timeout"]
+[connection signal="timeout" from="nivel_2" to="." method="_on_nivel_2_timeout"]

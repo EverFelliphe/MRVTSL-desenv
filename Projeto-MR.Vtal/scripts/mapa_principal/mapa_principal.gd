@@ -6,6 +6,7 @@ var controle = Global.controle_nathalia #controla se está no diálogo da nathal
 var nivel_2 = Global.nivel_2#verifica se o player passou de nível para iniciar a cutscene 
 var current_state = Global.current_state
 var i = Global.call_index
+var j = Global.cutscene_index
 func _ready(): 
 	print(Global.current_state)
 	Global.camera_state = Global.StateCameraClamp.Off
@@ -51,7 +52,38 @@ func _ready():
 			$excl.queue_free()
 			$mini_game_1.queue_free()
 			$sec_mission.queue_free()
-
+	match Global.current_nivel:
+				Global.state_nivel.N2:
+					if j == 0 :
+						print("xx")
+						$nivel_1.start()
+						$mini_game_1.queue_free()
+						$sec_mission.hide()
+						Global.cutscene_index = 1
+					else: pass
+				Global.state_nivel.N3:
+					if j == 0 :
+						print("xx")
+						$nivel_2.start()
+						Global.cutscene_index = 1
+					else: pass
+			
+	 
+	match Global.current_area:
+			Global.state_areas.AREA_2:
+				if j!=0:
+					$excl.hide()
+					$mini_game_1.queue_free()
+					$Sprite.queue_free()
+					$sec_mission.hide()
+				else: pass
+			Global.state_areas.AREA_3:
+				if j!=0:
+					$excl.hide()
+					$Sprite.queue_free()
+					$Sprite2.queue_free()
+					$sec_mission.hide()
+				else:pass
 #	if Global.pontuacao == 4 :
 #		$nivel_1.start()
 
@@ -178,3 +210,22 @@ func _on_situation_2_body_entered(body):
 func _on_bar_desbloq_timeout():
 	$Personagem/Camera2D/AnimationPlayer.play_backwards("bar_desbloq")
 	Global.speed = 250
+
+
+func _on_nivel_2_timeout():
+	Global.velocity(0)
+	$Personagem.hide()
+	$Personagem/Camera2D/AnimationPlayer.play("area_2")
+	$area_desb_3.start()
+
+
+func _on_area_desb_3_timeout():
+	$Sprite/AnimationPlayer.play("sumir_2")
+	$sumir_2.start()
+
+func _on_sumir_2_timeout():
+	$Personagem/Camera2D/AnimationPlayer.play_backwards("area_2")
+	$area_reverso.start() 
+	$Personagem.show()
+	$Sprite2.queue_free()
+	Global.current_area = Global.state_areas.AREA_2
