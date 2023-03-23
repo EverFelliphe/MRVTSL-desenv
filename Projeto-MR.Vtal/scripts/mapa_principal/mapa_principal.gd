@@ -9,15 +9,16 @@ var i = Global.call_index
 var j = Global.cutscene_index
 
 func _ready(): 
-	
+	$hud.hide()
+	$gamepad.hide()
 	Global.camera_state = Global.StateCameraClamp.Off
 	$Personagem.position = Vector2(Global.posicaox , Global.posicaoy) 
 	$dialogo.hide() #esconde dialogo e falas durante início da cena 
-	$CanvasLayer.hide()
 	match current_state: #primeira abertura do jogo inicia dialogo com nathalia  
 		Global.State.Inicio:
 			Global.controle_nathalia = false
 			$sec_mission.hide()
+			$CanvasLayer.hide()
 			$hud.hide()
 			$dialogo.hide()
 			$Transition.show()
@@ -28,7 +29,8 @@ func _ready():
 	#		Global.pontuacao = 0
 	 #quando ele voltar da situação ele esconde a exclamação, atualiza a posição do personagem e apaga o dialogo inicial
 		Global.State.Situacao1:
-			pass
+			tocar_transicao()
+			$sec_mission.queue_free()
 			
 		Global.State.Situacao1_finish:
 			if i == 0:
@@ -45,14 +47,17 @@ func _ready():
 				$sec_mission.show()
 				$Transition.show()
 				$Transition/Fill/animation.play_backwards("transicao")
+			tocar_transicao()
 				
 		Global.State.Situacao2:
+			tocar_transicao()
 			$mini_game_1.queue_free()
 			$excl.hide()
 			$sec_mission.play()
 			$Quest.start()
 			$Transition.hide()
 		Global.State.Situacao2_finish:
+			tocar_transicao()
 			$Sprite.queue_free()
 			$Situacao.queue_free()
 			$excl.queue_free()
@@ -62,7 +67,6 @@ func _ready():
 	match Global.current_nivel:
 				Global.state_nivel.N2:
 					if j == 0 :
-						print("xx")
 						$nivel_1.start()
 						$mini_game_1.queue_free()
 						$sec_mission.hide()
@@ -70,7 +74,6 @@ func _ready():
 					else: pass
 				Global.state_nivel.N3:
 					if j == 0 :
-						print("xx")
 						$nivel_2.start()
 						Global.cutscene_index = 1
 					else: pass
@@ -235,3 +238,15 @@ func _on_sumir_2_timeout():
 	$Personagem.show()
 	$Sprite2.queue_free()
 	Global.current_area = Global.state_areas.AREA_3
+	Global.current_area = Global.state_areas.AREA_2
+
+func tocar_transicao():
+	$CanvasLayer.show()
+	$Transition.queue_free()
+	$CanvasLayer/TransicaoCasa/ColorRect/AnimationPlayer.play_backwards("animacao")
+	$CanvasLayer/TransicaoCasa/timer_transition.start()
+
+func _on_timer_transition_timeout():
+	$CanvasLayer.queue_free()
+	$hud.show()
+	$gamepad.show()
