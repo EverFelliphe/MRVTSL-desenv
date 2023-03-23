@@ -313,6 +313,8 @@ visible = false
 
 [node name="TransicaoCasa" parent="CanvasLayer" instance=ExtResource( 12 )]
 
+[node name="timer_transition" type="Timer" parent="CanvasLayer/TransicaoCasa"]
+
 [node name="hud" type="CanvasLayer" parent="."]
 layer = 2
 visible = false

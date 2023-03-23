@@ -111,5 +111,5 @@ frames = SubResource( 8 )
 [node name="timer_hud" type="Timer" parent="."]
 wait_time = 3.0
 
-[connection signal="timeout" from="timer_hud" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="timer_hud" to="." method="_on_timer_hud_timeout"]
+[connection signal="timeout" from="timer_hud" to="." method="_on_Timer_timeout"]
