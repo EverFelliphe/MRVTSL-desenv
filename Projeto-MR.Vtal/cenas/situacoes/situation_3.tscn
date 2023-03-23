@@ -591,6 +591,7 @@ position = Vector2( 391, 187 )
 texture = ExtResource( 12 )
 
 [node name="mission_sec" type="Area2D" parent="."]
+visible = false
 position = Vector2( 200, 292 )
 rotation = -3.14159
 
