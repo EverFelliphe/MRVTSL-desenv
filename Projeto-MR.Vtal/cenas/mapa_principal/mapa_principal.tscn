@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://imagens/joy_stick/pixil-frame-0 (4).png" type="Texture" id=1]
 [ext_resource path="res://cenas/Jogador/Jogador.tscn" type="PackedScene" id=2]
@@ -295,6 +295,9 @@ animations = [ {
 radius = 10.9999
 height = 12.0
 
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 22.5, 3 )
+
 [node name="Mapa" type="Node2D"]
 script = ExtResource( 3 )
 __meta__ = {
@@ -312,6 +315,7 @@ visible = false
 
 [node name="hud" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="Node2D" parent="hud" instance=ExtResource( 9 )]
 position = Vector2( 281, 50 )
@@ -377,7 +381,8 @@ texture = ExtResource( 5 )
 position = Vector2( -128, -34 )
 
 [node name="PredioVtal" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
-polygon = PoolVector2Array( -32, -73, 306, -71, 306, 123, 306, 128, 320, 128, 320, 170, 320, 180, 318, 180, 318, 188, 314, 188, 314, 192, 312, 192, 312, 194, 304, 194, 304, 192, 302, 192, 301, 188, 253, 188, 251.307, 193.271, 241, 193, 239, 188, 218, 187, 215, 194, 202, 194, 193, 183, 196, 147, 99, 148, 79, 166, -12, 165, -31, 146, -31.9644, 1.35904 )
+position = Vector2( -1, -3 )
+polygon = PoolVector2Array( -32, -73, 306, -71, 306, 123, 306, 128, 320, 128, 320, 170, 320, 180, 318, 180, 318, 188, 314, 188, 314, 192, 312, 192, 312, 194, 304, 194, 304, 192, 302, 192, 301, 188, 253, 188, 251.307, 193.271, 241, 193, 239, 188, 218, 187, 215, 194, 202, 194, 193, 183, 198, 112, 102, 110, 79, 166, -12, 165, -31, 146, -31.9644, 1.35904 )
 
 [node name="Poste" type="CollisionShape2D" parent="Mapa_detalhes/Colisoes"]
 position = Vector2( 208, 339 )
@@ -652,6 +657,14 @@ polygon = PoolVector2Array( -225, 663, -289, 665, -288, 335, -98, 333, -96, 663,
 position = Vector2( 128, 34 )
 polygon = PoolVector2Array( 187, 1149, 223, 1151, 225, 1184, 178, 1185, 96, 1183, 95, 860, 759, 890, 764, 925, 801, 927, 804, 1183, 354, 1183, 351, 1163, 354, 1153, 375, 1150, 389, 1151, 414, 1154, 426, 1153, 457, 1153, 764, 1149, 766, 934, 153, 895, 130, 895, 131, 1151 )
 
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
+position = Vector2( 3, 1 )
+polygon = PoolVector2Array( 148, 146, 148, 107, 195, 108, 192, 146 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
+position = Vector2( 3, 1 )
+polygon = PoolVector2Array( 82, 160, 97, 146, 97, 122, 75, 161 )
+
 [node name="Carro3" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
 polygon = PoolVector2Array( -450, -255, -416, -254, -416, -191, -450, -191 )
 
@@ -840,6 +853,12 @@ one_shot = true
 [node name="sumir_2" type="Timer" parent="."]
 one_shot = true
 
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 123, 136 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource( 29 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Personagem" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Situacao" to="." method="_on_Situacao_body_entered"]
@@ -867,10 +886,11 @@ one_shot = true
 [connection signal="timeout" from="sit_2" to="." method="_on_sit_2_timeout"]
 [connection signal="body_entered" from="situation_2" to="." method="_on_situation_2_body_entered"]
 [connection signal="body_entered" from="situation_2" to="Personagem" method="_on_situation_2_body_entered"]
-[connection signal="body_entered" from="mini_game_1" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="." method="_on_mini_game_1_body_entered"]
+[connection signal="body_entered" from="mini_game_1" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="Personagem" method="_on_mini_game_1_body_entered"]
 [connection signal="timeout" from="bar_desbloq" to="." method="_on_bar_desbloq_timeout"]
 [connection signal="timeout" from="nivel_2" to="." method="_on_nivel_2_timeout"]
 [connection signal="timeout" from="area_desb_3" to="." method="_on_area_desb_3_timeout"]
 [connection signal="timeout" from="sumir_2" to="." method="_on_sumir_2_timeout"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

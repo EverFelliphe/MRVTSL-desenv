@@ -235,3 +235,9 @@ func _on_sumir_2_timeout():
 	$Personagem.show()
 	$Sprite2.queue_free()
 	Global.current_area = Global.state_areas.AREA_3
+
+
+func _on_Area2D2_body_entered(body):
+	if Global.current_state==Global.State.Final:
+		get_tree().change_scene("res://prédio_vtal.tscn")
+	else: pass
