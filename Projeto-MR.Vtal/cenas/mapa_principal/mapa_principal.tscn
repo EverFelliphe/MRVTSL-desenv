@@ -315,7 +315,6 @@ visible = false
 
 [node name="hud" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 
 [node name="Node2D" parent="hud" instance=ExtResource( 9 )]
 position = Vector2( 281, 50 )
@@ -819,6 +818,7 @@ position = Vector2( 336, 691 )
 rotation = 3.14159
 scale = Vector2( 0.990868, 0.990868 )
 frames = SubResource( 23 )
+frame = 2
 playing = true
 
 [node name="situation_2" type="Area2D" parent="."]
