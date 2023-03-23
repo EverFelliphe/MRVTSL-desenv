@@ -7,7 +7,6 @@ var timer = Timer.new() #tempo de transição
 onready var imagem = $atencao #carrega a imagem atenção 
 
 func _ready(): #
-	$Personagem.animacao.animation = 'baixo'
 	Global.current_state = Global.State.Situacao1_finish
 	$CanvasLayer.comecar_reverso()
 	$CanvasLayer.timer() #inicia o tempo e animação reversa acima 
