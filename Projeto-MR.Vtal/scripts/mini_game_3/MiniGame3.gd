@@ -2,11 +2,13 @@ extends Node
 
 export (PackedScene) var Inimigo #instancia a cena do inimigo em uma variável
 var score #pontuação do jogador
-var meta = 30 #pontuação necessária para vencer o jogo
-
+var meta = 2 #pontuação necessária para vencer o jogo
+var change_scene = false
 func _ready():
 	randomize()
 
+
+	
 func game_over(): #chamada ao colidir com um inimigo. Para o jogo, e logo em seguida o reinicia
 	$pontuacaoTimer.stop()
 	$inimigoTimer.stop()
@@ -21,11 +23,14 @@ func venceu(): #chamada ao atingir a pontuação necessária, pausa a movimenta�
 	$jogadorMG3.parar()
 	$jogadorMG3.hide()
 	$HUDMG3.exibir_ganhou()
-	
+	$sair.start()
+	get_tree().change_scene("res://situation_3.tscn")
+	Global.pontuacao+=2
 func _process(delta): #se chegar na pontuação da meta, executa a função "venceu()"
 	if score == meta:
 		venceu()
-	
+#	if change_scene == true :
+#		get_tree().change_scene("res://situation_3.tscn")
 func novo_jogo(): #chamada ao clicar no botão de iniciar. Inicia os timers que darão inicio ao jogo.
 	score = 0
 	$jogadorMG3.start($posicaoInicial.position)
@@ -52,3 +57,7 @@ func _on_inimigoTimer_timeout(): #spawna o inimigo em um canto aleatório do map
 	inimigo.rotation = direcao
 	inimigo.linear_velocity = Vector2(rand_range(inimigo.min_speed, inimigo.max_speed) , 0)
 	inimigo.linear_velocity = inimigo.linear_velocity.rotated(direcao)
+
+
+func _on_sair_timeout():
+	change_scene =true

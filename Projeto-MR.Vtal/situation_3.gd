@@ -21,9 +21,14 @@ func _ready():
 	$CanvasLayer3/parabens.hide()
 	$CanvasLayer3/atencao.hide()
 	$transition.hide()
-	
-
-
+	$mission_sec.hide()
+	match Global.current_nivel:
+		Global.state_nivel.N2:
+			$mission_sec.queue_free()
+	match Global.current_state:
+		Global.State.Situacao3_finish:
+			$Node2D.queue_free()
+			$mission_sec.show()
 	
 func _on_Button_pressed(): #após a apresentação da pergunta as escolhas aparecem 
 	n += 1 
@@ -49,7 +54,7 @@ func _on_Button_pressed(): #após a apresentação da pergunta as escolhas apare
 	
 func _on_Escolha1_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
 	dialogo = dialogo[n][1]
-	pontuacao += 2
+	Global.pontuacao += 2
 	clear() 
 	$CanvasLayer2/CaixaDialogo.hide()
 	$CanvasLayer3/parabens.visible = true
@@ -58,7 +63,7 @@ func _on_Escolha1_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 	
 func _on_Escolha2_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
 	dialogo = dialogo[n][2]
-	pontuacao += 1
+	Global.pontuacao += 1
 	clear()
 	$CanvasLayer2/CaixaDialogo.hide()
 	$CanvasLayer3/parabens.show()
@@ -67,7 +72,7 @@ func _on_Escolha2_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 	
 func _on_Escolha3_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
 	dialogo = dialogo[n][3]
-	pontuacao += 0
+	Global.pontuacao += 0
 	clear()
 	$CanvasLayer2/CaixaDialogo.hide()
 	$CanvasLayer3/atencao.show()
@@ -76,7 +81,7 @@ func _on_Escolha3_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 	
 func _on_Escolha4_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
 	dialogo = dialogo[n][4]
-	pontuacao += -1
+	Global.pontuacao += -1
 	clear()
 	$CanvasLayer2/CaixaDialogo.hide()
 	$CanvasLayer3/atencao.show()
@@ -134,4 +139,11 @@ func _on_finalizar_dialogo_timeout():
 
 func _on_transio_reverse_timeout():
 	$transition.show()
+	Global.current_state = Global.State.Situacao3_finish
 	$AnimationPlayer.play_backwards("situation_3")
+	$mission_sec.show()
+
+func _on_mission_sec_body_entered(body):
+	match Global.current_state:
+		Global.State.Situacao3_finish:
+			get_tree().change_scene("res://MiniGame3.tscn")
