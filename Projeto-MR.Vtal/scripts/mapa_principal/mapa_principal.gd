@@ -238,6 +238,6 @@ func _on_sumir_2_timeout():
 
 
 func _on_Area2D2_body_entered(body):
-	if Global.current_state == Global.State.Final:
+	if Global.current_state==Global.State.Final:
 		get_tree().change_scene("res://prédio_vtal.tscn")
 	else: pass

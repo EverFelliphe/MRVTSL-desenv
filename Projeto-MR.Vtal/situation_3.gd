@@ -21,9 +21,10 @@ func _ready():
 	$CanvasLayer3/parabens.hide()
 	$CanvasLayer3/atencao.hide()
 	$transition.hide()
-	
+	$mission_sec.hide()
 	match Global.current_nivel:
 		Global.state_nivel.N2:
+			print('ww')
 			$mission_sec.queue_free()
 	match Global.current_state:
 		Global.State.Situacao3_finish:

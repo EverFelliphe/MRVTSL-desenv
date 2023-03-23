@@ -24,8 +24,10 @@ func venceu(): #chamada ao atingir a pontuação necessária, pausa a movimenta�
 	$jogadorMG3.hide()
 	$HUDMG3.exibir_ganhou()
 	$sair.start()
-	get_tree().change_scene("res://situation_3.tscn")
 	Global.pontuacao+=2
+	get_tree().change_scene("res://cenas/situacoes/situation_3.tscn")
+	if change_scene:
+		pass
 func _process(delta): #se chegar na pontuação da meta, executa a função "venceu()"
 	if score == meta:
 		venceu()
