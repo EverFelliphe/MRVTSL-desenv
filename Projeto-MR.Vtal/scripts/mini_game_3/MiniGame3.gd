@@ -4,10 +4,9 @@ export (PackedScene) var Inimigo #instancia a cena do inimigo em uma variável
 var score #pontuação do jogador
 var meta = 20 #pontuação necessária para vencer o jogo
 var change_scene = false
+
 func _ready():
 	randomize()
-
-
 	
 func game_over(): #chamada ao colidir com um inimigo. Para o jogo, e logo em seguida o reinicia
 	$pontuacaoTimer.stop()
@@ -24,7 +23,7 @@ func venceu(): #chamada ao atingir a pontuação necessária, pausa a movimenta�
 	$jogadorMG3.hide()
 	$HUDMG3.exibir_ganhou()
 	$sair.start()
-	Global.pontuacao+=2
+	Global.pontuacao += 2
 	get_tree().change_scene("res://cenas/situacoes/situation_3.tscn")
 	if change_scene:
 		pass

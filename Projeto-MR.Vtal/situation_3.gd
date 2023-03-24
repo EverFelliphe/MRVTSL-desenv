@@ -10,6 +10,8 @@ var controle
 var i 
 
 func _ready(): 
+	$exclamacao.hide()
+	$mission_sec/CollisionShape2D.set_disabled(true)
 	Global.camera_state = Global.StateCameraClamp.Off
 #	$Personagem/Animacao.animation = "cima"
 #	$CanvasLayer.comecar_reverso()
@@ -26,9 +28,12 @@ func _ready():
 	$mission_sec.hide()
 	match Global.current_nivel:
 		Global.state_nivel.N4:
+<<<<<<< Updated upstream
 
 			print('ww')
 
+=======
+>>>>>>> Stashed changes
 			$mission_sec.queue_free()
 	match Global.current_state:
 		Global.State.Situacao3_finish:
@@ -159,9 +164,14 @@ func _on_transio_reverse_timeout():
 	Global.current_state = Global.State.Situacao3_finish
 	$AnimationPlayer.play_backwards("situation_3")
 	$mission_sec.show()
+	$mission_sec/CollisionShape2D.set_disabled(false)
+	$exclamacao.show()
 	Global.speed = 250
 
 func _on_mission_sec_body_entered(body):
 	match Global.current_state:
 		Global.State.Situacao3_finish:
 			get_tree().change_scene("res://MiniGame3.tscn")
+
+func _on_mini_game_body_entered(body):
+	get_tree().change_scene("res://MiniGame3.tscn")

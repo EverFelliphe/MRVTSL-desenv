@@ -714,10 +714,6 @@ rotation = -3.14159
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mission_sec"]
 shape = SubResource( 15 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="mission_sec/CollisionShape2D"]
-position = Vector2( 0, -4 )
-frames = SubResource( 20 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Node2D2" parent="CanvasLayer" instance=ExtResource( 13 )]
@@ -727,6 +723,13 @@ position = Vector2( -197, 387 )
 scale = Vector2( 2.4, 2.4 )
 frames = ExtResource( 9 )
 animation = "direita"
+
+[node name="exclamacao" type="AnimatedSprite" parent="."]
+position = Vector2( 200, 296 )
+rotation = -3.14159
+frames = SubResource( 20 )
+frame = 2
+playing = true
 
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="CanvasLayer3/parabens/passar" to="." method="_on_passar_pressed"]
