@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/3ef35179c31986a (4).png-60a35d15687e34645553aa2e2a552ee9.stex"
+path="res://.import/pixil-frame-0 (16).png-e5b7ec30b21b4a524d720ff62e1c375c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/spritesheet_player/3ef35179c31986a (4).png"
-dest_files=[ "res://.import/3ef35179c31986a (4).png-60a35d15687e34645553aa2e2a552ee9.stex" ]
+source_file="res://cenas/dialogo_fabricio/pixil-frame-0 (16).png"
+dest_files=[ "res://.import/pixil-frame-0 (16).png-e5b7ec30b21b4a524d720ff62e1c375c.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

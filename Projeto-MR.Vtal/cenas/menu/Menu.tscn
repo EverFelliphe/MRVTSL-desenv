@@ -42,7 +42,7 @@ anchor_bottom = 1.0
 margin_left = 1.0
 margin_top = -3.0
 margin_right = 2491.0
-margin_bottom = 1095.0
+margin_bottom = 1080.0
 rect_scale = Vector2( 0.537753, 0.558408 )
 texture = ExtResource( 3 )
 expand = true
@@ -94,10 +94,10 @@ custom_fonts/font = SubResource( 1 )
 text = "Play"
 
 [node name="Label3" type="Label" parent="."]
-margin_left = 469.0
-margin_top = 136.0
-margin_right = 653.0
-margin_bottom = 337.0
+margin_left = 495.0
+margin_top = 63.0
+margin_right = 679.0
+margin_bottom = 264.0
 custom_fonts/font = SubResource( 2 )
 text = "V.tal
 

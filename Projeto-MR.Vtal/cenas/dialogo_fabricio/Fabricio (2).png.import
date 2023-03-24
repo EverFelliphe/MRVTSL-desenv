@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/3ef35179c31986a (4).png-60a35d15687e34645553aa2e2a552ee9.stex"
+path="res://.import/Fabricio (2).png-83f43d912ed821164c6333c5da91e5b9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/spritesheet_player/3ef35179c31986a (4).png"
-dest_files=[ "res://.import/3ef35179c31986a (4).png-60a35d15687e34645553aa2e2a552ee9.stex" ]
+source_file="res://cenas/dialogo_fabricio/Fabricio (2).png"
+dest_files=[ "res://.import/Fabricio (2).png-83f43d912ed821164c6333c5da91e5b9.stex" ]
 
 [params]
 

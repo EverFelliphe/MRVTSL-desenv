@@ -2,6 +2,7 @@ extends Node2D
 
 var falasDiamante = Global.falas['diamante'] #chama o dicionario global, na seç~´ao do diamante, contendo as falas do tutorial
 var n = 1
+var limite = len(falasDiamante) 
 
 func _ready(): #Esconde a HUD da tela, parap oder tocar a transição entre as cenas
 	$gamepad.hide()
@@ -15,7 +16,7 @@ func _ready(): #Esconde a HUD da tela, parap oder tocar a transição entre as c
 	$dialogo/texto.text = falasDiamante[0]
 
 func _on_TextureButton_pressed(): 
-	if n == 3: #se o índice do dicionario for 3 ele muda de cena, já que representa o fim do diálogo
+	if n == limite: #se o índice do dicionario for 3 ele muda de cena, já que representa o fim do diálogo
 		$dialogo.queue_free()
 		$gamepad.show()
 	else:  #ao clicar no botão ele atualiza o dialogo (passa para as proximas falas)

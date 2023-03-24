@@ -9,7 +9,16 @@ var i = Global.call_index
 var j = Global.cutscene_index
 
 func _ready(): 
+<<<<<<< Updated upstream
 	
+=======
+<<<<<<< HEAD
+	var posicaum = $Sprite3.global_position
+	print(posicaum)
+=======
+	
+>>>>>>> df50a0133f8ba55b90b307bbc80437265f25b159
+>>>>>>> Stashed changes
 	Global.camera_state = Global.StateCameraClamp.Off
 	$Personagem.position = Vector2(Global.posicaox , Global.posicaoy) 
 	$dialogo.hide() #esconde dialogo e falas durante início da cena 
@@ -19,6 +28,7 @@ func _ready():
 			Global.controle_nathalia = false
 			$sec_mission.hide()
 			$hud.hide()
+			$gamepad.show()
 			$dialogo.hide()
 			$Transition.show()
 			$Transition/Fill/animation.play_backwards("transicao")

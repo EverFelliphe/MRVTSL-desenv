@@ -10,8 +10,8 @@ func _ready(): #
 	Global.current_state = Global.State.Situacao1_finish
 	$CanvasLayer.comecar_reverso()
 	$CanvasLayer.timer() #inicia o tempo e animação reversa acima 
-	$CaixaDialogo/nome.text = dialogo.nome
-	$CaixaDialogo/conversa.text = dialogo[0] #carrega caixa de diálogo 
+	$CaixaDialogo/nome.text = str(dialogo.nome)
+	$CaixaDialogo/conversa.text = dialogo[0]["text"] #carrega caixa de diálogo 
 	$CaixaDialogo/VBoxContainer/Escolha1.hide() #esconde escolhas e feedback enquanto aparece perguntas 
 	$CaixaDialogo/VBoxContainer/Escolha2.hide()
 	$CaixaDialogo/VBoxContainer/Escolha3.hide()
@@ -37,12 +37,20 @@ func _on_Button_pressed(): #após a apresentação da pergunta as escolhas apare
 	if n == 3:
 		$CaixaDialogo/conversa.hide()
 		$CaixaDialogo/Button.hide()
+		$CaixaDialogo/nome.hide()
+		$CaixaDialogo/nome2.hide()
 		$CaixaDialogo/VBoxContainer/Escolha1.show()
 		$CaixaDialogo/VBoxContainer/Escolha2.show()
 		$CaixaDialogo/VBoxContainer/Escolha3.show()
 		$CaixaDialogo/VBoxContainer/Escolha4.show()
+		
 	else:
-		$CaixaDialogo/conversa.text = dialogo[n]
+		$CaixaDialogo/conversa.text = dialogo[n]["text"]
+		$CaixaDialogo/nome.text = dialogo[n]["nome"]
+		if dialogo[n]["nome"] == "Mr. V.Tal":
+			$CaixaDialogo/nome2.hide()
+		else:
+			$CaixaDialogo/nome2
 		n += 1 
 	
 func _on_Escolha1_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
@@ -56,7 +64,7 @@ func _on_Escolha1_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 	
 func _on_Escolha2_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
 	dialogo = dialogo[n][2]
-	pontuacao += 1
+	pontuacao += 2
 	clear()
 	$CaixaDialogo.queue_free()
 	$parabens.show()
@@ -74,7 +82,7 @@ func _on_Escolha3_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 	
 func _on_Escolha4_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
 	dialogo = dialogo[n][4]
-	pontuacao += -1
+	pontuacao += 0
 	clear()
 	$CaixaDialogo.queue_free()
 	$atencao.show()

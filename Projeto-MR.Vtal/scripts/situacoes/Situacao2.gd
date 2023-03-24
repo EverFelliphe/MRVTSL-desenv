@@ -1,6 +1,5 @@
 extends Node2D
 
-var pontuacao = Global.pontuacao #utilizando a variavel definida no script do global
 var dialogo = Global.falas['situacao2'] #utiliando a variavel definida no script do global
 var n = 0 #controle do diálogo
 var timer = Timer.new() #tempo de transição
@@ -12,8 +11,7 @@ func _ready():
 #	$Personagem/Animacao.animation = ""
 	$CanvasLayer.comecar_reverso()
 	$CanvasLayer.timer() #inicia o tempo e animação reversa acima 
-	$CaixaDialogo/nome.text = dialogo.nome1
-	$CaixaDialogo/conversa.text = dialogo[0] #carrega caixa de diálogo 
+	$CaixaDialogo/conversa.text = dialogo[0]["text"] #carrega caixa de diálogo 
 	$CaixaDialogo/VBoxContainer/Escolha1.hide() #esconde escolhas e feedback enquanto aparece perguntas 
 	$CaixaDialogo/VBoxContainer/Escolha2.hide()
 	$CaixaDialogo/VBoxContainer/Escolha3.hide()
@@ -39,6 +37,7 @@ func _on_Button_pressed(): #após a apresentação da pergunta as escolhas apare
 		var escolhas = dialogo[n]
 		$CaixaDialogo/conversa.hide()
 		$CaixaDialogo/Button.hide()
+		$CaixaDialogo/nome.hide()
 		$CaixaDialogo/VBoxContainer/Escolha1.show()
 		$CaixaDialogo/VBoxContainer/Escolha2.show()
 		$CaixaDialogo/VBoxContainer/Escolha3.show()
@@ -48,26 +47,37 @@ func _on_Button_pressed(): #após a apresentação da pergunta as escolhas apare
 		$CaixaDialogo/VBoxContainer/Escolha3.text = str(escolhas[3])
 		$CaixaDialogo/VBoxContainer/Escolha4.text = str(escolhas[4])
 		
-#	elif n == 2:
-#		$CaixaDialogo.hide()
-#		$npc.start()
 	elif n > 4 and n < 10:
 		n = 9
 		$CaixaDialogo/conversa.text = dialogo[n]
 	
 	elif n >= 10:
 		$CaixaDialogo.hide()
-		Global.speed = 250
 		$NPC/NPC/AnimationPlayer.play("sit_2_volta")
+<<<<<<< HEAD
+		$sit_2_volta.start()
+		
+=======
 		Global.current_state = Global.State.Situacao2_finish
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> df50a0133f8ba55b90b307bbc80437265f25b159
+>>>>>>> Stashed changes
 	else:
-		$CaixaDialogo/conversa.text = dialogo[n]
+		$CaixaDialogo/conversa.text = dialogo[n]["text"]
+		$CaixaDialogo/nome.text = dialogo[n]["nome"]
+
+func _on_sit_2_volta_timeout():
+	Global.speed = 250
+	Global.current_state = Global.State.Situacao2_finish
+	$excl_mini_game.show()
+	$mini_game_2/CollisionShape2D.set_disabled(false)
 	
 func _on_Escolha1_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
 	n += 1
 	dialogo = dialogo[n][1]
-	pontuacao += 2
+	Global.pontuacao += 2
 	clear() 
 	$CaixaDialogo.hide()
 	$parabens.visible = true
@@ -77,7 +87,7 @@ func _on_Escolha1_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 func _on_Escolha2_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
 	n += 1
 	dialogo = dialogo[n][2]
-	pontuacao += 1
+	Global.pontuacao += 2
 	clear()
 	$CaixaDialogo.hide()
 	$parabens.show()
@@ -87,7 +97,7 @@ func _on_Escolha2_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 func _on_Escolha3_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
 	n += 1
 	dialogo = dialogo[n][3]
-	pontuacao += 0
+	Global.pontuacao += 0
 	clear()
 	$CaixaDialogo.hide()
 	$atencao.show()
@@ -97,7 +107,7 @@ func _on_Escolha3_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 func _on_Escolha4_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
 	n += 1
 	dialogo = dialogo[n][4]
-	pontuacao += -1
+	Global.pontuacao += -1
 	clear()
 	$CaixaDialogo.hide()
 	$atencao.show()
@@ -110,6 +120,7 @@ func clear(): #encerra a cena
 	$CaixaDialogo/VBoxContainer/Escolha3.queue_free()
 	$CaixaDialogo/VBoxContainer/Escolha4.queue_free()
 	$CaixaDialogo/Button.show()
+	$CaixaDialogo/nome.show()
 	
 func _on_passar_pressed(): #volta o personagem para o mapa 
 	$atencao.hide()
@@ -142,7 +153,6 @@ func _on_animacao_player_timeout():
 	$CaixaDialogo.show()
 
 func _on_saida_body_entered(body):
-	Global.atualizar_pontuacao(pontuacao)
 	get_tree().change_scene("res://cenas/mapa_principal/mapa_principal.tscn") 
 
 func _on_npc_timeout():
@@ -153,3 +163,15 @@ func _on_enemy_timeout():
 	$CaixaDialogo.show()
 	$CaixaDialogo/conversa.text = dialogo[n]
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+func _on_mini_game_2_body_entered(body):
+	Global.posicao_bar = Vector2($Personagem.position.x, $Personagem.position.y)
+	get_tree().change_scene("res://cenas/forca/forca.tscn")
+
+
+
+=======
+>>>>>>> df50a0133f8ba55b90b307bbc80437265f25b159
+>>>>>>> Stashed changes

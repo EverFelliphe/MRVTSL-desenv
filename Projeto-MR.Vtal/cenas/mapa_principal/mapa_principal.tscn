@@ -16,6 +16,7 @@
 [ext_resource path="res://fontes/OldSchoolAdventures-42j9.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://call_nathalia.tscn" type="PackedScene" id=15]
 [ext_resource path="res://exclamação_sec.png" type="Texture" id=16]
+[ext_resource path="res://imagens/icon.png" type="Texture" id=17]
 
 [sub_resource type="Animation" id=12]
 length = 0.001
@@ -353,7 +354,7 @@ texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2/StaticBody2D"]
 position = Vector2( -128, -34 )
-polygon = PoolVector2Array( 215, -1316, 193, -1282.69, 193, -287, 364, -286, 379, -286, 391, -270, 385, -255, 414, -252, 422, -235, 417, -223, 440, -221, 455, -205, 451, -190, 449, 223, 1315, 1089, 1537, 1090, 1536, 1062, 1329, 1063, 468, 191, 480, -238, 391, -319, 229, -315, 223, -1312 )
+polygon = PoolVector2Array( 215, -1316, 193, -1282.69, 193, -287, 364, -286, 379, -286, 391, -270, 385, -255, 414, -252, 422, -235, 417, -223, 440, -221, 455, -205, 451, -190, 450.015, 13.4394, 449, 223, 1315, 1089, 1537, 1090, 1536, 1062, 1329, 1063, 468, 191, 480, -238, 391, -319, 229, -315, 223, -1312 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 128, 34 )
@@ -819,6 +820,7 @@ position = Vector2( 336, 691 )
 rotation = 3.14159
 scale = Vector2( 0.990868, 0.990868 )
 frames = SubResource( 23 )
+frame = 1
 playing = true
 
 [node name="situation_2" type="Area2D" parent="."]
@@ -826,7 +828,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="bar" type="CollisionPolygon2D" parent="situation_2"]
-position = Vector2( -13.3332, -0.000366211 )
+position = Vector2( -16.3332, -0.000366211 )
 scale = Vector2( 0.972384, 1 )
 polygon = PoolVector2Array( -456, -961, -457, -1011, -371, -1012, -371, -961 )
 
@@ -853,11 +855,23 @@ one_shot = true
 [node name="sumir_2" type="Timer" parent="."]
 one_shot = true
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( -244, -1059 )
+texture = ExtResource( 17 )
+=======
+>>>>>>> Stashed changes
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2( 123, 136 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 shape = SubResource( 29 )
+<<<<<<< Updated upstream
+=======
+>>>>>>> df50a0133f8ba55b90b307bbc80437265f25b159
+>>>>>>> Stashed changes
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Personagem" method="_on_Area2D_body_entered"]

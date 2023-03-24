@@ -15,26 +15,25 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 	'diamante': {
 		0: "Use as setas no canto inferior esquerdo para se movimentar pelo mapa!",
 		1: "Aperte o botão A para interagir com os personagens no jogo ",
-		2: 'sla'
 	},
 	'situacao1': {
 		"nome":"Robert",
-		0: "Boa tarde, meu nome é Robert e eu trabalho na Claro, vi que você trabalha na V.tal para qual empresa você está indo instalar a fibra?",
-		1: "Estou indo instalar da Tim",
-		2: "Eu te pago uma grana se você instalar essa fibra da minha empresa",
+		0: {"text": "Opa, tudo bem? Eu sou o Robert, e trabalho na Boa Comunicação S.A. Reparei que você trabalha na V.Tal, e tenho uma proposta para você. Mas antes disso, para qual empresa você está indo instalar a fibra?", "nome": "Robert"},
+		1: {"text": "Olá, tudo certo? Eu estou indo instalar a fibra da Rápida Conexão.", "nome": "Mr. V.Tal"},
+		2: {"text": "Ah, bom saber! Então é o seguinte, eu posso te oferecer uma certa quantia, e em troca você instala a fibra da minha empresa. O que acha?", "nome": "Robert"},
 		3: {
-			1: {"text":"Parabéns!! Você escolheu a opção mais ética", "feedback":"res://imagens/parabens.png"},
-			2: {"text":"Parabéns!! Você escolheu uma ótima opção, agindo plenamente de acordo com o código de ética da empresa. Entretanto, faltou reportar a situação para o compliance, para que possamos ter um controle da situação!", "feedback":"res://imagens/parabens.png"},
-			3: {"text":"A família tem grande importância, mas devemos sempre ter um comportamento ético. A opção mais ética seria recusar a proposta e reportar ao compliance, já que se trata de uma tentativa de suborno", "feedback":"res://imagens/aten.png"},
-			4: {"text":"A opção mais ética seria recusar a proposta e reportar ao compliance, já que se trata de uma tentativa de suborno, portanto, aceitar o dinheiro seria totalmente contra o código de ética da empresa.", "feedback":"res://imagens/aten.png"}
+			1: {"text":"Parabéns!! Você escolheu a opção mais ética. É essencial recusar ofertas de suborno, já que fazê-lo se configura como corrupção, que é condenada no nosso código de ética.", "feedback":"res://imagens/parabens.png"},
+			2: {"text":"Parabéns!! Você escolheu uma ótima opção, reconhecendo o suborno corrupto de Robert e questionando a sua atitude. Afinal, a corrupção vai contra nosso código de ética.", "feedback":"res://imagens/parabens.png"},
+			3: {"text":"A família tem grande importância, mas devemos sempre ter um comportamento ético. A opção mais ética seria recusar a proposta de suborno, já que se trata de um caso de corrupção, o que vai contra nosso código de ética.", "feedback":"res://imagens/aten.png"},
+			4: {"text":"Aceitar essa oferta vai totalmente contra nosso código de ética. Afinal, a proposta se trata de um suborno e, portanto, se enquadra como corrupção..", "feedback":"res://imagens/aten.png"}
 		}
 	},
 	'situacao2':{
 		'nome1':'',
 		'nome2':'',
-		0:'Ei, cara, há quanto tempo não te vejo! Vi que você foi contratado pela V.Tal, como tem sido o seu trabalho lá até então?',
-		1:'Ah, oi Paulo! Tem sido bem interessante, estou aprendendo bastante. E você, ainda está trabalhando na 	Boa Comunicações?',
-		2:'Sim, sigo firme e forte lá! Inclusive, estamos pensando em lançar um novo produto, que irá explodir a mente dos clientes. E vocês, trabalhando em algo novo?',
+		0: {"text": "Ei, cara, há quanto tempo não te vejo! Vi que você foi contratado pela V.Tal, como tem sido o seu trabalho lá até então?", "nome": "???"},
+		1: {"text": "Ah, oi Paulo! Tem sido bem interessante, estou aprendendo bastante. E você, ainda está trabalhando na Boa Comunicações?", "nome": "Mr. V.Tal"},
+		2: {"text": "Sim, sigo firme e forte lá! Inclusive, estamos pensando em lançar um novo produto, que irá explodir a mente dos clientes. E vocês, trabalhando em algo novo?", "nome": "Paulo"},
 		3: {
 			1: "Esquece o trabalho cara, vamos falar sobre outra coisa! Viu o último jogo do Flamengo?",
 			2: "Ah sabe como é, prefiro não comentar assuntos sobre o trabalho",
@@ -74,8 +73,8 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 	"nathalia": {
 		0: "Olá, eu sou a Nathália, e sou funcionária da Vtal! E assim como o Fabrício, te auxiliarei na sua jornada. Te ajudarei passando instruções sobre o que fazer ao longo da sua jornada, por meio dessas ligações!",
 		1: "Como sua primeira tarefa, precisamos que você instale a fibra ótica de um cliente na casa do quarteirão abaixo!",
-		2: "Olá novamente, estou aqui para indicar a sua 2 mssão",
-		3: "a partir de agora você enfrentara dilemas mais sutis, porém não menos importantes. Dica. separe pessoal do profissional",
+		2: "Parabéns pela sua promoção! Agora, você se tornou o duque da fibra, e está cada vez mais perto de se tornar o rei das fibras.",
+		3: "Agora, para comemorar, a bebida é por conta da casa! Vá até o bar, acima do prédio da V.Tal, para pegar sua merecida breja!",
 		4: "teste3",
 		5: "teste4",
 		6: "teste 5",
