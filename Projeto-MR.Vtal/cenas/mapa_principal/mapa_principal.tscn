@@ -367,6 +367,7 @@ visible = false
 
 [node name="hud" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="Node2D" parent="hud" instance=ExtResource( 9 )]
 position = Vector2( 281, 50 )
@@ -475,6 +476,10 @@ shape = SubResource( 5 )
 position = Vector2( 80, 883 )
 rotation = 1.5708
 shape = SubResource( 5 )
+
+[node name="barreira" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
+position = Vector2( 131, 35 )
+polygon = PoolVector2Array( -31, 111, 21, 111, 21, 113, -31, 113 )
 
 [node name="Poste11" type="CollisionShape2D" parent="Mapa_detalhes/Colisoes"]
 position = Vector2( -15, 892 )
@@ -747,6 +752,7 @@ shape = SubResource( 30 )
 position = Vector2( 123, 118 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vtal"]
+position = Vector2( 0, 19 )
 shape = SubResource( 33 )
 
 [node name="Area2D" type="Area2D" parent="."]
