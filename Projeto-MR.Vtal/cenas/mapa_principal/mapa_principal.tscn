@@ -910,6 +910,7 @@ position = Vector2( 336, 691 )
 rotation = 3.14159
 scale = Vector2( 0.990868, 0.990868 )
 frames = SubResource( 23 )
+frame = 1
 playing = true
 
 [node name="situation_2" type="Area2D" parent="."]
