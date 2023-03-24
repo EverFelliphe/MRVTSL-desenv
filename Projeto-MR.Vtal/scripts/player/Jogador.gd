@@ -15,6 +15,13 @@ onready var animacao = get_node("Animacao")
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size #define o tamanho da tela
+	
+	match Global.current_nivel:
+		Global.state_nivel.N3:
+			Global.current_state_skin =  Global.State_skin.General
+		Global.state_nivel.N4:
+			Global.current_state_skin = Global.State_skin.Rei
+			
 	match Global.current_state_skin:
 		Global.State_skin.Defensor:
 			animacao = get_node("Animacao_defensor")
@@ -28,6 +35,7 @@ func _ready() -> void:
 			animacao = get_node("Animacao_rei")
 			$Animacao_defensor.queue_free()
 			$Animacao_general.queue_free()
+	
 
 func _physics_process(delta): #define os controles do jogo
 	var camera_state = Global.camera_state

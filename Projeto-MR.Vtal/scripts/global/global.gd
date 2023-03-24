@@ -38,10 +38,10 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 			4: "Posso até te contar sobre o que estamos fazendo, mas tudo tem o seu preço"
 		},
 		4:{
-			1: "Ótima escolha! Você mudou de assunto para não violar o código de ética, já que divulgar informações confidenciais de clientes é contrário aos valores da V.Tal.",
-			2: "Ótima escolha! Você se recusou a divulgar informações sigilosas da empresa para a concorrência.",
-			3: "Apesar de estar em um momento descontraído, você não pode divulgar informações de cliente para pessoas de fora, especialmente concorrentes, já que isso viola o Código de Ética e Conduta da V.Tal.",
-			4: "Você escolheu uma opção antiética. Divulgar informações confidenciais de clientes é contrário aos valores da V.Tal e receber dinheiro para fazê-lo é pior ainda, constituindo um crime. Você deveria ter mudado de assunto ou se recusar a fornecer as informações ao amigo."
+			1: "Ótima escolha! Você mudou de assunto para não violar o código de ética, já que divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, visto que fere nosso princípio de neutralidade",
+			2: "Ótima escolha! Você se recusou a divulgar informações sigilosas de nossos clientes para a concorrência, já que fazê-lo fere nosso princípio de neutralidade .",
+			3: "Apesar de estar em um momento descontraído, você não pode divulgar informações de cliente para correntes, já que isso viola nosso princípio de neutralidade",
+			4: "Divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, e fere nosso princípio de neutralidade e, portanto, vai contra o código de ética "
 		},
 		5: "Que jogo feio foi aquele! Minha bisavó jogaria futebol melhor do que aqueles caras!",
 		6: "Tudo bem, te entendo! Às vezes é realmente melhor não comentar esses tipos de dados com os outros",
@@ -68,12 +68,13 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 	"nathalia": {
 		0: "Olá, eu sou a Nathália, e sou funcionária da Vtal! E assim como o Fabrício, te auxiliarei na sua jornada. Te ajudarei passando instruções sobre o que fazer ao longo da sua jornada, por meio dessas ligações!",
 		1: "Como sua primeira tarefa, precisamos que você instale a fibra ótica de um cliente na casa do quarteirão abaixo!",
-		2: "Está vendo essa exclamação verde? Ela indicará os mini jogos que você terá que fazer",
+		2: "Está vendo essa exclamação verde? Ela indicará os mini jogos que você terá que fazer.",
 		3: "Caso você termine um mini jogo e ainda não tenha pontos de reputação o suficiente para subir de nível, você pode refazê-los quantas vezes conseguir para acumular pontos!",
-		4: "Parabéns, você conseguiu liberar uma área e está cada vez mais próximo de se tornar o rei da fibra",
+		4: "Parabéns, você conseguiu liberar uma área, e agora pode transitar livremente por ela.",
+		5: "Continue assim, e você estará cada vez mais próximo de se tornar o rei da fibra.",
 		6: "Para comemorar essa conquista após um árduo dia de trabalho, hoje a breja é por nossa conta!",
-		7: "Vá até o bar acima da V.Tal para pegar a sua recompensa",
-		8: "Seu progresso está ótimo. Agora, conseguiu liberara a última área do mapa",
+		7: "Vá até o bar acima da V.Tal para pegar a sua recompensa.",
+		8: "Seu progresso está ótimo. Agora, conseguiu liberar a última área do mapa.",
 		9: "A partir de agora tome mais cuidado com suas ações, pois quanto maior o seu cargo maior o impacto que suas ações causarão.",
 		10: "Vejo que após todos estes desafios enfrentados, você se provou ético e digno de se tornar o Rei da fibra. Por fim, volte para o prédio da V.Tal para uma surpresa!",
 		11: "A partir de agora você conseguirá entrar nele!",

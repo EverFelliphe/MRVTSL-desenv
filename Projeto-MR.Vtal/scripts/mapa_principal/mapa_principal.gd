@@ -10,9 +10,6 @@ var j = Global.cutscene_index
 
 func _ready(): 
 	pass
-	
-	var posicaum = $Sprite3.global_position
-	print(posicaum)
 
 	Global.camera_state = Global.StateCameraClamp.Off
 	$Personagem.position = Vector2(Global.posicaox , Global.posicaoy) 
@@ -153,7 +150,7 @@ func _on_passar_pressed(): #carrega dialogo com natalia
 		$Personagem/Camera2D/AnimationPlayer.play("clube")
 		$club.start()
 		$dialogo.hide()
-	elif n ==12:
+	elif n == 12:
 		$Personagem/Camera2D/AnimationPlayer.play("final_1")
 		$final.start()
 		$dialogo.hide()

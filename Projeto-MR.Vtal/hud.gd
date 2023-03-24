@@ -43,6 +43,7 @@ func _ready(): #mostra a pontuação zerada ao iniciar o jogo
 				Global.current_nivel = Global.state_nivel.N4
 				Global.cutscene_index = 0
 				Global.current_area = Global.state_areas.FINAL
+				
 		$timer_hud.start()
 		
 		Global.pontuacao = 0
