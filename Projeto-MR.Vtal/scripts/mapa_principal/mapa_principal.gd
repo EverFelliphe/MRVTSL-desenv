@@ -7,6 +7,7 @@ var nivel_2 = Global.nivel_2#verifica se o player passou de nível para iniciar 
 var current_state = Global.current_state
 var i = Global.call_index
 var j = Global.cutscene_index
+
 func _ready(): 
 	pass
 	
@@ -84,13 +85,9 @@ func _ready():
 						if j == 0 :
 							$Quest.start()
 							Global.cutscene_index = 1
-<<<<<<< Updated upstream
+
 						else: pass
-				
-=======
-						else:
-							 pass
->>>>>>> Stashed changes
+
 			
 	 
 	match Global.current_area:
@@ -108,6 +105,12 @@ func _ready():
 					$Sprite2.queue_free()
 					$sec_mission.hide()
 				else:pass
+			Global.state_areas.FINAL:
+					$excl.hide()
+					$Sprite.queue_free()
+					$Sprite2.queue_free()
+					$sec_mission.hide()
+					$Mapa_detalhes/Colisoes/barreira.queue_free()
 #	if Global.pontuacao == 4 :
 #		$nivel_1.start()
 
@@ -254,7 +257,8 @@ func _on_area_desb_3_timeout():
 
 func _on_sumir_2_timeout():
 	$Personagem/Camera2D/AnimationPlayer.play_backwards("area_2")
-
+	Global.speed = 250
+	$Quest.start()
 
 #
 #func _on_Area2D2_body_entered(body):
@@ -267,7 +271,7 @@ func _on_sumir_2_timeout():
 
 func _on_final_timeout():
 	$Personagem/Camera2D/AnimationPlayer.play_backwards("final_1")
-
+	Global.speed = 250
 func _on_mercado2_body_entered(body):
 	get_tree().change_scene("res://mercado.tscn")
 
@@ -283,9 +287,7 @@ func _on_club_timeout():
 
 
 func _on_vtal_body_entered(body):
-	match current_state:
-		Global.State.Final:
-			get_tree().change_scene("res://prédio_vtal.tscn")
+		get_tree().change_scene("res://prédio_vtal.tscn")
 
 
 
@@ -294,5 +296,5 @@ func _on_sumir_2_3_timeout():
 		$Personagem.show()
 		$Sprite2.queue_free()
 		Global.current_area = Global.state_areas.AREA_3
-		$area_reverso.start() 
+		
 		$sumir_2.start()

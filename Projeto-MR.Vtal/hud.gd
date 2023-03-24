@@ -42,6 +42,7 @@ func _ready(): #mostra a pontuação zerada ao iniciar o jogo
 			3:
 				Global.current_nivel = Global.state_nivel.N4
 				Global.cutscene_index = 0
+				Global.current_area = Global.state_areas.FINAL
 		$timer_hud.start()
 		
 		Global.pontuacao = 0
@@ -137,4 +138,5 @@ func _on_timer_hud_timeout():
 		Global.state_nivel.N4:
 			$VBoxContainer/nome_nivel.texture = load("res://imagens/níveis/MolduraGeneralPronta.png")
 			Global.moldura = "res://imagens/níveis/MolduraGeneralPronta.png"
+			Global.current_area = Global.state_areas.FINAL
 	print(Global.pontuacao)

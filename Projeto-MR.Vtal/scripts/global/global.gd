@@ -81,7 +81,7 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 	}
 }
 enum state_situations {INIT,SITUATION_1, SITUATION_2,  SITUATION_3}
-enum state_areas {AREA_1, AREA_2,  AREA_3}
+enum state_areas {AREA_1, AREA_2,  AREA_3, FINAL}
 enum state_person{FRENTE,TRAS,ESQUERDA,DIREITA,PARADO}
 enum state_nivel{N1,N2,N3,N4,N5}
 
