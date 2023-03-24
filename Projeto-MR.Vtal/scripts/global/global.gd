@@ -34,7 +34,7 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 		3: {
 			1: "Esquece o trabalho cara, vamos falar sobre outra coisa! Viu o último jogo do Flamengo?",
 			2: "Ah sabe como é, prefiro não comentar assuntos sobre o trabalho",
-			3: "Estamos trabalhando para conseguir oferecer um pacote de 1 GB para nossos clientes, além de expandir nosso mercado no Centro-Oeste",
+			3: "Estamos trabalhando para conseguir oferecer um pacote de 1 GB para nossos clientes",
 			4: "Posso até te contar sobre o que estamos fazendo, mas tudo tem o seu preço"
 		},
 		4:{
@@ -68,16 +68,15 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 	"nathalia": {
 		0: "Olá, eu sou a Nathália, e sou funcionária da Vtal! E assim como o Fabrício, te auxiliarei na sua jornada. Te ajudarei passando instruções sobre o que fazer ao longo da sua jornada, por meio dessas ligações!",
 		1: "Como sua primeira tarefa, precisamos que você instale a fibra ótica de um cliente na casa do quarteirão abaixo!",
-		2: "Olá novamente, estou aqui para explicar como o jogo irá fluir daqui para frente",
-		3: "A partir de agora você precisará realizar ass missões secundarias/minigames indicados pelas exclamações verdes, para passar de nível e liberar a próxima area com novas situações éticas e recompensas para desbloquear ",
-		4: "Parabéns, voce conseguiun liberar uma nova area e esta mais perto de ser o rei da fibra",
-		5: "nesta nova area, voce enfrentara novas situações éticas com sutiliezas e maiores complexidade e terá outros minigames/situações secundarias para evoluir cada vez mais",
-		6: "A próxima missão que voce enfrentara esta no bar da cidade, ela esta indicada por uma exclamação dentro do bar e este será indicado por uma seta.  ",
-		7: "esta seta indicara o caminho para bar, siga ela e chegua ate a proxima situação. ",
-		8:"Você esta indo bem, parabéns. Conseguiu liberara a ultima area do mapa",
-		9:"A partir de agora tome mais cuidado com suas ações, pois quanto maior o seu cargo maior o impacto que suas ações causarão.",
-		10:"Vejo que após todos estes desafios enfrentados, você se provou ético e digno de se tornar o Rei da fibra. Como ultima mssão volte para o prédio da v.tal, onde tudo começou  ",
-		11:"a partir de agora você sera capaz de entrar nele e após isso veja o que acontece",
+		2: "Está vendo essa exclamação verde? Ela indicará os mini jogos que você terá que fazer",
+		3: "Caso você termine um mini jogo e ainda não tenha pontos de reputação o suficiente para subir de nível, você pode refazê-los quantas vezes conseguir para acumular pontos!",
+		4: "Parabéns, você conseguiu liberar uma área e está cada vez mais próximo de se tornar o rei da fibra",
+		6: "Para comemorar essa conquista após um árduo dia de trabalho, hoje a breja é por nossa conta!",
+		7: "Vá até o bar acima da V.Tal para pegar a sua recompensa",
+		8: "Seu progresso está ótimo. Agora, conseguiu liberara a última área do mapa",
+		9: "A partir de agora tome mais cuidado com suas ações, pois quanto maior o seu cargo maior o impacto que suas ações causarão.",
+		10: "Vejo que após todos estes desafios enfrentados, você se provou ético e digno de se tornar o Rei da fibra. Por fim, volte para o prédio da V.Tal para uma surpresa!",
+		11: "A partir de agora você conseguirá entrar nele!",
 	}
 }
 enum state_situations {INIT,SITUATION_1, SITUATION_2,  SITUATION_3}

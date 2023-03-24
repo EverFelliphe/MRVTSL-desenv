@@ -28,12 +28,6 @@ func _ready():
 	$mission_sec.hide()
 	match Global.current_nivel:
 		Global.state_nivel.N4:
-<<<<<<< Updated upstream
-
-			print('ww')
-
-=======
->>>>>>> Stashed changes
 			$mission_sec.queue_free()
 	match Global.current_state:
 		Global.State.Situacao3_finish:

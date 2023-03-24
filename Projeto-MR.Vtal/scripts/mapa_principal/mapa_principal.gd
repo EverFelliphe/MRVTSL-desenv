@@ -86,15 +86,9 @@ func _ready():
 							$Quest.start()
 							Global.cutscene_index = 1
 
-<<<<<<< Updated upstream
 						else: pass
 
-			
-=======
-						else: 
-							pass
->>>>>>> Stashed changes
-	 
+
 	match Global.current_area:
 			Global.state_areas.AREA_2:
 				if j!=0:
