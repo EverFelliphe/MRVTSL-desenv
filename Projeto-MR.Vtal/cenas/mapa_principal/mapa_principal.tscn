@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://imagens/joy_stick/pixil-frame-0 (4).png" type="Texture" id=1]
 [ext_resource path="res://cenas/Jogador/Jogador.tscn" type="PackedScene" id=2]
@@ -127,6 +127,49 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 2, 2 ), Vector2( 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=32]
+resource_name = "clube"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1449.52, 872.793 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "final_1"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -890.059, 106.513 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+
 [sub_resource type="Animation" id=13]
 resource_name = "mover"
 tracks/0/type = "value"
@@ -190,6 +233,15 @@ height = 3.99999
 
 [sub_resource type="CircleShape2D" id=9]
 radius = 6.0
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 30, 10 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 62.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 22.5, 7 )
 
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 3.5, 30.75 )
@@ -329,7 +381,7 @@ scale = Vector2( 0.949037, 1 )
 
 [node name="Personagem" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 141, 208 )
+position = Vector2( 142, 217 )
 rotation = -0.000547229
 
 [node name="Camera2D" type="Camera2D" parent="Personagem"]
@@ -340,6 +392,8 @@ anims/RESET = SubResource( 12 )
 anims/area_2 = SubResource( 27 )
 anims/area_desb = SubResource( 15 )
 anims/bar_desbloq = SubResource( 26 )
+anims/clube = SubResource( 32 )
+anims/final_1 = SubResource( 31 )
 anims/mover = SubResource( 13 )
 anims/mover_2 = SubResource( 18 )
 anims/teste-1 = SubResource( 24 )
@@ -375,7 +429,7 @@ texture = ExtResource( 5 )
 position = Vector2( -128, -34 )
 
 [node name="PredioVtal" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
-polygon = PoolVector2Array( -32, -73, 306, -71, 306, 123, 306, 128, 320, 128, 320, 170, 320, 180, 318, 180, 318, 188, 314, 188, 314, 192, 312, 192, 312, 194, 304, 194, 304, 192, 302, 192, 301, 188, 253, 188, 251.307, 193.271, 241, 193, 239, 188, 218, 187, 215, 194, 202, 194, 193, 183, 196, 147, 99, 148, 79, 166, -12, 165, -31, 146, -31.9644, 1.35904 )
+polygon = PoolVector2Array( -32, -73, 306, -71, 306, 123, 306, 128, 320, 128, 320, 170, 320, 180, 318, 180, 318, 188, 314, 188, 314, 192, 312, 192, 312, 194, 304, 194, 304, 192, 302, 192, 301, 188, 253, 188, 251.307, 193.271, 241, 193, 239, 188, 218, 187, 215, 194, 202, 194, 193, 183, 196, 147, 153, 147, 150, 84, 102, 82, 99, 148, 79, 166, -12, 165, -31, 146, -31.9644, 1.35904 )
 
 [node name="Poste" type="CollisionShape2D" parent="Mapa_detalhes/Colisoes"]
 position = Vector2( 208, 339 )
@@ -622,7 +676,7 @@ polygon = PoolVector2Array( -638, -130, -633, -126, -512, -125, -511, -135, -512
 
 [node name="mercado" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
 position = Vector2( 128, 34 )
-polygon = PoolVector2Array( -1152, -163, -1153, -511, -577, -512, -577, -193, -781, -192, -782, -161, -833, -160, -1150, -159 )
+polygon = PoolVector2Array( -1152, -163, -1153, -511, -577, -512, -577, -193, -781, -192, -782, -161, -833, -160, -958, -161, -959, -208, -1021, -208, -1024, -160, -1150, -159 )
 
 [node name="bar" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
 position = Vector2( -2, 1 )
@@ -673,9 +727,27 @@ polygon = PoolVector2Array( -1020, -121, -1020, -62, -996, -62, -995, -122, -999
 [node name="Mesa" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
 polygon = PoolVector2Array( -721, -1139, -721, -1122, -716, -1106, -714, -1093, -718, -1087, -711, -1087, -707, -1095, -699, -1095, -694, -1088, -689, -1086, -686, -1093, -683, -1098, -655, -1101, -657, -1088, -648, -1086, -644, -1093, -637, -1093, -632, -1087, -628, -1086, -626, -1113, -621, -1132, -622, -1140, -628, -1140, -636, -1125, -640, -1125, -640, -1140, -656, -1147, -656, -1152, -661, -1156, -660, -1162, -660, -1174, -670, -1180, -674, -1181, -685, -1171, -685, -1160, -683, -1156, -689, -1149, -703, -1139, -704, -1126, -709, -1126, -713, -1137, -717, -1141 )
 
+[node name="mercado2" type="Area2D" parent="Mapa_detalhes/Colisoes"]
+position = Vector2( -863, -156 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa_detalhes/Colisoes/mercado2"]
+shape = SubResource( 29 )
+
 [node name="Mesa2" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
 position = Vector2( 95, 96 )
 polygon = PoolVector2Array( -721, -1139, -721, -1122, -716, -1106, -714, -1093, -718, -1087, -711, -1087, -707, -1095, -699, -1095, -694, -1088, -689, -1086, -686, -1093, -683, -1098, -655, -1101, -657, -1088, -648, -1086, -644, -1093, -637, -1093, -632, -1087, -628, -1086, -626, -1113, -621, -1132, -622, -1140, -628, -1140, -636, -1125, -640, -1125, -640, -1140, -656, -1147, -656, -1152, -661, -1156, -660, -1162, -660, -1174, -670, -1180, -674, -1181, -685, -1171, -685, -1160, -683, -1156, -689, -1149, -703, -1139, -704, -1126, -709, -1126, -713, -1137, -717, -1141 )
+
+[node name="clube2" type="Area2D" parent="Mapa_detalhes/Colisoes"]
+position = Vector2( 1024, -170 )
+
+[node name="clube2" type="CollisionShape2D" parent="Mapa_detalhes/Colisoes/clube2"]
+shape = SubResource( 30 )
+
+[node name="vtal" type="Area2D" parent="."]
+position = Vector2( 123, 118 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vtal"]
+shape = SubResource( 33 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 753, 763 )
@@ -792,7 +864,6 @@ one_shot = true
 one_shot = true
 
 [node name="Quest" type="Timer" parent="."]
-wait_time = 2.0
 one_shot = true
 
 [node name="sit_2" type="Timer" parent="."]
@@ -850,6 +921,23 @@ anims/RESET = SubResource( 16 )
 anims/sumir = SubResource( 17 )
 anims/sumir_2 = SubResource( 28 )
 
+[node name="club" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="sumir_2_3" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="final" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="Mapa_detalhes/Colisoes/mercado2" to="." method="_on_mercado2_body_entered"]
+[connection signal="body_entered" from="Mapa_detalhes/Colisoes/clube2" to="." method="_on_clube2_body_entered"]
+[connection signal="body_entered" from="Mapa_detalhes/Colisoes/clube2" to="Personagem" method="_on_clube2_body_entered"]
+[connection signal="body_entered" from="vtal" to="." method="_on_vtal_body_entered"]
+[connection signal="body_entered" from="vtal" to="Personagem" method="_on_vtal_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Personagem" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Situacao" to="." method="_on_Situacao_body_entered"]
@@ -877,10 +965,13 @@ anims/sumir_2 = SubResource( 28 )
 [connection signal="timeout" from="sit_2" to="." method="_on_sit_2_timeout"]
 [connection signal="body_entered" from="situation_2" to="." method="_on_situation_2_body_entered"]
 [connection signal="body_entered" from="situation_2" to="Personagem" method="_on_situation_2_body_entered"]
-[connection signal="body_entered" from="mini_game_1" to="." method="_on_mini_game_1_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="." method="_on_Area2D2_body_entered"]
+[connection signal="body_entered" from="mini_game_1" to="." method="_on_mini_game_1_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="Personagem" method="_on_mini_game_1_body_entered"]
 [connection signal="timeout" from="bar_desbloq" to="." method="_on_bar_desbloq_timeout"]
 [connection signal="timeout" from="nivel_2" to="." method="_on_nivel_2_timeout"]
 [connection signal="timeout" from="area_desb_3" to="." method="_on_area_desb_3_timeout"]
 [connection signal="timeout" from="sumir_2" to="." method="_on_sumir_2_timeout"]
+[connection signal="timeout" from="club" to="." method="_on_club_timeout"]
+[connection signal="timeout" from="sumir_2_3" to="." method="_on_sumir_2_3_timeout"]
+[connection signal="timeout" from="final" to="." method="_on_final_timeout"]

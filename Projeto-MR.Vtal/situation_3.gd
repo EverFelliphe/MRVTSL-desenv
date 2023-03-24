@@ -23,7 +23,7 @@ func _ready():
 	$transition.hide()
 	$mission_sec.hide()
 	match Global.current_nivel:
-		Global.state_nivel.N2:
+		Global.state_nivel.N4:
 			print('ww')
 			$mission_sec.queue_free()
 	match Global.current_state:

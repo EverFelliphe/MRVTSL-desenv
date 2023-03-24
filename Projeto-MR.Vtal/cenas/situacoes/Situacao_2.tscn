@@ -386,7 +386,6 @@ position = Vector2( 460, 563 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 7 )
 animation = "direita"
-frame = 3
 playing = true
 flip_h = true
 
@@ -600,7 +599,7 @@ scale = Vector2( 0.8, 0.8 )
 [node name="excl_mini_game" type="AnimatedSprite" parent="."]
 position = Vector2( 873, 364 )
 frames = SubResource( 21 )
-frame = 6
+frame = 5
 playing = true
 flip_v = true
 
@@ -608,6 +607,7 @@ flip_v = true
 one_shot = true
 
 [connection signal="body_entered" from="saida" to="." method="_on_saida_body_entered"]
+[connection signal="body_entered" from="saida" to="Personagem" method="_on_saida_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="atencao/passar" to="." method="_on_passar_pressed"]
 [connection signal="pressed" from="parabens/passar" to="." method="_on_passar_pressed"]

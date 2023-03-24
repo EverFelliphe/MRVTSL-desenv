@@ -80,10 +80,10 @@ func _ready():
 					else: pass
 				Global.state_nivel.N4:
 						if j == 0 :
-							print("xx")
-							$nivel_2.start()
+							$Quest.start()
 							Global.cutscene_index = 1
 						else: pass
+				
 			
 	 
 	match Global.current_area:
@@ -140,6 +140,14 @@ func _on_passar_pressed(): #carrega dialogo com natalia
 		$dialogo/Dialogo/Timer2.start()
 		$Personagem/Camera2D/AnimationPlayer.play("bar_desbloq")
 		$bar_desbloq.start()
+	elif n == 10:
+		$Personagem/Camera2D/AnimationPlayer.play("clube")
+		$club.start()
+		$dialogo.hide()
+	elif n ==12:
+		$Personagem/Camera2D/AnimationPlayer.play("final_1")
+		$final.start()
+		$dialogo.hide()
 #	elif n == 6:
 #		$Personagem/Camera2D/AnimationPlayer.play("mover_2")
 #		$dialogo.hide()
@@ -219,10 +227,8 @@ func _on_mini_game_1_body_entered(body):
 	get_tree().change_scene("res://cenas/flappy/flappy.tscn")
 
 func _on_situation_2_body_entered(body):
-	if current_state == Global.State.Situacao1_finish:
-		get_tree().change_scene("res://cenas/situacoes/Situacao_2.tscn")
-	else:
-		pass
+	get_tree().change_scene("res://cenas/situacoes/Situacao_2.tscn")
+	
 
 func _on_bar_desbloq_timeout():
 	$Personagem/Camera2D/AnimationPlayer.play_backwards("bar_desbloq")
@@ -237,23 +243,49 @@ func _on_nivel_2_timeout():
 
 func _on_area_desb_3_timeout():
 	$sumir.play("sumir_2")
-	$sumir_2.start()
+	$sumir_2_3.start()
 
 func _on_sumir_2_timeout():
 	$Personagem/Camera2D/AnimationPlayer.play_backwards("area_2")
-	$area_reverso.start() 
-	$Personagem.show()
-	$Sprite2.queue_free()
-	Global.current_area = Global.state_areas.AREA_3
 
 
-func _on_Area2D2_body_entered(body):
-	if Global.current_state==Global.State.Final:
-		get_tree().change_scene("res://prédio_vtal.tscn")
-	else: pass
-
+#
+#func _on_Area2D2_body_entered(body):
+#	if Global.current_state==Global.State.Final:
+#		get_tree().change_scene("res://prédio_vtal.tscn")
+#	else: pass
+#
 
 
 
 func _on_final_timeout():
-	pass # Replace with function body.
+	$Personagem/Camera2D/AnimationPlayer.play_backwards("final_1")
+
+func _on_mercado2_body_entered(body):
+	get_tree().change_scene("res://mercado.tscn")
+
+
+func _on_clube2_body_entered(body):
+	
+	get_tree().change_scene("res://cenas/situacoes/situation_3.tscn")
+
+
+func _on_club_timeout():
+	$Personagem/Camera2D/AnimationPlayer.play_backwards("clube")
+	Global.speed = 250
+
+
+func _on_vtal_body_entered(body):
+	match current_state:
+		Global.State.Final:
+			get_tree().change_scene("res://prédio_vtal.tscn")
+
+
+
+func _on_sumir_2_3_timeout():
+		
+		$Personagem.show()
+		$Sprite2.queue_free()
+		Global.current_area = Global.state_areas.AREA_3
+		$area_reverso.start() 
+		$sumir_2.start()

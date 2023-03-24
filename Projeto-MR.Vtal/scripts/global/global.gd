@@ -79,6 +79,10 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 		5: "nesta nova area, voce enfrentara novas situações éticas com sutiliezas e maiores complexidade e terá outros minigames/situações secundarias para evoluir cada vez mais",
 		6: "A próxima missão que voce enfrentara esta no bar da cidade, ela esta indicada por uma exclamação dentro do bar e este será indicado por uma seta.  ",
 		7: "esta seta indicara o caminho para bar, siga ela e chegua ate a proxima situação. ",
+		8:"Você esta indo bem, parabéns. Conseguiu liberara a ultima area do mapa",
+		9:"A partir de agora tome mais cuidado com suas ações, pois quanto maior o seu cargo maior o impacto que suas ações causarão.",
+		10:"Vejo que após todos estes desafios enfrentados, você se provou ético e digno de se tornar o Rei da fibra. Como ultima mssão volte para o prédio da v.tal, onde tudo começou  ",
+		11:"a partir de agora você sera capaz de entrar nele e após isso veja o que acontece",
 	}
 }
 enum state_situations {INIT,SITUATION_1, SITUATION_2,  SITUATION_3}
