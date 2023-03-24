@@ -73,12 +73,12 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 	"nathalia": {
 		0: "Olá, eu sou a Nathália, e sou funcionária da Vtal! E assim como o Fabrício, te auxiliarei na sua jornada. Te ajudarei passando instruções sobre o que fazer ao longo da sua jornada, por meio dessas ligações!",
 		1: "Como sua primeira tarefa, precisamos que você instale a fibra ótica de um cliente na casa do quarteirão abaixo!",
-		2: "Parabéns pela sua promoção! Agora, você se tornou o duque da fibra, e está cada vez mais perto de se tornar o rei das fibras.",
-		3: "Agora, para comemorar, a bebida é por conta da casa! Vá até o bar, acima do prédio da V.Tal, para pegar sua merecida breja!",
-		4: "teste3",
-		5: "teste4",
-		6: "teste 5",
-		7: "teste 6",
+		2: "Olá novamente, estou aqui para explicar como o jogo irá fluir daqui para frente",
+		3: "A partir de agora você precisará realizar ass missões secundarias/minigames indicados pelas exclamações verdes, para passar de nível e liberar a próxima area com novas situações éticas e recompensas para desbloquear ",
+		4: "Parabéns, voce conseguiun liberar uma nova area e esta mais perto de ser o rei da fibra",
+		5: "nesta nova area, voce enfrentara novas situações éticas com sutiliezas e maiores complexidade e terá outros minigames/situações secundarias para evoluir cada vez mais",
+		6: "A próxima missão que voce enfrentara esta no bar da cidade, ela esta indicada por uma exclamação dentro do bar e este será indicado por uma seta.  ",
+		7: "esta seta indicara o caminho para bar, siga ela e chegua ate a proxima situação. ",
 	}
 }
 enum state_situations {INIT,SITUATION_1, SITUATION_2,  SITUATION_3}

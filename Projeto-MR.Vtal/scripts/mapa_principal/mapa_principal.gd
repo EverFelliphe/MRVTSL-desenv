@@ -7,7 +7,6 @@ var nivel_2 = Global.nivel_2#verifica se o player passou de nível para iniciar 
 var current_state = Global.current_state
 var i = Global.call_index
 var j = Global.cutscene_index
-
 func _ready(): 
 	pass
 	
@@ -43,7 +42,7 @@ func _ready():
 				$sec_mission.show()
 				$Transition.show()
 				$Transition/Fill/animation.play_backwards("transicao")
-#				$Quest.start()
+				$Quest.start()
 			else:
 				$Situacao.queue_free()
 				$excl.queue_free()
@@ -79,6 +78,12 @@ func _ready():
 						$nivel_2.start()
 						Global.cutscene_index = 1
 					else: pass
+				Global.state_nivel.N4:
+						if j == 0 :
+							print("xx")
+							$nivel_2.start()
+							Global.cutscene_index = 1
+						else: pass
 			
 	 
 	match Global.current_area:
@@ -130,16 +135,16 @@ func _on_passar_pressed(): #carrega dialogo com natalia
 		$Personagem/Camera2D/AnimationPlayer.play("mover")
 		$dialogo.hide()
 		$dialogo/Dialogo/Timer1.start()
-	elif n == 4:
+	elif n == 8:
 		$dialogo.hide()
 		$dialogo/Dialogo/Timer2.start()
 		$Personagem/Camera2D/AnimationPlayer.play("bar_desbloq")
 		$bar_desbloq.start()
-	elif n == 6:
-		$Personagem/Camera2D/AnimationPlayer.play("mover_2")
-		$dialogo.hide()
-		$sit_2.start()
-	elif n == 8:
+#	elif n == 6:
+#		$Personagem/Camera2D/AnimationPlayer.play("mover_2")
+#		$dialogo.hide()
+#		$sit_2.start()
+	elif n == 4:
 		$dialogo.hide()
 		$dialogo/Dialogo/Timer2.start()
 	
@@ -185,7 +190,7 @@ func _on_nivel_1_timeout():#ao subir de nivel inicia uma cutscene para mostrar a
 	$area_desbloqueada.start()
 
 func _on_area_desbloqueada_timeout(): # mostra os cones desaparecendo  e da queue free neles para que de para entrar na area
-	$Sprite/AnimationPlayer.play("sumir")
+	$sumir.play("sumir")
 	$Sprite/StaticBody2D.queue_free()
 	$nivel_1_2.start()
 	
@@ -225,13 +230,13 @@ func _on_bar_desbloq_timeout():
 
 func _on_nivel_2_timeout():
 	Global.velocity(0)
-#	$Personagem.hide()
+	$Personagem.hide()
 	$Personagem/Camera2D/AnimationPlayer.play("area_2")
 	$area_desb_3.start()
 
 
 func _on_area_desb_3_timeout():
-	$Sprite/AnimationPlayer.play("sumir_2")
+	$sumir.play("sumir_2")
 	$sumir_2.start()
 
 func _on_sumir_2_timeout():
@@ -246,3 +251,9 @@ func _on_Area2D2_body_entered(body):
 	if Global.current_state==Global.State.Final:
 		get_tree().change_scene("res://prédio_vtal.tscn")
 	else: pass
+
+
+
+
+func _on_final_timeout():
+	pass # Replace with function body.
