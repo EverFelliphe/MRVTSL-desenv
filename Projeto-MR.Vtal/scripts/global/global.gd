@@ -2,7 +2,6 @@ extends Node
 
 var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do diamante no tutorial
 	'fabricio': {
-		"nome":"Fabricio",
 		0: "Olá, tudo bem? Prazer em conhecê-lo, eu sou o Fabrício, e trabalho na V.Tal. Estarei aqui para te auxiliar!",
 		1: "Vi no seu currículo que você se formou no Inteli, um dos maiores institutos de tecnologia do mundo, e quem sabe do Brasil!",
 		2: "Vejo em você um enorme potencial para alcançar o cargo mais alto da V.Tal, o Rei das Fibras, e se tornar um grande funcionário da nossa empresa.",
@@ -29,8 +28,6 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 		}
 	},
 	'situacao2':{
-		'nome1':'',
-		'nome2':'',
 		0: {"text": "Ei, cara, há quanto tempo não te vejo! Vi que você foi contratado pela V.Tal, como tem sido o seu trabalho lá até então?", "nome": "???"},
 		1: {"text": "Ah, oi Paulo! Tem sido bem interessante, estou aprendendo bastante. E você, ainda está trabalhando na Boa Comunicações?", "nome": "Mr. V.Tal"},
 		2: {"text": "Sim, sigo firme e forte lá! Inclusive, estamos pensando em lançar um novo produto, que irá explodir a mente dos clientes. E vocês, trabalhando em algo novo?", "nome": "Paulo"},
@@ -53,22 +50,20 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 		9: "Mas enfim, tenho que ir embora para ficar com a família. Até a próxima, foi um prazer te encontrar de novo!",
 	},
 	"situcao3":{
-		'nome1':'',
-		0:'teste1',
-		1:'teste2',
-		2:'teste3',
-		3:'teste4',
-		4:'teste5',
-		5:{
-			1: {"text":"aaaaaaaaa", "feedback":"res://imagens/parabens.png"},
-			2: {"text":"bbbbbbbbb", "feedback":"res://imagens/parabens.png"},
-			3: {"text":"ccccccccc", "feedback":"res://imagens/aten.png"},
-			4: {"text":"ddddddddd", "feedback":"res://imagens/aten.png"}
+		0: {"text": "Olá, tudo bem? Você é o funcionário da V.Tal com quem vim fechar negócios?", "nome": "???"},
+		1: {"text": "Isso mesmo! Eu vim até aqui para poder fechar o contrato com você", "nome": "Mr. V.Tal"},
+		2: {"text": "Ótimo! Prazer em conhecê-lo, me chamo Letícia. E sobre a negociação, antes de fecharmos, eu gostaria de saber sobre alguns dados da Rápida Conexão.", "nome": "Letícia"},
+		3: {"text": "Essas informações são essenciais para que eu possa fechar o contrato. Sei que você é uma pessoa bem influente na empresa, então será que conseguiria me fornecê-las?", "nome": "Letícia"},
+		4: "",
+		5: {"text": "Muito obrigada! Agora, podemos fechar o contrato sem nenhum problema", "nome": "Letícia"},
+		6: {"text": "Eu preciso desses dados para poder fechar o contrato. Infelizmente, não tem outra maneira", "nome": "Letícia"},
+		7: {"text": "Ok. Sem essas informações, não posso fechar o contrato. Então, nossa conversa acabou.", "nome": "Letícia"},
+		8: {
+			1: {"text":"Fornecer dados confidencias de nossos clientes fere o princípio de neutralidade da V.Tal e, assim, viola o código de ética.", "feedback":"res://imagens/parabens.png"},
+			2: {"text":"", "feedback":"res://imagens/parabens.png"},
+			3: {"text":"Parabéns! Mesmo que você não tenha conseguido fechar o contrato, você seguiu fielmente nossos valores éticos! Afinal, entregar dados dos nossos clientes fere o princípio de neutralidade da V.Tal.", "feedback":"res://imagens/aten.png"},
+			4: {"text":"Mesmo que seja importante fechar negócios com um cliente, seguir a ética é sempre a prioridade. Fornecer informações de nossos clientes vai contra o princípio da neutralidade e, por isso, não deve ser feito.", "feedback":"res://imagens/aten.png"}
 		},
-		6: 'sem problemas',
-		7: 'sem problemas',
-		8: 'sem problemas',
-		9: 'sem problemas',
 	},
 	"nathalia": {
 		0: "Olá, eu sou a Nathália, e sou funcionária da Vtal! E assim como o Fabrício, te auxiliarei na sua jornada. Te ajudarei passando instruções sobre o que fazer ao longo da sua jornada, por meio dessas ligações!",

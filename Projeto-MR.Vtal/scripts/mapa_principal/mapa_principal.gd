@@ -71,19 +71,26 @@ func _ready():
 						$mini_game_1.queue_free()
 						$sec_mission.hide()
 						Global.cutscene_index = 1
-					else: pass
+					else: 
+						pass
 				Global.state_nivel.N3:
 					if j == 0 :
 						print("xx")
 						$nivel_2.start()
 						Global.cutscene_index = 1
-					else: pass
+					else: 
+						pass
 				Global.state_nivel.N4:
 						if j == 0 :
 							$Quest.start()
 							Global.cutscene_index = 1
+<<<<<<< Updated upstream
 						else: pass
 				
+=======
+						else:
+							 pass
+>>>>>>> Stashed changes
 			
 	 
 	match Global.current_area:

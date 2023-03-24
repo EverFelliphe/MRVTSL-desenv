@@ -6,14 +6,16 @@ var n = 0 #controle do diálogo
 var timer = Timer.new() #tempo de transição
 var controle_situation = false
 onready var imagem = $atencao #carrega a imagem atenção 
+var controle 
+var i 
 
 func _ready(): 
 	Global.camera_state = Global.StateCameraClamp.Off
 #	$Personagem/Animacao.animation = "cima"
 #	$CanvasLayer.comecar_reverso()
 #	$CanvasLayer.timer() #inicia o tempo e animação reversa acima 
-	$CanvasLayer2/CaixaDialogo/nome.text = dialogo.nome1
-	$CanvasLayer2/CaixaDialogo/conversa.text = dialogo[0] #carrega caixa de diálogo 
+	$CanvasLayer2/CaixaDialogo/conversa.text = dialogo[0]["text"] #carrega caixa de diálogo 
+	$CanvasLayer2/CaixaDialogo/nome.text = dialogo[0]["nome"]
 	$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha1.hide()
 	$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha2.hide()
 	$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha3.hide()
@@ -24,7 +26,10 @@ func _ready():
 	$mission_sec.hide()
 	match Global.current_nivel:
 		Global.state_nivel.N4:
+<<<<<<< Updated upstream
 			print('ww')
+=======
+>>>>>>> Stashed changes
 			$mission_sec.queue_free()
 	match Global.current_state:
 		Global.State.Situacao3_finish:
@@ -33,96 +38,109 @@ func _ready():
 	
 func _on_Button_pressed(): #após a apresentação da pergunta as escolhas aparecem 
 	n += 1 
-	if n == 5:
+	print(n)
+	if n == 4:
 		$CanvasLayer2/CaixaDialogo/conversa.hide()
 		$CanvasLayer2/CaixaDialogo/Button.hide()
+		$CanvasLayer2/CaixaDialogo/nome.hide()
 		$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha1.show()
 		$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha2.show()
 		$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha3.show()
 		$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha4.show()
-		print(n)
 		
+#	elif n == 7:
+#		$CanvasLayer2/CaixaDialogo/conversa.text = dialogo[n]["text"]
+#		$CanvasLayer2/CaixaDialogo/nome.text = dialogo[n]["nome"]
+#		n = 3
+
+
 		
-	elif n >=10:
+	elif n >= 5:
 		$CanvasLayer2/CaixaDialogo.hide()
-		$finalizar_dialogo.start()
-#		$AnimationPlayer.play_backwards("situation_3")
-		print("sucesso")
-		
+		if controle:
+			$CanvasLayer3/parabens.show()
+		else:
+			$CanvasLayer3/atencao.show()
+
 	else:
-		$CanvasLayer2/CaixaDialogo/conversa.text = dialogo[n]
+		$CanvasLayer2/CaixaDialogo/conversa.text = dialogo[n]["text"]
+		$CanvasLayer2/CaixaDialogo/nome.text = dialogo[n]["nome"]
 		
 	
 func _on_Escolha1_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
-	dialogo = dialogo[n][1]
-	Global.pontuacao += 2
+	Global.pontuacao += 0
 	clear() 
-	$CanvasLayer2/CaixaDialogo.hide()
-	$CanvasLayer3/parabens.visible = true
-	$CanvasLayer3/parabens/feedback.text = dialogo.text
+	$CanvasLayer3/atencao/feedback.text = dialogo[8][1]["text"]
+#	controle = false
 	n += 1
+	$CanvasLayer2/CaixaDialogo/conversa.show()
+	$CanvasLayer2/CaixaDialogo/nome.show()
+	$CanvasLayer2/CaixaDialogo/conversa.text = dialogo[n]["text"]
+	$CanvasLayer2/CaixaDialogo/nome.text = dialogo[n]["nome"]
 	
 func _on_Escolha2_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
-	dialogo = dialogo[n][2]
-	Global.pontuacao += 1
-	clear()
-	$CanvasLayer2/CaixaDialogo.hide()
-	$CanvasLayer3/parabens.show()
-	$CanvasLayer3/parabens/feedback.text = dialogo.text
-	n += 2
-	
-func _on_Escolha3_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
-	dialogo = dialogo[n][3]
 	Global.pontuacao += 0
 	clear()
-	$CanvasLayer2/CaixaDialogo.hide()
-	$CanvasLayer3/atencao.show()
-	$CanvasLayer3/atencao/feedback.text = dialogo.text
-	n += 3
+	n = 3
+	$CanvasLayer2/CaixaDialogo/conversa.show()
+	$CanvasLayer2/CaixaDialogo/nome.show()
+	$CanvasLayer2/CaixaDialogo/conversa.text = dialogo[6]["text"]
+	$CanvasLayer2/CaixaDialogo/nome.text = dialogo[6]["nome"]
 	
-func _on_Escolha4_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
-	dialogo = dialogo[n][4]
-	Global.pontuacao += -1
+func _on_Escolha3_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
+	Global.pontuacao += 2
 	clear()
-	$CanvasLayer2/CaixaDialogo.hide()
-	$CanvasLayer3/atencao.show()
-	$CanvasLayer3/atencao/feedback.text = dialogo.text
-	n += 4 #controle de ordem de fala de acordo com o dicionário global 
+	$CanvasLayer3/parabens/feedback.text = dialogo[8][3]["text"]
+	controle = true
+	n += 2
+	$CanvasLayer2/CaixaDialogo/conversa.show()
+	$CanvasLayer2/CaixaDialogo/nome.show()
+	$CanvasLayer2/CaixaDialogo/conversa.text = dialogo[n + 1]["text"]
+	$CanvasLayer2/CaixaDialogo/nome.text = dialogo[n + 1]["nome"]
+	 
+func _on_Escolha4_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
+	Global.pontuacao += 0
+	clear()
+	$CanvasLayer3/atencao/feedback.text = dialogo[8][4]["text"]
+	controle = false
+	n = 4 #controle de ordem de fala de acordo com o dicionário global 
+	$CanvasLayer2/CaixaDialogo/conversa.show()
+	$CanvasLayer2/CaixaDialogo/nome.show()
+	$CanvasLayer2/CaixaDialogo/conversa.text = dialogo[n + 1]["text"]
+	$CanvasLayer2/CaixaDialogo/nome.text = dialogo[n + 1]["nome"]
 	
 func clear(): #encerra a cena 
-	$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha1.queue_free()
-	$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha2.queue_free()
-	$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha3.queue_free()
-	$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha4.queue_free()
+	$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha1.hide()
+	$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha2.hide()
+	$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha3.hide()
+	$CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha4.hide()
 	$CanvasLayer2/CaixaDialogo/Button.show()
 	
 func _on_passar_pressed(): #volta o personagem para o mapa 
-	$CanvasLayer3/atencao.hide()
-	$CanvasLayer3/parabens.hide()
-	dialogo = Global.falas['situcao3']
-	$finalizar_dialogo/resposta.start()
+	$finalizar_dialogo.start()
+	$CanvasLayer3/atencao.queue_free()
+	$CanvasLayer3/parabens.queue_free()
 
 func _on_resposta_timeout():
 	$CanvasLayer2/CaixaDialogo.show()
 	$CanvasLayer2/CaixaDialogo/conversa.show()
 	$CanvasLayer2/CaixaDialogo/conversa.text = dialogo[n]
 	n += (10-n)
+	
 func _on_Area2D_body_entered(body):
+	$transition.show()
+	$AnimationPlayer.play("situation_3")
 	$start_situation.start()
-
+	Global.speed = 0
 
 func _on_saida_clube_body_entered(body):
 	Global.atualizar_pontuacao(pontuacao)
 	Global.current_state = Global.State.Situacao3_finish
 	get_tree().change_scene("res://cenas/mapa_principal/mapa_principal.tscn") 
 
-
 func _on_start_situation_timeout():
-	$transition.show()
 	$Node2D.queue_free()
-	$AnimationPlayer.play("situation_3")
 	$animation_1.start()
-
 
 func _on_animation_1_timeout():
 	$NPC.show()
@@ -133,9 +151,8 @@ func _on_animation_1_timeout():
 func _on_start_dialogo_timeout():
 	$CanvasLayer2/CaixaDialogo.show()
 
-
 func _on_finalizar_dialogo_timeout():
-	$AnimationPlayer.play_backwards("npc_enemy")
+	$AnimationPlayer.play("npc_enemy_backwards")
 	$"transição_reverse".start()
 
 func _on_transio_reverse_timeout():
@@ -143,6 +160,7 @@ func _on_transio_reverse_timeout():
 	Global.current_state = Global.State.Situacao3_finish
 	$AnimationPlayer.play_backwards("situation_3")
 	$mission_sec.show()
+	Global.speed = 250
 
 func _on_mission_sec_body_entered(body):
 	match Global.current_state:

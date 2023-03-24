@@ -11,8 +11,6 @@ func _ready():
 	$mini_game_2/CollisionShape2D.set_disabled(true)
 	Global.camera_state = Global.StateCameraClamp.On
 	$Personagem.position = Global.posicao_bar
-#	$Personagem/Animacao.animation = ""
-
 	$Personagem.animacao.animation = "cima"
 	$CanvasLayer.comecar_reverso()
 	$CanvasLayer.timer() #inicia o tempo e animação reversa acima 

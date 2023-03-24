@@ -6,9 +6,8 @@
 [ext_resource path="res://excl.tscn" type="PackedScene" id=4]
 [ext_resource path="res://imagens/spritesheet_player/arrow_right_icon_133719.png" type="Texture" id=5]
 [ext_resource path="res://fontes/PTSansNarrow-Regular.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://fontes/OldSchoolAdventures-42j9.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://imagens/parabens.png" type="Texture" id=8]
-[ext_resource path="res://imagens/icon.png" type="Texture" id=9]
+[ext_resource path="res://cenas/npc.tres" type="SpriteFrames" id=9]
 [ext_resource path="res://imagens/aten.png" type="Texture" id=10]
 [ext_resource path="res://imagens/baixados-removebg-preview.png" type="Texture" id=11]
 [ext_resource path="res://imagens/clube2 (1) (1).png" type="Texture" id=12]
@@ -16,7 +15,8 @@
 [ext_resource path="res://exclamação_sec.png" type="Texture" id=14]
 
 [sub_resource type="CapsuleShape2D" id=5]
-height = 42.0
+radius = 12.0
+height = 54.0
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -160,6 +160,54 @@ tracks/5/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("NPC:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("NPC:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "direita" ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("NPC:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("NPC:flip_h")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=10]
 resource_name = "npc_enemy"
@@ -171,10 +219,98 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.4 ),
+"times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -197, 387 ), Vector2( -94, 379 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NPC:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("NPC:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "direita", "direita" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("NPC:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "npc_enemy_backwards"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("NPC:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -94, 379 ), Vector2( -197, 387 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NPC:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("NPC:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("NPC:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -241,26 +377,27 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 
+[sub_resource type="DynamicFont" id=22]
+size = 70
+font_data = ExtResource( 6 )
+
 [sub_resource type="DynamicFont" id=11]
+size = 53
 font_data = ExtResource( 6 )
 
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 65, 8.5 )
 
-[sub_resource type="DynamicFont" id=6]
-size = 25
+[sub_resource type="DynamicFont" id=9]
+size = 19
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=7]
-size = 20
+[sub_resource type="DynamicFont" id=6]
+size = 30
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 10
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=9]
-size = 19
+size = 35
 font_data = ExtResource( 6 )
 
 [sub_resource type="RectangleShape2D" id=13]
@@ -299,7 +436,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node2D2" type="Node2D"]
+[node name="situation_3" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -352,6 +489,7 @@ color = Color( 0, 0, 0, 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )
 anims/npc_enemy = SubResource( 10 )
+anims/npc_enemy_backwards = SubResource( 21 )
 anims/situation_3 = SubResource( 4 )
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
@@ -368,22 +506,21 @@ scale = Vector2( 0.219298, 0.191462 )
 normal = ExtResource( 5 )
 
 [node name="feedback" type="Label" parent="CanvasLayer3/parabens"]
-margin_left = -385.0
+margin_left = -363.0
 margin_top = 8.0
-margin_right = -69.0
-margin_bottom = 133.0
-rect_scale = Vector2( 3.01222, 3.91155 )
+margin_right = 543.0
+margin_bottom = 564.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.678431, 0.647059, 0.647059, 1 )
+custom_fonts/font = SubResource( 22 )
 text = "teste"
 align = 3
 valign = 1
 autowrap = true
 
 [node name="atencao" type="Sprite" parent="CanvasLayer3"]
-visible = false
 position = Vector2( 539, 195 )
-scale = Vector2( 0.49862, 0.592794 )
+scale = Vector2( 0.5, 0.593 )
 texture = ExtResource( 10 )
 
 [node name="passar" type="TouchScreenButton" parent="CanvasLayer3/atencao"]
@@ -392,15 +529,14 @@ scale = Vector2( 0.219298, 0.191462 )
 normal = ExtResource( 5 )
 
 [node name="feedback" type="Label" parent="CanvasLayer3/atencao"]
-margin_left = -485.0
-margin_top = 153.0
-margin_right = -214.0
-margin_bottom = 243.0
-rect_scale = Vector2( 3.01222, 3.91155 )
+margin_left = -474.0
+margin_top = 139.966
+margin_right = 310.0
+margin_bottom = 586.966
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.678431, 0.647059, 0.647059, 1 )
 custom_fonts/font = SubResource( 11 )
-text = "teste"
+text = "Mesmo que seja importante fechar negócios com um cliente, seguir a ética é sempre a prioridade. Fornecer informações de nossos clientes vai contra o princípio da neutralidade e, por isso, não deve ser feito."
 align = 3
 valign = 1
 autowrap = true
@@ -441,13 +577,58 @@ margin_top = 424.0
 margin_right = 1024.0
 margin_bottom = 607.0
 
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/CaixaDialogo"]
+margin_left = 10.0
+margin_top = 9.0
+margin_right = 949.0
+margin_bottom = 133.0
+rect_scale = Vector2( 1.4, 1.4 )
+
+[node name="Escolha1" type="LinkButton" parent="CanvasLayer2/CaixaDialogo/VBoxContainer"]
+modulate = Color( 0.478431, 0.0784314, 0.0784314, 1 )
+margin_right = 939.0
+margin_bottom = 26.0
+focus_mode = 2
+custom_fonts/font = SubResource( 9 )
+text = "a) Entregar os dados, já que não tem nenhum problemas em divulgá-los."
+underline = 1
+
+[node name="Escolha2" type="LinkButton" parent="CanvasLayer2/CaixaDialogo/VBoxContainer"]
+modulate = Color( 0.541176, 0.160784, 0.160784, 1 )
+margin_top = 30.0
+margin_right = 939.0
+margin_bottom = 56.0
+focus_mode = 2
+custom_fonts/font = SubResource( 9 )
+text = "b) Oferecer uma alternativa que não envolva fornecer os dados da Rápida Conexão."
+underline = 1
+
+[node name="Escolha3" type="LinkButton" parent="CanvasLayer2/CaixaDialogo/VBoxContainer"]
+modulate = Color( 0.541176, 0.160784, 0.160784, 1 )
+margin_top = 60.0
+margin_right = 939.0
+margin_bottom = 86.0
+focus_mode = 2
+custom_fonts/font = SubResource( 9 )
+text = "c) Não fornecer os dados, mesmo que isso signifique perder o contrato."
+underline = 1
+
+[node name="Escolha4" type="LinkButton" parent="CanvasLayer2/CaixaDialogo/VBoxContainer"]
+modulate = Color( 0.541176, 0.160784, 0.160784, 1 )
+margin_top = 90.0
+margin_right = 939.0
+margin_bottom = 116.0
+focus_mode = 2
+custom_fonts/font = SubResource( 9 )
+text = "d) Fornecer as informações, já que fechar o contrato com a cliente é a prioridade."
+underline = 1
+
 [node name="conversa" type="Label" parent="CanvasLayer2/CaixaDialogo"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 22.0
-margin_top = 51.0
-margin_right = 964.0
-margin_bottom = 192.0
-rect_scale = Vector2( 0.947278, 0.752094 )
+margin_left = 12.0
+margin_top = 48.0
+margin_right = 1005.0
+margin_bottom = 163.0
 custom_fonts/font = SubResource( 6 )
 text = "tttttttttttttttt"
 align = 3
@@ -461,81 +642,17 @@ margin_bottom = 183.0
 texture_normal = ExtResource( 5 )
 expand = true
 
-[node name="conversa2" type="Label" parent="CanvasLayer2/CaixaDialogo"]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 26.0
-margin_top = 167.0
-margin_right = 968.0
-margin_bottom = 308.0
-rect_scale = Vector2( 0.947, 0.752 )
-rect_pivot_offset = Vector2( -17, -459 )
-custom_fonts/font = SubResource( 7 )
-align = 3
-autowrap = true
-
 [node name="nome" type="Label" parent="CanvasLayer2/CaixaDialogo"]
-margin_left = 12.0
-margin_top = 7.0
-margin_right = 59.0
-margin_bottom = 26.0
-rect_scale = Vector2( 2.62044, 2.48758 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_left = 11.0
+margin_top = 1.0
+margin_right = 92.0
+margin_bottom = 47.0
+custom_colors/font_color = Color( 0.482353, 0.0470588, 0.0470588, 1 )
 custom_fonts/font = SubResource( 8 )
-text = "te"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/CaixaDialogo"]
-margin_left = 8.0
-margin_top = 50.0
-margin_right = 947.0
-margin_bottom = 174.0
-
-[node name="Escolha1" type="LinkButton" parent="CanvasLayer2/CaixaDialogo/VBoxContainer"]
-modulate = Color( 0.45098, 0.368627, 0.368627, 1 )
-margin_right = 939.0
-margin_bottom = 26.0
-focus_mode = 2
-custom_fonts/font = SubResource( 9 )
-text = "a) Recusar a oferta e informar o Compliance sobre o acontecimento"
-underline = 1
-
-[node name="Escolha2" type="LinkButton" parent="CanvasLayer2/CaixaDialogo/VBoxContainer"]
-modulate = Color( 0.45098, 0.368627, 0.368627, 1 )
-margin_top = 30.0
-margin_right = 939.0
-margin_bottom = 56.0
-focus_mode = 2
-custom_fonts/font = SubResource( 9 )
-text = "b) Recusar a oferta e instalar a fibra da Tim"
-underline = 1
-
-[node name="Escolha3" type="LinkButton" parent="CanvasLayer2/CaixaDialogo/VBoxContainer"]
-modulate = Color( 0.45098, 0.368627, 0.368627, 1 )
-margin_top = 60.0
-margin_right = 939.0
-margin_bottom = 86.0
-focus_mode = 2
-custom_fonts/font = SubResource( 9 )
-text = "c) Pegar o dinheiro, mas não instalar a fibra e usar para auxiliar na renda da sua família"
-underline = 1
-
-[node name="Escolha4" type="LinkButton" parent="CanvasLayer2/CaixaDialogo/VBoxContainer"]
-modulate = Color( 0.45098, 0.368627, 0.368627, 1 )
-margin_top = 90.0
-margin_right = 939.0
-margin_bottom = 116.0
-focus_mode = 2
-custom_fonts/font = SubResource( 9 )
-text = "d) Aceitar o dinheiro e instalar a fibra"
-underline = 1
-
-[node name="NPC" type="Sprite" parent="."]
-visible = false
-position = Vector2( -197, 387 )
-scale = Vector2( 0.609375, 0.5625 )
-texture = ExtResource( 9 )
+text = "Letícia"
 
 [node name="transição_reverse" type="Timer" parent="."]
-wait_time = 3.5
+wait_time = 1.5
 one_shot = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -605,6 +722,12 @@ frames = SubResource( 20 )
 
 [node name="Node2D2" parent="CanvasLayer" instance=ExtResource( 13 )]
 
+[node name="NPC" type="AnimatedSprite" parent="."]
+position = Vector2( -197, 387 )
+scale = Vector2( 2.4, 2.4 )
+frames = ExtResource( 9 )
+animation = "direita"
+
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="CanvasLayer3/parabens/passar" to="." method="_on_passar_pressed"]
 [connection signal="pressed" from="CanvasLayer3/atencao/passar" to="." method="_on_passar_pressed"]
@@ -614,10 +737,10 @@ frames = SubResource( 20 )
 [connection signal="timeout" from="start_dialogo" to="." method="_on_start_dialogo_timeout"]
 [connection signal="timeout" from="finalizar_dialogo" to="." method="_on_finalizar_dialogo_timeout"]
 [connection signal="timeout" from="finalizar_dialogo/resposta" to="." method="_on_resposta_timeout"]
-[connection signal="pressed" from="CanvasLayer2/CaixaDialogo/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha1" to="." method="_on_Escolha1_pressed"]
 [connection signal="pressed" from="CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha2" to="." method="_on_Escolha2_pressed"]
 [connection signal="pressed" from="CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha3" to="." method="_on_Escolha3_pressed"]
 [connection signal="pressed" from="CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha4" to="." method="_on_Escolha4_pressed"]
+[connection signal="pressed" from="CanvasLayer2/CaixaDialogo/Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="transição_reverse" to="." method="_on_transio_reverse_timeout"]
 [connection signal="body_entered" from="mission_sec" to="." method="_on_mission_sec_body_entered"]

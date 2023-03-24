@@ -2,7 +2,7 @@ extends Node2D
 
 var n = 1
 var dialogo = Global.falas['fabricio'] #chama o dicionario global contendo os dialogos e armazena em uma variavel local
-var limite = len(dialogo) - 1 #define até onde o diálogo vai, para que, após terminar, mude de cena
+var limite = len(dialogo)  #define até onde o diálogo vai, para que, após terminar, mude de cena
 #neste caso chama a seção do fabrício
 func _ready():
 	$caixa/texto.text = dialogo[0]
