@@ -112,5 +112,5 @@ frames = SubResource( 8 )
 wait_time = 2.0
 one_shot = true
 
-[connection signal="timeout" from="timer_hud" to="." method="_on_timer_hud_timeout"]
 [connection signal="timeout" from="timer_hud" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="timer_hud" to="." method="_on_timer_hud_timeout"]

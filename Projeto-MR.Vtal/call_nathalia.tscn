@@ -138,7 +138,6 @@ wait_time = 0.05
 one_shot = true
 
 [node name="pisca" type="Timer" parent="."]
-wait_time = 1.6
 one_shot = true
 
 [connection signal="pressed" from="Sprite/TextureButton" to="." method="_on_TextureButton_pressed"]

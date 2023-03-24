@@ -252,7 +252,7 @@ func _on_nivel_2_timeout():
 
 
 func _on_area_desb_3_timeout():
-	$sumir.play("sumir_2")
+	$sumir_3.play("sumir_2")
 	$sumir_2_3.start()
 
 func _on_sumir_2_timeout():

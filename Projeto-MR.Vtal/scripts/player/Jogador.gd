@@ -168,3 +168,5 @@ func _on_vtal_body_entered(body):
 	posicaox = position.x 
 	posicaoy = position.y +30
 	Global.atualizar_posicao(posicaox,posicaoy)
+
+

@@ -133,8 +133,6 @@ func _on_Area2D_body_entered(body):
 	Global.speed = 0
 
 func _on_saida_clube_body_entered(body):
-	Global.atualizar_pontuacao(pontuacao)
-	Global.current_state = Global.State.Situacao3_finish
 	get_tree().change_scene("res://cenas/mapa_principal/mapa_principal.tscn") 
 
 func _on_start_situation_timeout():
@@ -156,8 +154,8 @@ func _on_finalizar_dialogo_timeout():
 
 func _on_transio_reverse_timeout():
 	$transition.show()
-	Global.current_state = Global.State.Situacao3_finish
 	$AnimationPlayer.play_backwards("situation_3")
+	Global.current_state = Global.State.Situacao3_finish
 	$mission_sec.show()
 	Global.speed = 250
 

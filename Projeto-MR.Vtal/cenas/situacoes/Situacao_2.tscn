@@ -574,7 +574,7 @@ scale = Vector2( 0.8, 0.8 )
 [node name="excl_mini_game" type="AnimatedSprite" parent="."]
 position = Vector2( 873, 364 )
 frames = SubResource( 21 )
-frame = 1
+frame = 5
 playing = true
 flip_v = true
 
@@ -598,4 +598,5 @@ one_shot = true
 [connection signal="timeout" from="transicaoTimer" to="." method="_on_transicaoTimer_timeout"]
 [connection signal="timeout" from="animacao_player" to="." method="_on_animacao_player_timeout"]
 [connection signal="body_entered" from="mini_game_2" to="." method="_on_mini_game_2_body_entered"]
+[connection signal="body_entered" from="mini_game_2" to="Personagem" method="_on_mini_game_2_body_entered"]
 [connection signal="timeout" from="sit_2_volta" to="." method="_on_sit_2_volta_timeout"]

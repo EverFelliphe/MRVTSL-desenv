@@ -28,8 +28,20 @@ func _ready():
 	$Transition.hide()
 	match Global.current_state:
 		Global.State.Situacao2_finish:
+			if Global.current_nivel != Global.state_nivel.N3:
+				$mini_game_2/CollisionShape2D.set_disabled(false)
+				$excl_mini_game.show()
+				$banco.queue_free()
+				$exclamacao.queue_free()
+			else: pass
+	match Global.current_nivel:
+		Global.state_nivel.N3:
+
+			print('ww')
 			$banco.queue_free()
 			$exclamacao.queue_free()
+			$mini_game_2.queue_free()
+			$excl_mini_game.queue_free()
 
 func _on_Situao1_body_entered(body): #quando o jogador entra na área definida inicia a cena 
 	$Timer.start()
@@ -159,7 +171,7 @@ func _on_enemy_timeout():
 	$CaixaDialogo/conversa.text = dialogo[n]
 
 func _on_mini_game_2_body_entered(body):
-	Global.posicao_bar = Vector2($Personagem.position.x, $Personagem.position.y)
+	Global.posicao_bar = Vector2($Personagem.position.x ,($Personagem.position.y + 30))
 	get_tree().change_scene("res://cenas/forca/forca.tscn")
 
 
