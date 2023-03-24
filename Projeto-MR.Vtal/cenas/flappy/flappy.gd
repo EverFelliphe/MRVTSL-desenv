@@ -5,7 +5,7 @@ var status = 0
 var score = 0
 var y = 0.8
 var x = 2
-var meta = 1
+var meta = 10
 
 func _ready():
 	$sair.hide()

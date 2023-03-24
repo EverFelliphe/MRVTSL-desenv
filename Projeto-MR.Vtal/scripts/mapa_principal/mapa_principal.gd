@@ -88,8 +88,7 @@ func _ready():
 
 						else: pass
 
-			
-	 
+
 	match Global.current_area:
 			Global.state_areas.AREA_2:
 				if j!=0:

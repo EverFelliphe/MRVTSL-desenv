@@ -505,7 +505,7 @@ margin_right = 939.0
 margin_bottom = 86.0
 focus_mode = 2
 custom_fonts/font = SubResource( 5 )
-text = "c) Pegar o dinheiro, mas não instalar a fibra e usar para auxiliar na renda da sua família"
+text = "c) Estamos trabalhando para conseguir oferecer um pacote de 1 GB para nossos cliente"
 underline = 1
 
 [node name="Escolha4" type="LinkButton" parent="CaixaDialogo/VBoxContainer"]
