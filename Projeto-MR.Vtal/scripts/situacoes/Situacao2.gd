@@ -7,8 +7,13 @@ var controle_situation = false
 onready var imagem = $atencao #carrega a imagem atenção 
 
 func _ready(): 
+	$excl_mini_game.hide()
+	$mini_game_2/CollisionShape2D.set_disabled(true)
 	Global.camera_state = Global.StateCameraClamp.On
+	$Personagem.position = Global.posicao_bar
 #	$Personagem/Animacao.animation = ""
+
+	$Personagem.animacao.animation = "cima"
 	$CanvasLayer.comecar_reverso()
 	$CanvasLayer.timer() #inicia o tempo e animação reversa acima 
 	$CaixaDialogo/conversa.text = dialogo[0]["text"] #carrega caixa de diálogo 
@@ -54,16 +59,8 @@ func _on_Button_pressed(): #após a apresentação da pergunta as escolhas apare
 	elif n >= 10:
 		$CaixaDialogo.hide()
 		$NPC/NPC/AnimationPlayer.play("sit_2_volta")
-<<<<<<< HEAD
 		$sit_2_volta.start()
 		
-=======
-		Global.current_state = Global.State.Situacao2_finish
-
-<<<<<<< Updated upstream
-=======
->>>>>>> df50a0133f8ba55b90b307bbc80437265f25b159
->>>>>>> Stashed changes
 	else:
 		$CaixaDialogo/conversa.text = dialogo[n]["text"]
 		$CaixaDialogo/nome.text = dialogo[n]["nome"]
@@ -135,6 +132,7 @@ func _on_banco_body_entered(body):
 	$Transition.comecar()
 	$transicaoTimer.start()
 	Global.speed = 0
+	$exclamacao.queue_free()
 	
 func _on_transicaoTimer_timeout():
 	$Transition.comecar_reverso()
@@ -145,7 +143,6 @@ func _on_Timer_timeout(): #carrega caixa de diálogo
 	$Timer.queue_free()
 	$NPC.show()
 	$banco.queue_free()
-	$exclamacao.queue_free()
 	$NPC/NPC/AnimationPlayer.play("sit_2_ida")
 	$animacao_player.start()
 	
@@ -163,15 +160,9 @@ func _on_enemy_timeout():
 	$CaixaDialogo.show()
 	$CaixaDialogo/conversa.text = dialogo[n]
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 func _on_mini_game_2_body_entered(body):
 	Global.posicao_bar = Vector2($Personagem.position.x, $Personagem.position.y)
 	get_tree().change_scene("res://cenas/forca/forca.tscn")
 
 
 
-=======
->>>>>>> df50a0133f8ba55b90b307bbc80437265f25b159
->>>>>>> Stashed changes

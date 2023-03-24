@@ -1,17 +1,38 @@
 extends Node2D
 
-var palavra = 'etica'
+var palavra = 'ETICA'
 var letras_ausentes = []
 var letra 
 var erros
-func _ready():
-	pass
+var acertos = 0
+var current_state = State.playing
 
+enum State {
+	playing
+	game_over
+}
+
+func _ready():
+	$ganhou.hide()
+	$reiniciar.hide()
+	$sair.hide()
+	acertos = 0
+	letras_ausentes = []
+	erros = 0
+	$erros.text = ''
+	$E.hide()
+	$t.hide()
+	$i.hide()
+	$c.hide()
+	$a.hide()
+	palavra = 'ETICA'
+
+func _process(_delta):
+	if acertos == 5:
+		$ganhou.show()
+		$sair.show()
 
 func _on_Button_pressed():
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 	match current_state:
 		State.playing:
 			letra = $letra.text.to_upper()
@@ -67,44 +88,3 @@ func _on_sair_pressed():
 func _on_reiniciar_pressed():
 	_ready()
 	current_state = State.playing
-=======
->>>>>>> Stashed changes
-	letra = $letra.text
-	if palavra.find(letra)!=-1:
-		palavra = palavra.replace(letra, "")
-		if letra =='e':
-			$E.show()
-		if letra =='t':
-			$t.show()
-		if letra =='i':
-			$i.show()
-		if letra =='c':
-			$c.show()
-		if letra =='a':
-			$a.show()
-		
-	else:
-		letras_ausentes.append(letra)
-		$erros.text = str(letras_ausentes)
-		if len(letras_ausentes) == 1:
-			$cabeca.show()
-		elif len(letras_ausentes) == 2:
-			$corpocab.show()
-		elif len(letras_ausentes) == 3:
-			$braco.show()
-		elif len(letras_ausentes) == 4:
-			$spt.show()
-		elif len(letras_ausentes) == 5:
-			$sp1.show()
-		elif len(letras_ausentes) == 6:
-			$inicial.show()
-		elif len(letras_ausentes) == 7:
-			$fim.show()
-			$Button2.show()
-			$Button3.show()
-		
-		
-<<<<<<< Updated upstream
-=======
->>>>>>> df50a0133f8ba55b90b307bbc80437265f25b159
->>>>>>> Stashed changes
