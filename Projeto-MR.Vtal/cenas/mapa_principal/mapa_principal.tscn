@@ -1,21 +1,21 @@
 [gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://imagens/joy_stick/pixil-frame-0 (4).png" type="Texture" id=1]
-[ext_resource path="res://cenas/Jogador/Jogador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://cenas/jogador/jogador.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/mapa_principal/mapa_principal.gd" type="Script" id=3]
 [ext_resource path="res://fontes/PTSansNarrow-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://imagens/mapa_principal/sobreposição.png" type="Texture" id=5]
 [ext_resource path="res://imagens/spritesheet_player/arrow_right_icon_133719.png" type="Texture" id=6]
-[ext_resource path="res://cenas/TransitionNode.tscn" type="PackedScene" id=7]
-[ext_resource path="res://cenas/Jogador/mapa-vtal-5.0.png" type="Texture" id=8]
-[ext_resource path="res://hud.tscn" type="PackedScene" id=9]
+[ext_resource path="res://cenas/transicoes/transicao_shaders.tscn" type="PackedScene" id=7]
+[ext_resource path="res://imagens/mapa_principal/mapa-vtal-5.0.png" type="Texture" id=8]
+[ext_resource path="res://cenas/hud/hud.tscn" type="PackedScene" id=9]
 [ext_resource path="res://imagens/mapa_principal/cones_area-2.png" type="Texture" id=10]
 [ext_resource path="res://imagens/mapa_principal/cones_area-3.png" type="Texture" id=11]
-[ext_resource path="res://TransitionCasas.tscn" type="PackedScene" id=12]
-[ext_resource path="res://excl.tscn" type="PackedScene" id=13]
+[ext_resource path="res://cenas/transicoes/transicao_casas.tscn" type="PackedScene" id=12]
+[ext_resource path="res://cenas/mapa_principal/excl.tscn" type="PackedScene" id=13]
 [ext_resource path="res://fontes/OldSchoolAdventures-42j9.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://call_nathalia.tscn" type="PackedScene" id=15]
-[ext_resource path="res://exclamação_sec.png" type="Texture" id=16]
+[ext_resource path="res://cenas/mapa_principal/call_nathalia.tscn" type="PackedScene" id=15]
+[ext_resource path="res://imagens/situacoes/exclamação_sec.png" type="Texture" id=16]
 
 [sub_resource type="Animation" id=12]
 length = 0.001
@@ -257,22 +257,18 @@ size = 24
 font_data = ExtResource( 14 )
 
 [sub_resource type="AtlasTexture" id=19]
-flags = 4
 atlas = ExtResource( 16 )
 region = Rect2( 0, 0, 32, 64 )
 
 [sub_resource type="AtlasTexture" id=20]
-flags = 4
 atlas = ExtResource( 16 )
 region = Rect2( 32, 0, 32, 64 )
 
 [sub_resource type="AtlasTexture" id=21]
-flags = 4
 atlas = ExtResource( 16 )
 region = Rect2( 64, 0, 32, 64 )
 
 [sub_resource type="AtlasTexture" id=22]
-flags = 4
 atlas = ExtResource( 16 )
 region = Rect2( 96, 0, 32, 64 )
 
@@ -389,7 +385,6 @@ position = Vector2( 125, 33 )
 texture = ExtResource( 8 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="TransicaoCasa" parent="CanvasLayer" instance=ExtResource( 12 )]
 
@@ -405,7 +400,7 @@ position = Vector2( 281, 50 )
 layer = 2
 
 [node name="Node2D" parent="smaho" instance=ExtResource( 15 )]
-position = Vector2( 19, -12 )
+position = Vector2( 22, -17 )
 rotation = 0.000576615
 scale = Vector2( 0.949037, 1 )
 
@@ -428,16 +423,6 @@ anims/mover = SubResource( 13 )
 anims/mover_2 = SubResource( 18 )
 anims/teste-1 = SubResource( 24 )
 
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 128, 34 )
-texture = ExtResource( 11 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2/StaticBody2D"]
-position = Vector2( -128, -34 )
-polygon = PoolVector2Array( 215, -1316, 193, -1282.69, 193, -287, 364, -286, 379, -286, 391, -270, 385, -255, 414, -252, 422, -235, 417, -223, 440, -221, 455, -205, 451, -190, 450.015, 13.4394, 449, 223, 1315, 1089, 1537, 1090, 1536, 1062, 1329, 1063, 468, 191, 480, -238, 391, -319, 229, -315, 223, -1312 )
-
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 128, 34 )
 texture = ExtResource( 10 )
@@ -445,11 +430,11 @@ texture = ExtResource( 10 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/StaticBody2D"]
-polygon = PoolVector2Array( -1313, 1030, -1301, 1028, -1299, 1022, -1294, 1021, -1293, 1028, -1266, 1031, -1267, 1021, -1261, 1020, -1259, 1028, -1234, 1028, -1234, 1020, -1228, 1020, -1228, 1025, -1204, 1027, -307, 135, -317, -67, -318, -264, -279.07, -304.409, -239, -346, -178, -348, -60, -349, -64, -1315, -69, -1347, -50, -1353, -35, -1318, -33, -324, -221, -321, -233, -313, -224, -288, -253.575, -287.414, -267, -280, -256, -256, -287, -256, -300, -248, -293, -227, -303, -223, -291.837, -196.461, -303, -191, -290.57, -163.223, -303, -158, -289.242, -128.352, -301, -125, -288, -96, -301, -91, -286, -64, -286, -64, -306, -65, -289, -35, -304, -30, -288.691, -4.29779, -303, 0, -288.35, 29.6476, -303, 33, -288.043, 60.2513, -303, 67, -288, 94, -304, 98, -287.544, 125.925, -302, 130, -289, 158, -316, 167, -321, 191, -353, 199, -351.857, 221.857, -383, 230, -384.268, 254.268, -414, 263, -417.38, 287.38, -450, 294, -449.371, 319.371, -480, 325, -480.098, 350.098, -515, 357, -513.351, 383.351, -544, 394, -545.622, 415.622, -574, 423, -576.91, 446.91, -609, 454, -608.62, 478.62, -644, 485, -641.031, 511.031, -678, 518, -672.6, 542.6, -705, 550, -705.853, 575.853, -740, 581, -737.001, 607.002, -776, 610, -769.553, 639.553, -809, 643, -801.403, 671.403, -839, 674, -832.551, 702.551, -873, 707, -866.365, 736.365, -903, 738, -896.251, 766.251, -932, 774, -929.784, 799.784, -963, 804, -959.841, 829.841, -993, 838, -993.959, 863.959, -1027, 869, -1026.13, 896.132, -1059, 902, -1057.24, 927.245, -1090, 933, -1089.06, 959.065, -1123, 963, -1121.06, 991.061, -1158, 997, -1153.59, 1023.59, -1188, 1028, -1186, 1056, -1313, 1056 )
+polygon = PoolVector2Array( -1313, 1030, -1301, 1028, -1299, 1022, -1294, 1021, -1293, 1028, -1266, 1031, -1267, 1021, -1261, 1020, -1259, 1028, -1234, 1028, -1234, 1020, -1228, 1020, -1228, 1025, -1204, 1027, -307, 135, -317, -67, -318, -264, -279.07, -304.409, -239, -346, -178, -348, -60, -349, -64, -1315, -69, -1347, -50, -1353, -35, -1318, -33, -324, -221, -321, -233, -313, -224, -288, -253.575, -287.414, -267, -280, -256, -256, -287, -256, -300, -248, -293, -227, -303, -223, -291.837, -196.461, -303, -191, -290.57, -163.223, -303, -158, -289.242, -128.352, -301, -125, -288, -96, -301, -91, -286, -64, -286, -64, -306, -65, -289, -35, -304, -30, -288.691, -4.29779, -303, 0, -288.35, 29.6476, -303, 33, -288.043, 60.2513, -303, 67, -288, 94, -304, 98, -287.544, 125.925, -302, 130, -289, 158, -316, 167, -321, 191, -353, 199, -351.857, 221.857, -383, 230, -384.268, 254.268, -414, 263, -417.38, 287.38, -450, 294, -449.371, 319.371, -480, 325, -480.098, 350.098, -515, 357, -513.351, 383.351, -544, 394, -545.622, 415.622, -574, 423, -576.91, 446.91, -609, 454, -608.62, 478.62, -644, 485, -641.031, 511.031, -678, 518, -672.6, 542.6, -705, 550, -705.853, 575.853, -740, 581, -737.001, 607.002, -776, 610, -769.553, 639.553, -809, 643, -801.403, 671.403, -839, 674, -832.551, 702.551, -873, 707, -866.365, 736.365, -903, 738, -896.251, 766.251, -932, 774, -929.784, 799.784, -963, 804, -959.841, 829.841, -1002, 834, -993.959, 863.959, -1035, 865, -1026.13, 896.132, -1067, 897, -1057.24, 927.245, -1099, 929, -1089.06, 959.065, -1133, 959, -1121.06, 991.061, -1167, 992, -1153.59, 1023.59, -1197, 1024, -1186, 1056, -1313, 1056 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite/StaticBody2D"]
 position = Vector2( -128, -34 )
-polygon = PoolVector2Array( -1184, 1089, -1214, 1090, -1214, 1055, -1185, 1056, -1181, 1063 )
+polygon = PoolVector2Array( -1184, 1089, -1236, 1090, -1227, 1057, -1185, 1056, -1181, 1063 )
 
 [node name="Mapa_detalhes" type="Sprite" parent="."]
 position = Vector2( 125, 33 )
@@ -699,7 +684,7 @@ polygon = PoolVector2Array( -1218, 1374, -1212, -1532, -1467, -1519, -1510, 1398
 polygon = PoolVector2Array( -1215, -1311, 196.476, -1309.46, 1536, -1308, 1774, -1304, 1765, -1613, -1479, -1589, -1472, -1520 )
 
 [node name="AreaExterna4" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
-polygon = PoolVector2Array( 1957, 38, 1781, -1303, 1535, -1307, 1535, 1374, 1759, 1375 )
+polygon = PoolVector2Array( 1775, 9, 1775, -1311, 1535, -1307, 1535, 1374, 1759, 1375 )
 
 [node name="carrinhos-1" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
 polygon = PoolVector2Array( -638, -130, -633, -126, -481, -127, -484, -133, -484, -140, -480, -145, -485, -158, -636, -158 )
@@ -775,6 +760,7 @@ polygon = PoolVector2Array( -721, -1139, -721, -1122, -716, -1106, -714, -1093, 
 position = Vector2( 1024, -170 )
 
 [node name="clube2" type="CollisionShape2D" parent="Mapa_detalhes/Colisoes/clube2"]
+position = Vector2( 0, 44 )
 shape = SubResource( 30 )
 
 [node name="vtal" type="Area2D" parent="."]
@@ -873,7 +859,6 @@ one_shot = true
 one_shot = true
 
 [node name="Transition" parent="." instance=ExtResource( 7 )]
-visible = false
 
 [node name="Timer3" type="Timer" parent="."]
 one_shot = true
@@ -910,7 +895,7 @@ position = Vector2( 336, 691 )
 rotation = 3.14159
 scale = Vector2( 0.990868, 0.990868 )
 frames = SubResource( 23 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="situation_2" type="Area2D" parent="."]
@@ -969,6 +954,16 @@ one_shot = true
 wait_time = 3.0
 one_shot = true
 
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 128, 34 )
+texture = ExtResource( 11 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2/StaticBody2D"]
+position = Vector2( -128, -34 )
+polygon = PoolVector2Array( 215, -1316, 193, -1282.69, 193, -287, 364, -286, 379, -286, 391, -270, 385, -255, 414, -252, 422, -235, 417, -223, 440, -221, 455, -205, 451, -190, 463, -190, 450, -160, 450.003, -127.215, 450.005, -96.0334, 450.008, -62.1791, 450.011, -33.6703, 450.014, 1.07468, 450.015, 13.4394, 449.924, 32.2452, 449.771, 63.8822, 449.611, 96.8555, 449.46, 128.034, 449.296, 161.866, 449.158, 190.391, 449, 223, 466.111, 240.111, 480.813, 254.813, 500.188, 274.188, 515.113, 289.113, 531.369, 305.369, 546.962, 320.962, 566, 340, 579.48, 353.48, 595.068, 369.068, 612.889, 386.889, 626.25, 400.25, 641.843, 415.843, 657.431, 431.431, 673.69, 447.69, 687.276, 461.276, 706.653, 480.653, 720.908, 494.908, 737.835, 511.835, 754.316, 528.316, 770.353, 544.353, 787.948, 561.948, 803.093, 577.093, 834.275, 608.274, 866.347, 640.347, 898.865, 672.865, 930.492, 704.491, 961.45, 735.45, 992.855, 766.854, 1025, 799, 1060.12, 834.117, 1090.19, 864.185, 1123.37, 897.371, 1155, 928.998, 1315, 1089, 1537, 1090, 1536, 1062, 1329, 1063, 478, 191, 480, -238, 391, -319, 229, -315, 223, -1312 )
+
 [connection signal="body_entered" from="Mapa_detalhes/Colisoes/mercado2" to="." method="_on_mercado2_body_entered"]
 [connection signal="body_entered" from="Mapa_detalhes/Colisoes/clube2" to="." method="_on_clube2_body_entered"]
 [connection signal="body_entered" from="Mapa_detalhes/Colisoes/clube2" to="Personagem" method="_on_clube2_body_entered"]
@@ -1001,8 +996,8 @@ one_shot = true
 [connection signal="timeout" from="sit_2" to="." method="_on_sit_2_timeout"]
 [connection signal="body_entered" from="situation_2" to="." method="_on_situation_2_body_entered"]
 [connection signal="body_entered" from="situation_2" to="Personagem" method="_on_situation_2_body_entered"]
-[connection signal="body_entered" from="mini_game_1" to="." method="_on_mini_game_1_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="." method="_on_Area2D2_body_entered"]
+[connection signal="body_entered" from="mini_game_1" to="." method="_on_mini_game_1_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="Personagem" method="_on_mini_game_1_body_entered"]
 [connection signal="timeout" from="bar_desbloq" to="." method="_on_bar_desbloq_timeout"]
 [connection signal="timeout" from="nivel_2" to="." method="_on_nivel_2_timeout"]

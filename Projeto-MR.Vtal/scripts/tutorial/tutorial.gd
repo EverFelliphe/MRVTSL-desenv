@@ -29,4 +29,4 @@ func _on_Diamante_body_entered(body): #Começa a mudança de cena ao colidir com
 	$Transition2/Fill/animation.play("transicao")
 
 func _on_Timer_timeout(): 
-	get_tree().change_scene("res://cenas/dialogo_fabricio/DiálogoFabricio.tscn") 
+	get_tree().change_scene("res://cenas/dialogo_fabricio/dialogo_fabricio.tscn") 

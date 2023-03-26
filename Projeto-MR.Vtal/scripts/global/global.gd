@@ -104,7 +104,7 @@ enum State {
 	Final
 }
 
-var moldura  = "res://imagens/níveis/MolduraDefensorPronta.png"
+var moldura  = "res://imagens/niveis/MolduraDefensorPronta.png"
 
 
 enum State_skin {

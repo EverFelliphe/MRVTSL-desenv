@@ -27,6 +27,7 @@ func _on_Volume_pressed(): #ao clicar no botão de volume a música para e ao cl
 
 func _on_Timer_timeout():
 	get_tree().change_scene("res://cenas/tutorial/tutorial.tscn")
+	queue_free()
 
 func _on_sair_pressed():
 	get_tree().quit()
