@@ -9,3 +9,6 @@ func _ready() -> void: #randomiza a animação do inimigo a ser utilizada, escol
 
 func _on_VisibilityNotifier2D_screen_exited(): #deleta o inimigo ao sair da tela, para não travar o jogo
 	queue_free()
+
+func _on_Area2D_body_entered(body):
+	Global.current_state_mini_game_3 = Global.State_mini_game_3.morto

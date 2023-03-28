@@ -407,6 +407,8 @@ extents = Vector2( 11.5, 739.5 )
 extents = Vector2( 662.5, 22.5 )
 
 [sub_resource type="CapsuleShape2D" id=15]
+radius = 23.0
+height = 2.00012
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 7 )
@@ -446,7 +448,7 @@ zoom = Vector2( 0.5, 0.5 )
 limit_bottom = 595
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 199, 258 )
+position = Vector2( -51, 250 )
 scale = Vector2( 0.371769, 0.356362 )
 texture = ExtResource( 2 )
 
@@ -708,6 +710,7 @@ position = Vector2( 200, 292 )
 rotation = -3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mission_sec"]
+position = Vector2( 250, 1.99936 )
 shape = SubResource( 15 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -721,7 +724,7 @@ frames = ExtResource( 8 )
 animation = "direita"
 
 [node name="exclamacao" type="AnimatedSprite" parent="."]
-position = Vector2( 200, 296 )
+position = Vector2( -50, 185 )
 rotation = -3.14159
 frames = SubResource( 20 )
 frame = 2

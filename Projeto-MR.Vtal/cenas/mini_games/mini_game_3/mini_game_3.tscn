@@ -7,7 +7,6 @@
 [ext_resource path="res://musica/Efeitos sonoros/House In a Forest Loop.ogg" type="AudioStream" id=5]
 [ext_resource path="res://musica/Efeitos sonoros/gameover.wav" type="AudioStream" id=6]
 
-
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 1025, -1, 0, 0, 0, 0, 1025, 600, 0, 0, 0, 0, -1, 598, 0, 0, 0, 0, -2, 0 )

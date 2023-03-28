@@ -104,6 +104,13 @@ enum State {
 	Final
 }
 
+enum State_mini_game_3 {
+	vivo
+	morto
+}
+
+var current_state_mini_game_3 = State_mini_game_3.vivo
+
 var moldura  = "res://imagens/niveis/MolduraDefensorPronta.png"
 
 

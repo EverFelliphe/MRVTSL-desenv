@@ -88,3 +88,11 @@ func _on_sair_pressed():
 func _on_reiniciar_pressed():
 	_ready()
 	current_state = State.playing
+
+func _on_TouchScreenButton_pressed():
+	$clique_botao.hide()
+
+
+func _on_letra_text_changed(new_text):
+	if len(new_text) > 1:
+		$letra.text = new_text[0]

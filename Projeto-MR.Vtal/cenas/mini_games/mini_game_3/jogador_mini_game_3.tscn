@@ -6,7 +6,6 @@
 [ext_resource path="res://imagens/mini_games/mini_game_3/playerGrey_up2.png" type="Texture" id=4]
 [ext_resource path="res://scripts/mini_games/mini_game_3/JogadorMG3.gd" type="Script" id=5]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
@@ -24,7 +23,9 @@ animations = [ {
 radius = 54.0
 height = 28.0
 
-[node name="JogadorMG3" type="Area2D"]
+[node name="JogadorMG3" type="KinematicBody2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource( 5 )
 
 [node name="Animacao" type="AnimatedSprite" parent="."]
@@ -35,5 +36,3 @@ animation = "direita"
 [node name="HitBox" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.75, 0.75 )
 shape = SubResource( 2 )
-
-[connection signal="body_entered" from="." to="." method="_on_JogadorMG3_body_entered"]

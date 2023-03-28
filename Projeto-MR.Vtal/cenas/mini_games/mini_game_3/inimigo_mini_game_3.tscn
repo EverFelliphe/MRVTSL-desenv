@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://imagens/mini_games/mini_game_3/enemySwimming_2.png" type="Texture" id=1]
 [ext_resource path="res://imagens/mini_games/mini_game_3/enemyFlyingAlt_1.png" type="Texture" id=2]
@@ -30,16 +30,17 @@ animations = [ {
 radius = 41.3333
 height = 49.3333
 
+[sub_resource type="CircleShape2D" id=3]
+radius = 84.006
+
 [node name="Inimigo" type="RigidBody2D"]
 collision_mask = 0
-gravity_scale = 0.0
 script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 1 )
 animation = "voando"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -52,4 +53,11 @@ shape = SubResource( 2 )
 position = Vector2( -7, -2 )
 scale = Vector2( 3.15, 2.05 )
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 3 )
+
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

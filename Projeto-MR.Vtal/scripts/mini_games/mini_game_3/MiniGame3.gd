@@ -14,6 +14,7 @@ func game_over(): #chamada ao colidir com um inimigo. Para o jogo, e logo em seg
 	$HUDMG3.exibir_gameover()
 	$musica.stop()
 	$somMorte.play()
+	$HUDMG3/inicioButton.show()
 	
 func venceu(): #chamada ao atingir a pontuação necessária, pausa a movimentação do jogador e exibe o texto vencedor
 	$pontuacaoTimer.stop()
