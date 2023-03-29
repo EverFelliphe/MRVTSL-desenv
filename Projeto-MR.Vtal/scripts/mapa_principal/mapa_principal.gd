@@ -7,8 +7,11 @@ var nivel_2 = Global.nivel_2#verifica se o player passou de nível para iniciar 
 var current_state = Global.current_state
 var i = Global.call_index
 var j = Global.cutscene_index
+var obj_position
 
 func _ready(): 
+	$Personagem/Arrow.hide()
+	Global.obj_position = $excl.get_position()
 	Global.camera_state = Global.StateCameraClamp.Off
 	$Personagem.position = Vector2(Global.posicaox , Global.posicaoy) 
 	$dialogo.hide() #esconde dialogo e falas durante início da cena 
@@ -16,6 +19,7 @@ func _ready():
 	
 	match current_state: #primeira abertura do jogo inicia dialogo com nathalia  
 		Global.State.Inicio:
+			obj_position = $excl.get_position()
 			Global.controle_nathalia = false
 			$sec_mission.hide()
 			$hud.hide()
@@ -35,6 +39,7 @@ func _ready():
 			$Transition/Fill/animation.play_backwards("transicao")
 			
 		Global.State.Situacao1_finish:
+			obj_position = $sec_mission.get_position()
 			if i == 0:
 				Global.call_index += 1
 				$Situacao.queue_free()
@@ -126,6 +131,7 @@ func _ready():
 					$Mapa_detalhes/Colisoes/barreira.queue_free()
 
 func _process(delta):
+	Global.obj_position = obj_position
 	current_state = Global.current_state
 	
 	if Global.controle_nathalia == true:
@@ -181,6 +187,7 @@ func _on_Timer_timeout(): #fim do timer do dialogo e da cena
 
 func _on_Timer2_timeout(): #personagem pode se mover dentro do mapa 
 	Global.velocity(300)
+	$Personagem/Arrow.show()
 
 func _on_transicao_timeout(): #tira a transição da tela 
 	$Transition.queue_free()

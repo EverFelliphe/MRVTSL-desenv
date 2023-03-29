@@ -381,10 +381,11 @@ __meta__ = {
 }
 
 [node name="Mapa" type="Sprite" parent="."]
-position = Vector2( 125, 33 )
+position = Vector2( 125, 32 )
 texture = ExtResource( 8 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TransicaoCasa" parent="CanvasLayer" instance=ExtResource( 12 )]
 
@@ -859,6 +860,7 @@ one_shot = true
 one_shot = true
 
 [node name="Transition" parent="." instance=ExtResource( 7 )]
+visible = false
 
 [node name="Timer3" type="Timer" parent="."]
 one_shot = true
@@ -895,7 +897,6 @@ position = Vector2( 336, 691 )
 rotation = 3.14159
 scale = Vector2( 0.990868, 0.990868 )
 frames = SubResource( 23 )
-frame = 3
 playing = true
 
 [node name="situation_2" type="Area2D" parent="."]
@@ -996,8 +997,8 @@ polygon = PoolVector2Array( 215, -1316, 193, -1282.69, 193, -287, 364, -286, 379
 [connection signal="timeout" from="sit_2" to="." method="_on_sit_2_timeout"]
 [connection signal="body_entered" from="situation_2" to="." method="_on_situation_2_body_entered"]
 [connection signal="body_entered" from="situation_2" to="Personagem" method="_on_situation_2_body_entered"]
-[connection signal="body_entered" from="mini_game_1" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="." method="_on_mini_game_1_body_entered"]
+[connection signal="body_entered" from="mini_game_1" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="Personagem" method="_on_mini_game_1_body_entered"]
 [connection signal="timeout" from="bar_desbloq" to="." method="_on_bar_desbloq_timeout"]
 [connection signal="timeout" from="nivel_2" to="." method="_on_nivel_2_timeout"]

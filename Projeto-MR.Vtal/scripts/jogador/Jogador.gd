@@ -12,6 +12,9 @@ var down = false
 var right = false
 var left = false
 onready var animacao = get_node("Animacao")
+onready var arrow = get_node("Arrow")
+var arrow_pos = Vector2(0,0)
+var objetivo_pos = Vector2(0,0)
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size #define o tamanho da tela
@@ -40,6 +43,9 @@ func _ready() -> void:
 	
 
 func _physics_process(delta): #define os controles do jogo
+	arrow_pos = arrow.get_global_position()
+	objetivo_pos = Global.obj_position
+	arrow.set_rotation((arrow_pos - objetivo_pos).angle())
 	var camera_state = Global.camera_state
 	var speed = Global.speed
 	if control == true: 

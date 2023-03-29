@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arrow.png-23da276651e95a35445346d6e9e5e362.stex"
+path="res://.import/seta-removebg-preview (2).png-1212ccaa8cc6aa2b8ffe1d93f9816046.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagens/arrow.png"
-dest_files=[ "res://.import/arrow.png-23da276651e95a35445346d6e9e5e362.stex" ]
+source_file="res://imagens/seta-removebg-preview (2).png"
+dest_files=[ "res://.import/seta-removebg-preview (2).png-1212ccaa8cc6aa2b8ffe1d93f9816046.stex" ]
 
 [params]
 
@@ -27,7 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
-process/invert_color=true
+process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
