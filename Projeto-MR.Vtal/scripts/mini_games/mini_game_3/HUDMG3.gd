@@ -24,8 +24,10 @@ func atualiza_score(score): #atualiza o texto da pontuação
 	$scoreLabel.text = str(score)
 	
 func _on_inicioButton_pressed(): #inicia o jogo ao clicar no botão
-	$inicioButton.hide()
 	emit_signal("start_game")
+	$inicioButton.hide()
+	
+	
 	
 func _on_messageTimer_timeout(): #esconde a mensagem ao iniciar o jogo
 	$messageLabel.hide()

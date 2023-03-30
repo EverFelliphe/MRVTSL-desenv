@@ -10,6 +10,7 @@ var j = Global.cutscene_index
 var obj_position
 
 func _ready(): 
+	Global.objective = true
 	$Personagem/Arrow.hide()
 	Global.obj_position = $excl.get_position()
 	Global.camera_state = Global.StateCameraClamp.Off
@@ -23,7 +24,7 @@ func _ready():
 			Global.controle_nathalia = false
 			$sec_mission.hide()
 			$hud.hide()
-			$gamepad.show()
+			$Personagem/gamepad.show()
 			$dialogo.hide()
 			$Transition.show()
 			$Transition/Fill/animation.play_backwards("transicao")
@@ -196,7 +197,7 @@ func _on_Area2D_body_entered(body): #personagem entra na casa e carrega a transi
 	get_tree().change_scene("res://cenas/interiores/casa_1_interno.tscn") # Replace with function body.
 
 func esconder(): #esconde a hud 
-	$gamepad.hide()
+	$Personagem/gamepad.hide()
 	$hud.hide()
 
 func _on_Timer3_timeout(): #termina a situação 1 e muda de cena 

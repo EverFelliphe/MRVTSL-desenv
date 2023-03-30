@@ -19,6 +19,7 @@ func _on_Volume_pressed(): #ao clicar no botão de volume a música para e ao cl
 	if music_status == true:
 		$musica_fundo.stream_paused = true
 		$Volume.texture_normal = load("res://imagens/menu/imagem (18).png")
+
 		music_status = false
 	else:
 		$musica_fundo.stream_paused = false
@@ -26,8 +27,25 @@ func _on_Volume_pressed(): #ao clicar no botão de volume a música para e ao cl
 		music_status = true
 
 func _on_Timer_timeout():
-	get_tree().change_scene("res://cenas/tutorial/tutorial.tscn")
-	queue_free()
+	$"../AnimationPlayer".play("confirm")
 
 func _on_sair_pressed():
 	get_tree().quit()
+
+
+func _on_CheckBox_pressed():
+	if OS.window_fullscreen:
+		OS.window_fullscreen = !OS.window_fullscreen
+	else: OS.window_fullscreen =true
+
+
+func _on_mobile_pressed():
+	Global.mobile = true
+	get_tree().change_scene("res://cenas/tutorial/tutorial.tscn")
+
+	
+
+
+func _on_desktop_pressed():
+	Global.mobile = false
+	get_tree().change_scene("res://cenas/tutorial/tutorial.tscn")

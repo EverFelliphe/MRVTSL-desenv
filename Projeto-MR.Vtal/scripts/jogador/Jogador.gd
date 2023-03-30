@@ -18,7 +18,11 @@ var objetivo_pos = Vector2(0,0)
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size #define o tamanho da tela
-	
+	print(Global.mobile)
+	if Global.mobile == true:
+		$gamepad.show()
+	elif Global.mobile == false:
+		$gamepad.hide()
 	match Global.current_nivel:
 		
 		Global.state_nivel.N3:
@@ -43,9 +47,13 @@ func _ready() -> void:
 	
 
 func _physics_process(delta): #define os controles do jogo
-	arrow_pos = arrow.get_global_position()
-	objetivo_pos = Global.obj_position
-	arrow.set_rotation((arrow_pos - objetivo_pos).angle())
+	if Global.objective:
+		$Arrow.show()
+		arrow_pos = arrow.get_global_position()
+		objetivo_pos = Global.obj_position
+		arrow.set_rotation((arrow_pos - objetivo_pos).angle())
+	else:
+		$Arrow.hide()
 	var camera_state = Global.camera_state
 	var speed = Global.speed
 	if control == true: 
@@ -186,3 +194,11 @@ func _on_vtal_body_entered(body):
 	Global.atualizar_posicao(posicaox,posicaoy)
 
 
+
+
+func _on_hide_gamepad_timeout():
+	$gamepad.hide()
+
+
+func _on_show_gamepad_timeout():
+	$gamepad.show()

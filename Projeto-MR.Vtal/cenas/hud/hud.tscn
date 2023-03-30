@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/hud/hud.gd" type="Script" id=1]
 [ext_resource path="res://imagens/niveis/MolduraDefensorPronta.png" type="Texture" id=2]
 [ext_resource path="res://imagens/hud/pixil-frame-0 (5)_scaled_14x_pngcrushed (3).png" type="Texture" id=3]
 [ext_resource path="res://imagens/hud/pixil-frame-0 (5)_scaled_14x_pngcrushed (5) (2).png" type="Texture" id=4]
+[ext_resource path="res://cenas/menu/config.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -77,7 +78,7 @@ scale = Vector2( 0.375, 0.375 )
 texture = ExtResource( 2 )
 
 [node name="pont_2" type="AnimatedSprite" parent="VBoxContainer"]
-position = Vector2( 123, 57 )
+position = Vector2( 128, 40 )
 scale = Vector2( 0.387, 0.387 )
 frames = SubResource( 2 )
 
@@ -92,12 +93,12 @@ scale = Vector2( 0.387, 0.387 )
 texture = ExtResource( 3 )
 
 [node name="pont3" type="AnimatedSprite" parent="VBoxContainer"]
-position = Vector2( 124, 58 )
+position = Vector2( 125, 43 )
 scale = Vector2( 0.387, 0.387 )
 frames = SubResource( 6 )
 
 [node name="pont_4" type="AnimatedSprite" parent="VBoxContainer"]
-position = Vector2( 124, 10 )
+position = Vector2( 125, -17 )
 scale = Vector2( 0.387, 0.387 )
 frames = SubResource( 8 )
 
@@ -107,5 +108,8 @@ frames = SubResource( 8 )
 wait_time = 2.0
 one_shot = true
 
-[connection signal="timeout" from="timer_hud" to="." method="_on_timer_hud_timeout"]
+[node name="Node2D" parent="." instance=ExtResource( 5 )]
+layer = 3
+
 [connection signal="timeout" from="timer_hud" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="timer_hud" to="." method="_on_timer_hud_timeout"]

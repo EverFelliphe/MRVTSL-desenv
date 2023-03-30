@@ -22,41 +22,41 @@ func _process(delta:float) -> void: #função que define a movimentação do jog
 			$HitBox.set_deferred("disabled", true)
 			
 	if controle: #se controle for verdadeiro, executa a movimentação
-		
-		if Input.is_action_just_pressed("left_click"):
-			click_position = get_global_mouse_position()
-			
-		var target_position = (click_position - position).normalized()
-		if position.distance_to(click_position) > 3:
-			move_and_slide(target_position * speed)
+		if Global.mobile:
+			if Input.is_action_just_pressed("left_click"):
+				click_position = get_global_mouse_position()
+				
+			var target_position = (click_position - position).normalized()
+			if position.distance_to(click_position) > 3:
+				move_and_slide(target_position * speed)
 
-
-		if Input.is_action_pressed("ui_right"): 
-			velocity.x += 1
-		if Input.is_action_pressed("ui_left"):
-			velocity.x -= 1
-		if Input.is_action_pressed("ui_down"):
-			velocity.y += 1 
-		if Input.is_action_pressed("ui_up"):
-			velocity.y -= 1  
-		if velocity.length() > 0: #se alguma tecla estiver sendo pressionada, aplica a movimentação e a animação do jogador
-			velocity = velocity.normalized() * speed
-			$Animacao.play()
 		else:
-			$Animacao.stop()
+			if Input.is_action_pressed("ui_right"): 
+				velocity.x += 1
+			if Input.is_action_pressed("ui_left"):
+				velocity.x -= 1
+			if Input.is_action_pressed("ui_down"):
+				velocity.y += 1 
+			if Input.is_action_pressed("ui_up"):
+				velocity.y -= 1  
+			if velocity.length() > 0: #se alguma tecla estiver sendo pressionada, aplica a movimentação e a animação do jogador
+				velocity = velocity.normalized() * speed
+				$Animacao.play()
+			else:
+				$Animacao.stop()
 
-		if velocity.x != 0: #regula a animação a ser usada de acordo com a direção do movimento do jogador
-			$Animacao.animation = "direita"
-			$Animacao.flip_v = false
-			$Animacao.flip_h = velocity.x < 0 
-		if velocity.y != 0:
-			$Animacao.animation = "cima"
-			$Animacao.flip_v = velocity.y > 0
+			if velocity.x != 0 : #regula a animação a ser usada de acordo com a direção do movimento do jogador
+				$Animacao.animation = "direita"
+				$Animacao.flip_v = false
+				$Animacao.flip_h = velocity.x < 0 
+			if velocity.y != 0:
+				$Animacao.animation = "cima"
+				$Animacao.flip_v = velocity.y > 0
 		
-		
+			move_and_slide(velocity * delta * 50)
 
 	#Define o limite da tela, de forma que o jogador não possa ultrapassá-la
-	move_and_slide(velocity * delta)
+	
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
 	

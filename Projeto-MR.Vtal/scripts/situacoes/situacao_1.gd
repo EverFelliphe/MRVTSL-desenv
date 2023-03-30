@@ -7,6 +7,7 @@ var timer = Timer.new() #tempo de transição
 onready var imagem = $atencao #carrega a imagem atenção 
 
 func _ready(): #
+	Global.objective = false
 	$Personagem/Arrow.hide()
 	Global.current_state = Global.State.Situacao1_finish
 	$CanvasLayer.comecar_reverso()
@@ -21,7 +22,7 @@ func _ready(): #
 	$NPC.hide()
 	$atencao.hide()
 	$parabens.hide()
-
+	$Personagem/gamepad.hide()
 func _on_Situao1_body_entered(body): #quando o jogador entra na área definida inicia a cena 
 	$NPC.show()
 	$NPC/AnimationPlayer.play("Situacao1")
