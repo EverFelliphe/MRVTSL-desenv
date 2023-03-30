@@ -872,7 +872,7 @@ position = Vector2( 336, 691 )
 rotation = 3.14159
 scale = Vector2( 0.990868, 0.990868 )
 frames = SubResource( 23 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="situation_2" type="Area2D" parent="."]
@@ -880,8 +880,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="bar" type="CollisionPolygon2D" parent="situation_2"]
-position = Vector2( -16.3332, -0.000366211 )
-scale = Vector2( 0.972384, 1 )
+position = Vector2( -42, -1 )
+scale = Vector2( 0.914245, 1 )
 polygon = PoolVector2Array( -456, -961, -457, -1011, -371, -1012, -371, -961 )
 
 [node name="mini_game_1" type="Area2D" parent="."]

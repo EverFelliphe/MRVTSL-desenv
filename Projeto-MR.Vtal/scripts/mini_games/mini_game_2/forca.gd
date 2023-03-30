@@ -83,7 +83,7 @@ func _on_Button_pressed():
 
 func _on_sair_pressed():
 	Global.pontuacao += 2
-	get_tree().change_scene("res://cenas/situacoes/situacao_2.tscn")
+	get_tree().change_scene("res://cenas/situacoes/Situacao_2.tscn")
 
 func _on_reiniciar_pressed():
 	_ready()

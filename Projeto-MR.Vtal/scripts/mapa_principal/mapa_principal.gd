@@ -243,7 +243,7 @@ func _on_mini_game_1_body_entered(body):
 	get_tree().change_scene("res://cenas/mini_games/mini_game_1/flappy.tscn")
 
 func _on_situation_2_body_entered(body):
-	get_tree().change_scene("res://cenas/situacoes/situacao_2.tscn")
+	get_tree().change_scene("res://cenas/situacoes/Situacao_2.tscn")
 	
 func _on_bar_desbloq_timeout():
 	$Personagem/Camera2D/AnimationPlayer.play_backwards("bar_desbloq")
