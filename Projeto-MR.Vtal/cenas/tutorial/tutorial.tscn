@@ -77,7 +77,6 @@ shape = SubResource( 1 )
 position = Vector2( -0.271179, 1.62711 )
 scale = Vector2( 0.804555, 0.804555 )
 frames = SubResource( 10 )
-frame = 3
 playing = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -108,7 +107,6 @@ autowrap = true
 position = Vector2( 70, -26 )
 scale = Vector2( 4.77295, 4.77295 )
 frames = SubResource( 10 )
-frame = 3
 playing = true
 
 [node name="TextureButton" type="TextureButton" parent="dialogo"]

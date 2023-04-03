@@ -77,28 +77,31 @@ position = Vector2( 119, 151 )
 scale = Vector2( 0.375, 0.375 )
 texture = ExtResource( 2 )
 
-[node name="pont_2" type="AnimatedSprite" parent="VBoxContainer"]
-position = Vector2( 128, 40 )
+[node name="Node2D2" type="Node2D" parent="VBoxContainer"]
+position = Vector2( 261, 84 )
+
+[node name="pont_2" type="AnimatedSprite" parent="VBoxContainer/Node2D2"]
+position = Vector2( -137, -27 )
 scale = Vector2( 0.387, 0.387 )
 frames = SubResource( 2 )
 
-[node name="pont_1" type="AnimatedSprite" parent="VBoxContainer"]
-position = Vector2( 124, 128 )
+[node name="pont_1" type="AnimatedSprite" parent="VBoxContainer/Node2D2"]
+position = Vector2( -141, 61 )
 scale = Vector2( 0.387, 0.387 )
 frames = SubResource( 4 )
 
-[node name="pont_0" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 124, 128 )
+[node name="pont_0" type="Sprite" parent="VBoxContainer/Node2D2"]
+position = Vector2( -141, 61 )
 scale = Vector2( 0.387, 0.387 )
 texture = ExtResource( 3 )
 
-[node name="pont3" type="AnimatedSprite" parent="VBoxContainer"]
-position = Vector2( 125, 43 )
+[node name="pont3" type="AnimatedSprite" parent="VBoxContainer/Node2D2"]
+position = Vector2( -140, -24 )
 scale = Vector2( 0.387, 0.387 )
 frames = SubResource( 6 )
 
-[node name="pont_4" type="AnimatedSprite" parent="VBoxContainer"]
-position = Vector2( 125, -17 )
+[node name="pont_4" type="AnimatedSprite" parent="VBoxContainer/Node2D2"]
+position = Vector2( -140, -84 )
 scale = Vector2( 0.387, 0.387 )
 frames = SubResource( 8 )
 
