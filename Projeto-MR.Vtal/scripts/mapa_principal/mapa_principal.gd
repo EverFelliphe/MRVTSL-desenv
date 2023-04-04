@@ -302,3 +302,19 @@ func _on_Node2D_blur_on():
 
 func _on_Node2D_blur_off():
 	$Blur.environment.set_dof_blur_near_enabled(false)
+
+
+func _on_casa_1_body_entered(body):
+	get_tree().change_scene("res://cenas/interiores/casa_1.tscn")
+
+
+func _on_restaurant_body_entered(body):
+	get_tree().change_scene("res://cenas/interiores/restaurante.tscn")
+
+
+func _on_casa_2_body_entered(body):
+	get_tree().change_scene("res://cenas/interiores/casa_2.tscn")
+
+
+func _on_casa_3_body_entered(body):
+	get_tree().change_scene("res://cenas/interiores/casa_3.tscn")
