@@ -203,3 +203,10 @@ func _on_Node2D_blur_on():
 
 func _on_Node2D_blur_off():
 	$gamepad.show()
+
+
+func _on_mini_game_2_body_entered(body):
+	control = false
+	posicaox = position.x 
+	posicaoy = position.y +30
+	Global.atualizar_posicao(posicaox,posicaoy)

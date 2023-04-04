@@ -78,7 +78,141 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 		9: "A partir de agora tome mais cuidado com suas ações, pois quanto maior o seu cargo maior o impacto que suas ações causarão.",
 		10: "Vejo que após todos estes desafios enfrentados, você se provou ético e digno de se tornar o Rei da fibra. Por fim, volte para o prédio da V.Tal para uma surpresa!",
 		11: "A partir de agora você conseguirá entrar nele!",
+	
+	},
+	"NPC_1":{
+		0: {"text": "Ei, cara, há quanto tempo não te vejo! Vi que você foi contratado pela V.Tal, como tem sido o seu trabalho lá até então?", "nome": "???"},
+		1: {"text": "Ah, oi Paulo! Tem sido bem interessante, estou aprendendo bastante. E você, ainda está trabalhando na Boa Comunicações?", "nome": "Mr. V.Tal"},
+		2: {"text": "Sim, sigo firme e forte lá! Inclusive, estamos pensando em lançar um novo produto, que irá explodir a mente dos clientes. E vocês, trabalhando em algo novo?", "nome": "Paulo"},
+		3: {
+			1: "Esquece o trabalho cara, vamos falar sobre outra coisa! Viu o último jogo do Flamengo?",
+			2: "Ah sabe como é, prefiro não comentar assuntos sobre o trabalho",
+			3: "Estamos trabalhando para conseguir oferecer um pacote de 1 GB para nossos clientes",
+			4: "Posso até te contar sobre o que estamos fazendo, mas tudo tem o seu preço"
+		},
+		4:{
+			1: "Ótima escolha! Você mudou de assunto para não violar o código de ética, já que divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, visto que fere nosso princípio de neutralidade",
+			2: "Ótima escolha! Você se recusou a divulgar informações sigilosas de nossos clientes para a concorrência, já que fazê-lo fere nosso princípio de neutralidade .",
+			3: "Apesar de estar em um momento descontraído, você não pode divulgar informações de cliente para correntes, já que isso viola nosso princípio de neutralidade",
+			4: "Divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, e fere nosso princípio de neutralidade e, portanto, vai contra o código de ética "
+		},
+		5: "Que jogo feio foi aquele! Minha bisavó jogaria futebol melhor do que aqueles caras!",
+		6: "Tudo bem, te entendo! Às vezes é realmente melhor não comentar esses tipos de dados com os outros",
+		7: "Ótima proposta, aposto que será uma grande inovação no mercado. E até que ela me deu uma ideia muito boa...",
+		8: "Eu até estaria disposto a pagar por isso, mas estou sem dinheiro no momento! Fica para a próxima.",
+		9: "Mas enfim, tenho que ir embora para ficar com a família. Até a próxima, foi um prazer te encontrar de novo!",
+	},
+	"NPC_2":{
+		0: {"text": "Ei, cara, há quanto tempo não te vejo! Vi que você foi contratado pela V.Tal, como tem sido o seu trabalho lá até então?", "nome": "???"},
+		1: {"text": "Ah, oi Paulo! Tem sido bem interessante, estou aprendendo bastante. E você, ainda está trabalhando na Boa Comunicações?", "nome": "Mr. V.Tal"},
+		2: {"text": "Sim, sigo firme e forte lá! Inclusive, estamos pensando em lançar um novo produto, que irá explodir a mente dos clientes. E vocês, trabalhando em algo novo?", "nome": "Paulo"},
+		3: {
+			1: "Esquece o trabalho cara, vamos falar sobre outra coisa! Viu o último jogo do Flamengo?",
+			2: "Ah sabe como é, prefiro não comentar assuntos sobre o trabalho",
+			3: "Estamos trabalhando para conseguir oferecer um pacote de 1 GB para nossos clientes",
+			4: "Posso até te contar sobre o que estamos fazendo, mas tudo tem o seu preço"
+		},
+		4:{
+			1: "Ótima escolha! Você mudou de assunto para não violar o código de ética, já que divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, visto que fere nosso princípio de neutralidade",
+			2: "Ótima escolha! Você se recusou a divulgar informações sigilosas de nossos clientes para a concorrência, já que fazê-lo fere nosso princípio de neutralidade .",
+			3: "Apesar de estar em um momento descontraído, você não pode divulgar informações de cliente para correntes, já que isso viola nosso princípio de neutralidade",
+			4: "Divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, e fere nosso princípio de neutralidade e, portanto, vai contra o código de ética "
+		},
+		5: "Que jogo feio foi aquele! Minha bisavó jogaria futebol melhor do que aqueles caras!",
+		6: "Tudo bem, te entendo! Às vezes é realmente melhor não comentar esses tipos de dados com os outros",
+		7: "Ótima proposta, aposto que será uma grande inovação no mercado. E até que ela me deu uma ideia muito boa...",
+		8: "Eu até estaria disposto a pagar por isso, mas estou sem dinheiro no momento! Fica para a próxima.",
+		9: "Mas enfim, tenho que ir embora para ficar com a família. Até a próxima, foi um prazer te encontrar de novo!",
+	},
+	"NPC_3":{
+		0: {"text": "Ei, cara, há quanto tempo não te vejo! Vi que você foi contratado pela V.Tal, como tem sido o seu trabalho lá até então?", "nome": "???"},
+		1: {"text": "Ah, oi Paulo! Tem sido bem interessante, estou aprendendo bastante. E você, ainda está trabalhando na Boa Comunicações?", "nome": "Mr. V.Tal"},
+		2: {"text": "Sim, sigo firme e forte lá! Inclusive, estamos pensando em lançar um novo produto, que irá explodir a mente dos clientes. E vocês, trabalhando em algo novo?", "nome": "Paulo"},
+		3: {
+			1: "Esquece o trabalho cara, vamos falar sobre outra coisa! Viu o último jogo do Flamengo?",
+			2: "Ah sabe como é, prefiro não comentar assuntos sobre o trabalho",
+			3: "Estamos trabalhando para conseguir oferecer um pacote de 1 GB para nossos clientes",
+			4: "Posso até te contar sobre o que estamos fazendo, mas tudo tem o seu preço"
+		},
+		4:{
+			1: "Ótima escolha! Você mudou de assunto para não violar o código de ética, já que divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, visto que fere nosso princípio de neutralidade",
+			2: "Ótima escolha! Você se recusou a divulgar informações sigilosas de nossos clientes para a concorrência, já que fazê-lo fere nosso princípio de neutralidade .",
+			3: "Apesar de estar em um momento descontraído, você não pode divulgar informações de cliente para correntes, já que isso viola nosso princípio de neutralidade",
+			4: "Divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, e fere nosso princípio de neutralidade e, portanto, vai contra o código de ética "
+		},
+		5: "Que jogo feio foi aquele! Minha bisavó jogaria futebol melhor do que aqueles caras!",
+		6: "Tudo bem, te entendo! Às vezes é realmente melhor não comentar esses tipos de dados com os outros",
+		7: "Ótima proposta, aposto que será uma grande inovação no mercado. E até que ela me deu uma ideia muito boa...",
+		8: "Eu até estaria disposto a pagar por isso, mas estou sem dinheiro no momento! Fica para a próxima.",
+		9: "Mas enfim, tenho que ir embora para ficar com a família. Até a próxima, foi um prazer te encontrar de novo!",
+	},
+	"NPC_4":{
+		0: {"text": "Ei, cara, há quanto tempo não te vejo! Vi que você foi contratado pela V.Tal, como tem sido o seu trabalho lá até então?", "nome": "???"},
+		1: {"text": "Ah, oi Paulo! Tem sido bem interessante, estou aprendendo bastante. E você, ainda está trabalhando na Boa Comunicações?", "nome": "Mr. V.Tal"},
+		2: {"text": "Sim, sigo firme e forte lá! Inclusive, estamos pensando em lançar um novo produto, que irá explodir a mente dos clientes. E vocês, trabalhando em algo novo?", "nome": "Paulo"},
+		3: {
+			1: "Esquece o trabalho cara, vamos falar sobre outra coisa! Viu o último jogo do Flamengo?",
+			2: "Ah sabe como é, prefiro não comentar assuntos sobre o trabalho",
+			3: "Estamos trabalhando para conseguir oferecer um pacote de 1 GB para nossos clientes",
+			4: "Posso até te contar sobre o que estamos fazendo, mas tudo tem o seu preço"
+		},
+		4:{
+			1: "Ótima escolha! Você mudou de assunto para não violar o código de ética, já que divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, visto que fere nosso princípio de neutralidade",
+			2: "Ótima escolha! Você se recusou a divulgar informações sigilosas de nossos clientes para a concorrência, já que fazê-lo fere nosso princípio de neutralidade .",
+			3: "Apesar de estar em um momento descontraído, você não pode divulgar informações de cliente para correntes, já que isso viola nosso princípio de neutralidade",
+			4: "Divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, e fere nosso princípio de neutralidade e, portanto, vai contra o código de ética "
+		},
+		5: "Que jogo feio foi aquele! Minha bisavó jogaria futebol melhor do que aqueles caras!",
+		6: "Tudo bem, te entendo! Às vezes é realmente melhor não comentar esses tipos de dados com os outros",
+		7: "Ótima proposta, aposto que será uma grande inovação no mercado. E até que ela me deu uma ideia muito boa...",
+		8: "Eu até estaria disposto a pagar por isso, mas estou sem dinheiro no momento! Fica para a próxima.",
+		9: "Mas enfim, tenho que ir embora para ficar com a família. Até a próxima, foi um prazer te encontrar de novo!",
+	},
+	"NPC_5":{
+		0: {"text": "Ei, cara, há quanto tempo não te vejo! Vi que você foi contratado pela V.Tal, como tem sido o seu trabalho lá até então?", "nome": "???"},
+		1: {"text": "Ah, oi Paulo! Tem sido bem interessante, estou aprendendo bastante. E você, ainda está trabalhando na Boa Comunicações?", "nome": "Mr. V.Tal"},
+		2: {"text": "Sim, sigo firme e forte lá! Inclusive, estamos pensando em lançar um novo produto, que irá explodir a mente dos clientes. E vocês, trabalhando em algo novo?", "nome": "Paulo"},
+		3: {
+			1: "Esquece o trabalho cara, vamos falar sobre outra coisa! Viu o último jogo do Flamengo?",
+			2: "Ah sabe como é, prefiro não comentar assuntos sobre o trabalho",
+			3: "Estamos trabalhando para conseguir oferecer um pacote de 1 GB para nossos clientes",
+			4: "Posso até te contar sobre o que estamos fazendo, mas tudo tem o seu preço"
+		},
+		4:{
+			1: "Ótima escolha! Você mudou de assunto para não violar o código de ética, já que divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, visto que fere nosso princípio de neutralidade",
+			2: "Ótima escolha! Você se recusou a divulgar informações sigilosas de nossos clientes para a concorrência, já que fazê-lo fere nosso princípio de neutralidade .",
+			3: "Apesar de estar em um momento descontraído, você não pode divulgar informações de cliente para correntes, já que isso viola nosso princípio de neutralidade",
+			4: "Divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, e fere nosso princípio de neutralidade e, portanto, vai contra o código de ética "
+		},
+		5: "Que jogo feio foi aquele! Minha bisavó jogaria futebol melhor do que aqueles caras!",
+		6: "Tudo bem, te entendo! Às vezes é realmente melhor não comentar esses tipos de dados com os outros",
+		7: "Ótima proposta, aposto que será uma grande inovação no mercado. E até que ela me deu uma ideia muito boa...",
+		8: "Eu até estaria disposto a pagar por isso, mas estou sem dinheiro no momento! Fica para a próxima.",
+		9: "Mas enfim, tenho que ir embora para ficar com a família. Até a próxima, foi um prazer te encontrar de novo!",
+	},
+	"NPC_6":{
+		0: {"text": "Ei, cara, há quanto tempo não te vejo! Vi que você foi contratado pela V.Tal, como tem sido o seu trabalho lá até então?", "nome": "???"},
+		1: {"text": "Ah, oi Paulo! Tem sido bem interessante, estou aprendendo bastante. E você, ainda está trabalhando na Boa Comunicações?", "nome": "Mr. V.Tal"},
+		2: {"text": "Sim, sigo firme e forte lá! Inclusive, estamos pensando em lançar um novo produto, que irá explodir a mente dos clientes. E vocês, trabalhando em algo novo?", "nome": "Paulo"},
+		3: {
+			1: "Esquece o trabalho cara, vamos falar sobre outra coisa! Viu o último jogo do Flamengo?",
+			2: "Ah sabe como é, prefiro não comentar assuntos sobre o trabalho",
+			3: "Estamos trabalhando para conseguir oferecer um pacote de 1 GB para nossos clientes",
+			4: "Posso até te contar sobre o que estamos fazendo, mas tudo tem o seu preço"
+		},
+		4:{
+			1: "Ótima escolha! Você mudou de assunto para não violar o código de ética, já que divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, visto que fere nosso princípio de neutralidade",
+			2: "Ótima escolha! Você se recusou a divulgar informações sigilosas de nossos clientes para a concorrência, já que fazê-lo fere nosso princípio de neutralidade .",
+			3: "Apesar de estar em um momento descontraído, você não pode divulgar informações de cliente para correntes, já que isso viola nosso princípio de neutralidade",
+			4: "Divulgar informações confidenciais de clientes é contrário aos valores da V.Tal, e fere nosso princípio de neutralidade e, portanto, vai contra o código de ética "
+		},
+		5: "Que jogo feio foi aquele! Minha bisavó jogaria futebol melhor do que aqueles caras!",
+		6: "Tudo bem, te entendo! Às vezes é realmente melhor não comentar esses tipos de dados com os outros",
+		7: "Ótima proposta, aposto que será uma grande inovação no mercado. E até que ela me deu uma ideia muito boa...",
+		8: "Eu até estaria disposto a pagar por isso, mas estou sem dinheiro no momento! Fica para a próxima.",
+		9: "Mas enfim, tenho que ir embora para ficar com a família. Até a próxima, foi um prazer te encontrar de novo!",
 	}
+	
 }
 enum state_situations {INIT,SITUATION_1, SITUATION_2,  SITUATION_3}
 enum state_areas {AREA_1, AREA_2,  AREA_3, FINAL}
