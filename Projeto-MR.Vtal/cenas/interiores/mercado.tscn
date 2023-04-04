@@ -45,11 +45,11 @@ limit_smoothed = true
 position = Vector2( -358.438, 130.437 )
 scale = Vector2( 2.52734, 2.52734 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="asiatico" type="AnimatedSprite" parent="."]
 position = Vector2( 622, -233 )
 scale = Vector2( 2.29688, 2.29688 )
 frames = SubResource( 2 )
-frame = 1
 playing = true

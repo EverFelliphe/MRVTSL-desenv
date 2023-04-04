@@ -78,7 +78,7 @@ tracks/0/keys = {
 "values": [ Vector2( 201, -545 ), Vector2( 201, 34 ) ]
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource( 4 )
