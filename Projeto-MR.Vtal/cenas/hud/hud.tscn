@@ -111,8 +111,10 @@ frames = SubResource( 8 )
 wait_time = 2.0
 one_shot = true
 
-[node name="Node2D" parent="." instance=ExtResource( 5 )]
+[node name="config" parent="." instance=ExtResource( 5 )]
 layer = 3
 
 [connection signal="timeout" from="timer_hud" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="timer_hud" to="." method="_on_timer_hud_timeout"]
+[connection signal="blur_off" from="config" to="." method="_on_config_blur_off"]
+[connection signal="blur_on" from="config" to="." method="_on_config_blur_on"]

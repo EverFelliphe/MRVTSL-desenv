@@ -27,7 +27,5 @@ func _on_inicioButton_pressed(): #inicia o jogo ao clicar no botão
 	emit_signal("start_game")
 	$inicioButton.hide()
 	
-	
-	
 func _on_messageTimer_timeout(): #esconde a mensagem ao iniciar o jogo
 	$messageLabel.hide()

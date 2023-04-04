@@ -1,6 +1,10 @@
 extends Node2D
 onready var nivel_imag = $VBoxContainer/nivel
 var imagem = Global.moldura
+
+signal blur_on
+signal blur_off
+
 func _ready(): #mostra a pontuação zerada ao iniciar o jogo
 	$VBoxContainer/nome_nivel.show()
 	$VBoxContainer/Node2D2/pont_0.show()
@@ -142,3 +146,12 @@ func _on_timer_hud_timeout():
 			Global.moldura = "res://imagens/niveis/MolduraGeneralPronta.png"
 			Global.current_area = Global.state_areas.FINAL
 	print(Global.pontuacao)
+
+func _on_config_blur_on():
+	$VBoxContainer.hide()
+	emit_signal("blur_on")
+
+
+func _on_config_blur_off():
+	$VBoxContainer.show()
+	emit_signal("blur_off")

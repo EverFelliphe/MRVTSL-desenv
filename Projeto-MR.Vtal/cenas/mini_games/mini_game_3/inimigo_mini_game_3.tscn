@@ -35,13 +35,13 @@ radius = 84.006
 
 [node name="Inimigo" type="RigidBody2D"]
 collision_mask = 0
+gravity_scale = 0.0
 script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 1 )
 animation = "voando"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

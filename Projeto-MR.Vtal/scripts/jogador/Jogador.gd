@@ -186,19 +186,20 @@ func _on_clube2_body_entered(body):
 #	posicaoy = position.y - 30
 #	Global.atualizar_posicao(posicaox,posicaoy)
 
-
 func _on_vtal_body_entered(body):
 	control = false
 	posicaox = position.x 
 	posicaoy = position.y +30
 	Global.atualizar_posicao(posicaox,posicaoy)
 
-
-
-
 func _on_hide_gamepad_timeout():
 	$gamepad.hide()
 
-
 func _on_show_gamepad_timeout():
+	$gamepad.show()
+
+func _on_Node2D_blur_on():
+	$gamepad.hide()
+
+func _on_Node2D_blur_off():
 	$gamepad.show()

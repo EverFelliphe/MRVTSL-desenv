@@ -1,5 +1,6 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
+[ext_resource path="res://imagens/outros/icon.png" type="Texture" id=1]
 [ext_resource path="res://cenas/jogador/jogador.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/mapa_principal/mapa_principal.gd" type="Script" id=3]
 [ext_resource path="res://fontes/PTSansNarrow-Regular.ttf" type="DynamicFontData" id=4]
@@ -373,11 +374,20 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="Environment" id=36]
+background_mode = 4
+dof_blur_far_amount = 0.81
+dof_blur_near_enabled = true
+
 [node name="Mapa" type="Node2D"]
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 435.0 ]
 }
+
+[node name="seta_2" type="Sprite" parent="."]
+position = Vector2( -421, -1000 )
+texture = ExtResource( 1 )
 
 [node name="Mapa" type="Sprite" parent="."]
 position = Vector2( 125, 32 )
@@ -872,6 +882,7 @@ position = Vector2( 336, 691 )
 rotation = 3.14159
 scale = Vector2( 0.990868, 0.990868 )
 frames = SubResource( 23 )
+frame = 3
 playing = true
 
 [node name="situation_2" type="Area2D" parent="."]
@@ -940,6 +951,13 @@ texture = ExtResource( 11 )
 position = Vector2( -128, -34 )
 polygon = PoolVector2Array( 215, -1316, 193, -1282.69, 193, -287, 364, -286, 379, -286, 391, -270, 385, -255, 414, -252, 422, -235, 417, -223, 440, -221, 455, -205, 451, -190, 463, -190, 450, -160, 450.003, -127.215, 450.005, -96.0334, 450.008, -62.1791, 450.011, -33.6703, 450.014, 1.07468, 450.015, 13.4394, 449.924, 32.2452, 449.771, 63.8822, 449.611, 96.8555, 449.46, 128.034, 449.296, 161.866, 449.158, 190.391, 449, 223, 466.111, 240.111, 480.813, 254.813, 500.188, 274.188, 515.113, 289.113, 531.369, 305.369, 546.962, 320.962, 566, 340, 579.48, 353.48, 595.068, 369.068, 612.889, 386.889, 626.25, 400.25, 641.843, 415.843, 657.431, 431.431, 673.69, 447.69, 687.276, 461.276, 706.653, 480.653, 720.908, 494.908, 737.835, 511.835, 754.316, 528.316, 770.353, 544.353, 787.948, 561.948, 803.093, 577.093, 834.275, 608.274, 866.347, 640.347, 898.865, 672.865, 930.492, 704.491, 961.45, 735.45, 992.855, 766.854, 1025, 799, 1060.12, 834.117, 1090.19, 864.185, 1123.37, 897.371, 1155, 928.998, 1315, 1089, 1537, 1090, 1536, 1062, 1329, 1063, 478, 191, 480, -238, 391, -319, 229, -315, 223, -1312 )
 
+[node name="Blur" type="WorldEnvironment" parent="."]
+environment = SubResource( 36 )
+
+[connection signal="blur_off" from="hud/Node2D" to="." method="_on_Node2D_blur_off"]
+[connection signal="blur_off" from="hud/Node2D" to="Personagem" method="_on_Node2D_blur_off"]
+[connection signal="blur_on" from="hud/Node2D" to="." method="_on_Node2D_blur_on"]
+[connection signal="blur_on" from="hud/Node2D" to="Personagem" method="_on_Node2D_blur_on"]
 [connection signal="body_entered" from="Mapa_detalhes/Colisoes/mercado2" to="." method="_on_mercado2_body_entered"]
 [connection signal="body_entered" from="Mapa_detalhes/Colisoes/clube2" to="." method="_on_clube2_body_entered"]
 [connection signal="body_entered" from="Mapa_detalhes/Colisoes/clube2" to="Personagem" method="_on_clube2_body_entered"]
@@ -964,8 +982,8 @@ polygon = PoolVector2Array( 215, -1316, 193, -1282.69, 193, -287, 364, -286, 379
 [connection signal="timeout" from="sit_2" to="." method="_on_sit_2_timeout"]
 [connection signal="body_entered" from="situation_2" to="." method="_on_situation_2_body_entered"]
 [connection signal="body_entered" from="situation_2" to="Personagem" method="_on_situation_2_body_entered"]
-[connection signal="body_entered" from="mini_game_1" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="." method="_on_mini_game_1_body_entered"]
+[connection signal="body_entered" from="mini_game_1" to="." method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="Personagem" method="_on_mini_game_1_body_entered"]
 [connection signal="timeout" from="bar_desbloq" to="." method="_on_bar_desbloq_timeout"]
 [connection signal="timeout" from="nivel_2" to="." method="_on_nivel_2_timeout"]

@@ -34,6 +34,7 @@ colors = PoolColorArray( 0.0784314, 0.0784314, 0.0784314, 0 )
 gradient = SubResource( 3 )
 
 [node name="forca" type="Node2D"]
+position = Vector2( 1, 0 )
 script = ExtResource( 16 )
 
 [node name="Barpix" type="Sprite" parent="."]

@@ -63,3 +63,6 @@ func _on_inimigoTimer_timeout(): #spawna o inimigo em um canto aleatório do map
 
 func _on_sair_timeout():
 	change_scene =true
+
+func _on_HUDMG3_start_game():
+	novo_jogo()

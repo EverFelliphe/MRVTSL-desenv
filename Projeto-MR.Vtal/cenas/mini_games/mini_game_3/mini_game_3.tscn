@@ -56,7 +56,6 @@ volume_db = -20.0
 wait_time = 3.0
 one_shot = true
 
-[connection signal="hit" from="jogadorMG3" to="." method="_on_jogadorMG3_hit"]
 [connection signal="hit" from="jogadorMG3" to="." method="game_over"]
 [connection signal="timeout" from="inicioTimer" to="." method="_on_inicioTimer_timeout"]
 [connection signal="timeout" from="inicioTimer" to="jogadorMG3" method="_on_inicioTimer_timeout"]

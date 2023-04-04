@@ -24,7 +24,7 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 			1: {"text":"Parabéns!! Você escolheu a opção mais ética. É essencial recusar ofertas de suborno, já que fazê-lo se configura como corrupção, que é condenada no nosso código de ética.", "feedback":"res://imagens/parabens.png"},
 			2: {"text":"Parabéns!! Você escolheu uma ótima opção, reconhecendo o suborno corrupto de Robert e questionando a sua atitude. Afinal, a corrupção vai contra nosso código de ética.", "feedback":"res://imagens/parabens.png"},
 			3: {"text":"A família tem grande importância, mas devemos sempre ter um comportamento ético. A opção mais ética seria recusar a proposta de suborno, já que se trata de um caso de corrupção, o que vai contra nosso código de ética.", "feedback":"res://imagens/aten.png"},
-			4: {"text":"Aceitar essa oferta vai totalmente contra nosso código de ética. Afinal, a proposta se trata de um suborno e, portanto, se enquadra como corrupção..", "feedback":"res://imagens/aten.png"}
+			4: {"text":"Aceitar essa oferta vai totalmente contra nosso código de ética. Afinal, a proposta se trata de um suborno e, portanto, se enquadra como corrupção.", "feedback":"res://imagens/aten.png"}
 		}
 	},
 	'situacao2':{

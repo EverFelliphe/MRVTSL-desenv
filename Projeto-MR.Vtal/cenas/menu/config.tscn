@@ -54,6 +54,7 @@ margin_left = 134.0
 margin_top = 27.0
 margin_right = 862.0
 margin_bottom = 571.0
+color = Color( 1, 1, 1, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
 anims/RESET = SubResource( 1 )
@@ -131,6 +132,7 @@ texture_normal = ExtResource( 1 )
 one_shot = true
 
 [node name="hide" type="Timer" parent="."]
+wait_time = 0.1
 one_shot = true
 
 [connection signal="pressed" from="ColorRect/CheckBox" to="." method="_on_CheckBox_pressed"]

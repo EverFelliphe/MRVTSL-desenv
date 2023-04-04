@@ -126,6 +126,7 @@ func _on_resposta_timeout():
 	n += (10-n)
 	
 func _on_Area2D_body_entered(body):
+	$Personagem/Arrow.hide()
 	$transition.show()
 	$AnimationPlayer.play("situation_3")
 	$start_situation.start()
@@ -150,6 +151,7 @@ func _on_start_dialogo_timeout():
 func _on_finalizar_dialogo_timeout():
 	$AnimationPlayer.play("npc_enemy_backwards")
 	$"transição_reverse".start()
+	$Personagem/Arrow.show()
 
 func _on_transio_reverse_timeout():
 	$transition.show()

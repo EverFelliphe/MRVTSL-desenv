@@ -10,6 +10,7 @@ var j = Global.cutscene_index
 var obj_position
 
 func _ready(): 
+	$Blur.environment.set_dof_blur_near_enabled(false)
 	Global.objective = true
 	$Personagem/Arrow.hide()
 	Global.obj_position = $excl.get_position()
@@ -20,7 +21,8 @@ func _ready():
 	
 	match current_state: #primeira abertura do jogo inicia dialogo com nathalia  
 		Global.State.Inicio:
-			obj_position = $excl.get_position()
+			
+			Global.obj_position = $excl.get_position()
 			Global.controle_nathalia = false
 			$sec_mission.hide()
 			$hud.hide()
@@ -34,13 +36,14 @@ func _ready():
 	#		Global.pontuacao = 0
 	 #quando ele voltar da situação ele esconde a exclamação, atualiza a posição do personagem e apaga o dialogo inicial
 		Global.State.Situacao1:
+			Global.obj_position = $excl.get_position()
 			$sec_mission.hide()
 			$mini_game_1/poste.set_disabled(true)
 			$Transition.show()
 			$Transition/Fill/animation.play_backwards("transicao")
 			
 		Global.State.Situacao1_finish:
-			obj_position = $sec_mission.get_position()
+			Global.obj_position = $sec_mission.get_position()
 			if i == 0:
 				Global.call_index += 1
 				$Situacao.queue_free()
@@ -58,6 +61,7 @@ func _ready():
 				$Transition/Fill/animation.play_backwards("transicao")
 
 		Global.State.Situacao2:
+			Global.obj_position = $seta_2.get_position()
 			$Transition.show()
 			$Transition/Fill/animation.play_backwards("transicao")
 			$mini_game_1.queue_free()
@@ -67,6 +71,7 @@ func _ready():
 			$Transition.hide()
 
 		Global.State.Situacao2_finish:
+			Global.obj_position = $situation_2/bar.get_position()
 			$Transition.show()
 			$Transition/Fill/animation.play_backwards("transicao")
 			$Sprite.queue_free()
@@ -132,7 +137,6 @@ func _ready():
 					$Mapa_detalhes/Colisoes/barreira.queue_free()
 
 func _process(delta):
-	Global.obj_position = obj_position
 	current_state = Global.current_state
 	
 	if Global.controle_nathalia == true:
@@ -213,7 +217,8 @@ func _on_Timer4_timeout(): #carrega a hud
 
 func _on_nivel_1_timeout():#ao subir de nivel inicia uma cutscene para mostrar a area liberando
 	Global.velocity(0)
-	$Personagem.hide()
+	Global.obj_position = $seta_2.get_position()
+	$Personagem.objetivo_pos = $seta_2.get_position()
 	$Personagem/Camera2D/AnimationPlayer.play("area_desb")
 	$area_desbloqueada.start()
 
@@ -224,6 +229,7 @@ func _on_area_desbloqueada_timeout(): # mostra os cones desaparecendo  e da queu
 	
 func _on_nivel_12_timeout():# volta para a posição do personagem
 	$Personagem/Camera2D/AnimationPlayer.play_backwards("area_desb")
+	$Personagem.objetivo_pos = $situation_2/bar.get_position()
 	$area_reverso.start() 
 	$Personagem.show()
 	$Sprite.queue_free()
@@ -284,5 +290,10 @@ func _on_sumir_2_3_timeout():
 		$Personagem.show()
 		$Sprite2.queue_free()
 		Global.current_area = Global.state_areas.AREA_3
-		
 		$sumir_2.start()
+
+func _on_Node2D_blur_on():
+	$Blur.environment.set_dof_blur_near_enabled(true)
+
+func _on_Node2D_blur_off():
+	$Blur.environment.set_dof_blur_near_enabled(false)
