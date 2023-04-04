@@ -10,6 +10,7 @@ var controle
 var i 
 
 func _ready(): 
+	$Personagem/Arrow.hide()
 	$exclamacao.hide()
 	$mission_sec/CollisionShape2D.set_disabled(true)
 	Global.camera_state = Global.StateCameraClamp.Off
@@ -126,7 +127,7 @@ func _on_resposta_timeout():
 	n += (10-n)
 	
 func _on_Area2D_body_entered(body):
-	$Personagem/Arrow.hide()
+	$Personagem/gamepad.hide()
 	$transition.show()
 	$AnimationPlayer.play("situation_3")
 	$start_situation.start()
@@ -151,9 +152,10 @@ func _on_start_dialogo_timeout():
 func _on_finalizar_dialogo_timeout():
 	$AnimationPlayer.play("npc_enemy_backwards")
 	$"transição_reverse".start()
-	$Personagem/Arrow.show()
+
 
 func _on_transio_reverse_timeout():
+	$Personagem/gamepad.show()
 	$transition.show()
 	$AnimationPlayer.play_backwards("situation_3")
 	Global.current_state = Global.State.Situacao3_finish

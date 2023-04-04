@@ -80,6 +80,9 @@ func _ready():
 			$mini_game_1.queue_free()
 			$sec_mission.queue_free()
 			
+		Global.State.Situacao3:
+			Global.obj_position = $seta_clube.get_position()
+			
 	match Global.current_nivel:
 				Global.state_nivel.N2:
 					if j == 0 :
@@ -170,6 +173,8 @@ func _on_passar_pressed(): #carrega dialogo com natalia
 		$bar_desbloq.start()
 		
 	elif n == 10:
+		Global.current_state = Global.State.Situacao3
+		Global.obj_position = $seta_clube.get_position()
 		$Personagem/Camera2D/AnimationPlayer.play("clube")
 		$club.start()
 		$dialogo.hide()

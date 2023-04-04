@@ -37,6 +37,8 @@ func _process(delta): #se chegar na pontuação da meta, executa a função "ven
 func novo_jogo(): #chamada ao clicar no botão de iniciar. Inicia os timers que darão inicio ao jogo.
 	score = 0
 	$jogadorMG3.start($posicaoInicial.position)
+	$HUDMG3/inicioButton.hide()
+	
 	$inicioTimer.start()
 	$HUDMG3.exibir_mensagem("Prepare-se\nChegue aos %d pontos para ganhar!" % [meta])
 	$HUDMG3.atualiza_score(score)
@@ -62,7 +64,7 @@ func _on_inimigoTimer_timeout(): #spawna o inimigo em um canto aleatório do map
 	inimigo.linear_velocity = inimigo.linear_velocity.rotated(direcao)
 
 func _on_sair_timeout():
-	change_scene =true
+	change_scene = true
 
 func _on_HUDMG3_start_game():
 	novo_jogo()
