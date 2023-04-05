@@ -91,7 +91,7 @@ func _on_reiniciar_pressed():
 
 func _on_TouchScreenButton_pressed():
 	$clique_botao.hide()
-
+	OS.show_virtual_keyboard("text")
 
 func _on_letra_text_changed(new_text):
 	if len(new_text) > 1:
