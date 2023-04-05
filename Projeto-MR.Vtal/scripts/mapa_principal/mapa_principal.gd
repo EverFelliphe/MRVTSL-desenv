@@ -69,7 +69,8 @@ func _ready():
 			$mini_game_1.queue_free()
 			$excl.queue_free()
 			$sec_mission.play()
-			$Quest.start()
+			
+			
 			$Transition.hide()
 
 		Global.State.Situacao2_finish:
@@ -299,6 +300,7 @@ func _on_vtal_body_entered(body):
 func _on_sumir_2_3_timeout():
 		$Personagem.show()
 		$Sprite2.queue_free()
+		Global.current_state = Global.State.Situacao3
 		Global.current_area = Global.state_areas.AREA_3
 		$sumir_2.start()
 

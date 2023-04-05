@@ -248,7 +248,7 @@ enum State_mini_game_3 {
 var current_state_mini_game_3 = State_mini_game_3.vivo
 
 var moldura  = "res://imagens/niveis/MolduraDefensorPronta.png"
-
+var call_index_state = true
 
 enum State_skin {
 	Defensor

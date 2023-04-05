@@ -41,12 +41,15 @@ func _ready(): #mostra a pontuação zerada ao iniciar o jogo
 			1:
 				Global.current_nivel =  Global.state_nivel.N2
 				Global.cutscene_index = 0
+				Global.call_index_state = true
 			2:
 				Global.current_nivel =  Global.state_nivel.N3
 				Global.cutscene_index = 0
+				Global.call_index_state = true
 			3:
 				Global.current_nivel = Global.state_nivel.N4
 				Global.cutscene_index = 0
+				Global.call_index_state = true
 				Global.current_area = Global.state_areas.FINAL
 				
 		$timer_hud.start()
@@ -138,13 +141,15 @@ func _on_timer_hud_timeout():
 			Global.moldura ="res://imagens/niveis/MolduraDuquePronta.png"
 			Global.current_state = Global.State.Situacao2
 			Global.current_area = Global.state_areas.AREA_2
+			Global.call_index_state = true
 		Global.state_nivel.N3:
 			$VBoxContainer/nome_nivel.texture = load("res://imagens/niveis/MolduraGeneralPronta.png")
 			Global.moldura = "res://imagens/niveis/MolduraGeneralPronta.png"
-			Global.current_state = Global.State.Situacao3
+			Global.call_index_state = true
 			Global.current_area = Global.state_areas.AREA_3
 		Global.state_nivel.N4:
 			$VBoxContainer/nome_nivel.texture = load("res://imagens/niveis/MolduraGeneralPronta.png")
+			Global.call_index_state = true
 			Global.moldura = "res://imagens/niveis/MolduraGeneralPronta.png"
 			Global.current_area = Global.state_areas.FINAL
 	print(Global.pontuacao)

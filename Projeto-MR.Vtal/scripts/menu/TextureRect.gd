@@ -2,11 +2,11 @@ extends Node2D
 
 export(float) var scroll_speed = 0.03
 var music_status = true
-<<<<<<< Updated upstream
+
 onready var teste = "teste"
-=======
+
 var n = 2
->>>>>>> Stashed changes
+
 #faz com que a variavel seja acessivel em outros scripts, como por exemplo no controle da interface grafica da cena
 
 func _ready():
@@ -32,18 +32,16 @@ func _on_Volume_pressed(): #ao clicar no botão de volume a música para e ao cl
 		music_status = true
 
 func _on_Timer_timeout():
-<<<<<<< Updated upstream
-	$"../AnimationPlayer".play("confirm")
-	$"../VBoxContainer".hide()
-	$"../Label3".hide()
-=======
+	$AnimationPlayer.play("confirm")
+	$Label3.hide()
+	$VBoxContainer.hide()
 	$CheckBox.hide()
 	$checkMark.hide()
 	$background/Volume.hide()
 	$Label3.hide()
 	$VBoxContainer.hide()
 	$AnimationPlayer.play("confirm")
->>>>>>> Stashed changes
+
 
 func _on_sair_pressed():
 	get_tree().quit()
@@ -61,16 +59,15 @@ func _on_CheckBox_pressed():
 
 func _on_mobile_pressed():
 	Global.mobile = true
-<<<<<<< Updated upstream
+
 	get_tree().change_scene_to(load("res://cenas/tutorial/Tutorial.tscn"))
 #
 #
 #
-#
-=======
-	get_tree().change_scene("res://cenas/tutorial.tscn")
 
->>>>>>> Stashed changes
+
+
+
 func _on_desktop_pressed():
 	Global.mobile = false
 	get_tree().change_scene("res://cenas/tutorial/Tutorial.tscn")

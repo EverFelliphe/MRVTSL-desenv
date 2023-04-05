@@ -12,7 +12,7 @@
 [ext_resource path="res://imagens/spritesheet_player/executivo/Executivo/ParadoCostas1.png" type="Texture" id=10]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 45.3333
+radius = 54.0
 height = 28.0
 
 [sub_resource type="SpriteFrames" id=3]
