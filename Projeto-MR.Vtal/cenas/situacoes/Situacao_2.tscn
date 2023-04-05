@@ -482,7 +482,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mini_game_2"]
-position = Vector2( 871.5, 407.5 )
+position = Vector2( 873, 388 )
 shape = SubResource( 16 )
 
 [node name="exclamacao" parent="." instance=ExtResource( 20 )]
@@ -492,7 +492,7 @@ scale = Vector2( 0.8, 0.8 )
 [node name="excl_mini_game" type="AnimatedSprite" parent="."]
 position = Vector2( 873, 366 )
 frames = SubResource( 21 )
-frame = 6
+frame = 2
 playing = true
 flip_v = true
 

@@ -6,7 +6,6 @@ var letra
 var erros
 var acertos = 0
 var current_state = State.playing
-
 enum State {
 	playing
 	game_over
@@ -83,6 +82,7 @@ func _on_Button_pressed():
 
 func _on_sair_pressed():
 	Global.pontuacao += 2
+	Global.control_inneramb = true
 	get_tree().change_scene("res://cenas/situacoes/Situacao_2.tscn")
 
 func _on_reiniciar_pressed():

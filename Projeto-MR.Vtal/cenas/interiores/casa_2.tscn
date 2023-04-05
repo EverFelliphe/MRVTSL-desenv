@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://imagens/interiores/CASA_2.png" type="Texture" id=1]
 [ext_resource path="res://cenas/Jogador/jogador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://cenas/interiores/casa_2.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 56.75, 10 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 515, 305 )
@@ -31,3 +36,11 @@ polygon = PoolVector2Array( 46, -7, 48, 2, 47, 10, 54, 13, 55, 4, 68, 5, 74, 13,
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( 515, 305 )
 polygon = PoolVector2Array( 68, -77, 68, -77, 97, -74, 97, -81, 93, -84, 92, -94, 94, -96, 91, -105, 82, -107, 74, -100, 72, -91, 67, -83, 67, -80 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 578.25, 598 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

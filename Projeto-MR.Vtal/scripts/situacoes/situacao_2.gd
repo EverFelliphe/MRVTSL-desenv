@@ -11,7 +11,8 @@ func _ready():
 	$excl_mini_game.hide()
 	$mini_game_2/CollisionShape2D.set_disabled(true)
 	Global.camera_state = Global.StateCameraClamp.On
-	$Personagem.position = Global.posicao_bar
+#	$Personagem.position = Global.posicao_bar
+	
 	$Personagem.animacao.animation = "cima"
 	$CanvasLayer.comecar_reverso()
 	$CanvasLayer.timer() #inicia o tempo e animação reversa acima 
@@ -27,6 +28,9 @@ func _ready():
 	$atencao.hide()
 	$parabens.hide()
 	$Transition.hide()
+	if Global.control_inneramb:
+		$Personagem.position = Global.pos_interior
+		Global.control_inneramb = false
 	
 	match Global.current_state:
 		Global.State.Situacao2_finish:
@@ -173,5 +177,5 @@ func _on_enemy_timeout():
 	$dialogo/CaixaDialogo/conversa.text = dialogo[n]
 
 func _on_mini_game_2_body_entered(body):
-	Global.posicao_bar = Vector2($Personagem.position.x ,($Personagem.position.y + 30))
+	Global.pos_interior = Vector2($Personagem.position.x +30,$Personagem.position.y +30)
 	get_tree().change_scene("res://cenas/mini_games/mini_game_2/forca.tscn")

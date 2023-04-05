@@ -278,9 +278,11 @@ var posicaoy = 201
 var pontuacao = 0 #pontuação do personagem
 var controle_tela = true
 var teste
+var control_inneramb = false
 var posicao_bar = Vector2(169, 296)
 var obj_position
-
+var pos_map = Vector2(posicaox, posicaoy)
+var pos_interior =Vector2.ZERO
 func tela():
 	controle_tela = false
 

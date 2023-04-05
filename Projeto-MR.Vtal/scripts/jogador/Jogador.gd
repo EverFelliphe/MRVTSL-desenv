@@ -156,28 +156,32 @@ func _on_left_released():
 
 func _on_Area2D_body_entered(body):
 	control = false
-	posicaox = position.x 
-	posicaoy = position.y +10
-	Global.atualizar_posicao(posicaox,posicaoy)
+	Global.pos_map = Vector2(position.x , position.y +10)
+#	posicaox = position.x 
+#	posicaoy = position.y +10
+#	Global.atualizar_posicao(posicaox,posicaoy)
 
 func _on_situation_2_body_entered(body):
 	control = false
-	posicaox = position.x 
-	posicaoy = position.y +10
-	Global.atualizar_posicao(posicaox,posicaoy)
+	Global.pos_map = Vector2(position.x , position.y +10)
+#	posicaox = position.x 
+#	posicaoy = position.y +10
+#	Global.atualizar_posicao(posicaox,posicaoy)
 
 func _on_mini_game_1_body_entered(body):
 	control = false
-	posicaox = position.x +30
-	posicaoy = position.y +30
-	Global.atualizar_posicao(posicaox,posicaoy)
+	Global.pos_map = Vector2(position.x + 30, position.y +30)
+#	posicaox = position.x +30
+#	posicaoy = position.y +30
+#	Global.atualizar_posicao(posicaox,posicaoy)
 
 
 func _on_clube2_body_entered(body):
 	control = false
-	posicaox = position.x 
-	posicaoy = position.y +30
-	Global.atualizar_posicao(posicaox,posicaoy)
+	Global.pos_map = Vector2(position.x , position.y +30)
+#	posicaox = position.x 
+#	posicaoy = position.y +30
+#	Global.atualizar_posicao(posicaox,posicaoy)
 
 
 #func _on_saida_body_entered(body):
@@ -188,9 +192,10 @@ func _on_clube2_body_entered(body):
 
 func _on_vtal_body_entered(body):
 	control = false
-	posicaox = position.x 
-	posicaoy = position.y +30
-	Global.atualizar_posicao(posicaox,posicaoy)
+	Global.pos_map = Vector2(position.x , position.y +30)
+#	posicaox = position.x 
+#	posicaoy = position.y +30
+#	Global.atualizar_posicao(posicaox,posicaoy)
 
 func _on_hide_gamepad_timeout():
 	$gamepad.hide()

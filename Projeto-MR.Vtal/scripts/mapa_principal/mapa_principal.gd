@@ -15,7 +15,7 @@ func _ready():
 	$Personagem/Arrow.hide()
 	Global.obj_position = $excl.get_position()
 	Global.camera_state = Global.StateCameraClamp.Off
-	$Personagem.position = Vector2(Global.posicaox , Global.posicaoy) 
+	$Personagem.position = Global.pos_map
 	$dialogo.hide() #esconde dialogo e falas durante início da cena 
 	$CanvasLayer.hide()
 	
@@ -153,8 +153,9 @@ func _on_Situacao_body_entered(body): #inicia animação nathalia e começa o ti
 	$CanvasLayer.show()
 	esconder()
 	$CanvasLayer/TransicaoCasa/ColorRect/AnimationPlayer.play("animacao")
-	Global.posicaox = $Personagem.position.x
-	Global.posicaoy = $Personagem.position.y
+	Global.pos_map = Vector2($Personagem.position.x, $Personagem.position.y)
+#	Global.posicaox = $Personagem.position.x
+#	Global.posicaoy = $Personagem.position.y
 	$Timer3.start()
 
 func _on_passar_pressed(): #carrega dialogo com natalia 

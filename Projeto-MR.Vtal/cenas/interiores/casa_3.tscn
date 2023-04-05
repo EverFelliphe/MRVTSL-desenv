@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://cenas/Jogador/jogador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://imagens/interiores/casa_3.png" type="Texture" id=2]
+[ext_resource path="res://cenas/interiores/casa_3.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 58.75, 13.5 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 515, 310 )
@@ -28,3 +33,11 @@ polygon = PoolVector2Array( 781, 515, 788, 514, 885, 514, 894, 517, 894, 509, 89
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 515, 581, 415, 579, 412, 554, 413, 494, 234, 491, 229, 290, 229, 273, 405, 273, 405, 398, 448, 398, 452, 226, 381, 227, 371, 222, 316, 220, 226, 221, 229, 198, 291, 194, 294, 95, 310, 99, 724, 106, 724, 117, 740, 127, 735, 117, 740, 102, 800, 102, 813, 124, 813, 136, 825, 111, 815, 99, 895, 104, 897, 231, 710, 232, 713, 291, 739, 292, 752, 298, 899, 302, 898, 580, 736, 582, 736, 366, 711, 364, 706, 580, 644, 580, 642, 614, 932, 610, 941, 4, 192, 7, 200, 612, 514, 618 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 579, 612 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
