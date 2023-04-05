@@ -11,7 +11,7 @@ func _ready():
 
 func _on_TextureButton_pressed():
 	$clique_botao.play()
-	get_tree().change_scene("res://cenas/tutorial.tscn")
+#	get_tree().change_scene("res://cenas/tutorial.tscn")
 	$Timer.start()
 # ao pressionar o botão 1(play) troca para a tela de tutorial com o personagem principal
 
@@ -44,11 +44,11 @@ func _on_CheckBox_pressed():
 
 func _on_mobile_pressed():
 	Global.mobile = true
-	get_tree().change_scene("res://cenas/tutorial.tscn")
+	get_tree().change_scene_to(load("res://cenas/tutorial/Tutorial.tscn"))
 
 	
 
 
 func _on_desktop_pressed():
 	Global.mobile = false
-	get_tree().change_scene("res://cenas/tutorial.tscn")
+	get_tree().change_scene("res://cenas/tutorial/Tutorial.tscn")
