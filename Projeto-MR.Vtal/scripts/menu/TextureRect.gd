@@ -28,8 +28,8 @@ func _on_Volume_pressed(): #ao clicar no botão de volume a música para e ao cl
 
 func _on_Timer_timeout():
 	$"../AnimationPlayer".play("confirm")
-	$"../VBoxContainer".hide()
-	$"../Label3".hide()
+#	$"../VBoxContainer".hide()
+#	$"../Label3".hide()
 
 func _on_sair_pressed():
 	get_tree().quit()

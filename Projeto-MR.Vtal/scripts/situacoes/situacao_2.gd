@@ -121,6 +121,9 @@ func _on_Escolha4_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 	n += 1
 	dialogo = dialogo[n][4]
 	Global.pontuacao += -1
+	Global.feedback_final["situ_2"]["pergunta"] = "Um antigo amigo te encontra em um bar e faz algumas perguntas capciosasacerca do  seu trabalho"
+	Global.feedback_final["situ_2"]["escolha"] = "escolha 4 - induziu o pagamento de uma quantia para o vazamento de informações"
+	
 	clear()
 	$dialogo/CaixaDialogo.hide()
 	$atencao.show()
