@@ -177,6 +177,7 @@ shape = SubResource( 5 )
 position = Vector2( -292, 48 )
 scale = Vector2( 2.10156, 2.10156 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
