@@ -43,11 +43,11 @@ func _on_CheckBox_pressed():
 
 func _on_mobile_pressed():
 	Global.mobile = true
-	get_tree().change_scene("res://cenas/tutorial/tutorial.tscn")
+	get_tree().change_scene("res://cenas/tutorial.tscn")
 
 	
 
 
 func _on_desktop_pressed():
 	Global.mobile = false
-	get_tree().change_scene("res://cenas/tutorial/tutorial.tscn")
+	get_tree().change_scene("res://cenas/tutorial.tscn")
