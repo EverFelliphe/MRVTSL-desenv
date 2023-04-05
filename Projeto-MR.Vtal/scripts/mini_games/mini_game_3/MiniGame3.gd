@@ -2,19 +2,17 @@ extends Node
 
 export (PackedScene) var Inimigo #instancia a cena do inimigo em uma variável
 var score #pontuação do jogador
-var meta = 20 #pontuação necessária para vencer o jogo
+var meta = 10 #pontuação necessária para vencer o jogo
 var change_scene = false
-
 func _ready():
 	randomize()
-	
+
 func game_over(): #chamada ao colidir com um inimigo. Para o jogo, e logo em seguida o reinicia
 	$pontuacaoTimer.stop()
 	$inimigoTimer.stop()
 	$HUDMG3.exibir_gameover()
 	$musica.stop()
 	$somMorte.play()
-	$HUDMG3/inicioButton.show()
 	
 func venceu(): #chamada ao atingir a pontuação necessária, pausa a movimentação do jogador e exibe o texto vencedor
 	$pontuacaoTimer.stop()
@@ -24,11 +22,10 @@ func venceu(): #chamada ao atingir a pontuação necessária, pausa a movimenta�
 	$jogadorMG3.hide()
 	$HUDMG3.exibir_ganhou()
 	$sair.start()
-	Global.pontuacao += 2
-	get_tree().change_scene("res://cenas/situacoes/situacao_3.tscn")
+	Global.pontuacao+=2
+	get_tree().change_scene("res://cenas/situacoes/situation_3.tscn")
 	if change_scene:
 		pass
-		
 func _process(delta): #se chegar na pontuação da meta, executa a função "venceu()"
 	if score == meta:
 		venceu()
@@ -37,8 +34,6 @@ func _process(delta): #se chegar na pontuação da meta, executa a função "ven
 func novo_jogo(): #chamada ao clicar no botão de iniciar. Inicia os timers que darão inicio ao jogo.
 	score = 0
 	$jogadorMG3.start($posicaoInicial.position)
-	$HUDMG3/inicioButton.hide()
-	
 	$inicioTimer.start()
 	$HUDMG3.exibir_mensagem("Prepare-se\nChegue aos %d pontos para ganhar!" % [meta])
 	$HUDMG3.atualiza_score(score)
@@ -64,7 +59,4 @@ func _on_inimigoTimer_timeout(): #spawna o inimigo em um canto aleatório do map
 	inimigo.linear_velocity = inimigo.linear_velocity.rotated(direcao)
 
 func _on_sair_timeout():
-	change_scene = true
-
-func _on_HUDMG3_start_game():
-	novo_jogo()
+	change_scene =true

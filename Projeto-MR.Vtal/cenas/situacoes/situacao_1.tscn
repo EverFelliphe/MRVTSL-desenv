@@ -57,6 +57,7 @@ tracks/0/keys = {
 
 [sub_resource type="DynamicFont" id=5]
 size = 19
+use_filter = true
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -97,6 +98,7 @@ position = Vector2( 1189, 331 )
 scale = Vector2( 2.39655, 2.39655 )
 frames = SubResource( 7 )
 animation = "esquerda"
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NPC"]

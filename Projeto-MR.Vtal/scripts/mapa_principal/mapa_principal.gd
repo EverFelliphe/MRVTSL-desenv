@@ -61,11 +61,13 @@ func _ready():
 				$Transition/Fill/animation.play_backwards("transicao")
 
 		Global.State.Situacao2:
+			$Situacao.queue_free()
+			$Sprite.queue_free()
 			Global.obj_position = $seta_2.get_position()
 			$Transition.show()
 			$Transition/Fill/animation.play_backwards("transicao")
 			$mini_game_1.queue_free()
-			$excl.hide()
+			$excl.queue_free()
 			$sec_mission.play()
 			$Quest.start()
 			$Transition.hide()
@@ -81,6 +83,10 @@ func _ready():
 			$sec_mission.queue_free()
 			
 		Global.State.Situacao3:
+			$excl.queue_free()
+			$Situacao.queue_free()
+			$Sprite.queue_free()
+			$Sprite2.queue_free()
 			Global.obj_position = $seta_clube.get_position()
 			
 	match Global.current_nivel:
@@ -174,8 +180,6 @@ func _on_passar_pressed(): #carrega dialogo com natalia
 		$bar_desbloq.start()
 		
 	elif n == 10:
-		Global.current_state = Global.State.Situacao3
-		Global.obj_position = $seta_clube.get_position()
 		$Personagem/Camera2D/AnimationPlayer.play("clube")
 		$club.start()
 		$dialogo.hide()
@@ -319,3 +323,7 @@ func _on_casa_2_body_entered(body):
 
 func _on_casa_3_body_entered(body):
 	get_tree().change_scene("res://cenas/interiores/casa_3.tscn")
+
+
+func _on_Quest_timeout():
+	$Quest.queue_free()

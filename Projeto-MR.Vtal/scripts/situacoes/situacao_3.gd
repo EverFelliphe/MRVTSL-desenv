@@ -32,6 +32,7 @@ func _ready():
 			$mission_sec.queue_free()
 	match Global.current_state:
 		Global.State.Situacao3_finish:
+			$Personagem.position = Vector2(Global.posicaox, Global.posicaoy)
 			$Node2D.queue_free()
 			$mission_sec.show()
 	
@@ -167,6 +168,8 @@ func _on_transio_reverse_timeout():
 func _on_mission_sec_body_entered(body):
 	match Global.current_state:
 		Global.State.Situacao3_finish:
+			Global.posicaox = $Personagem.position.x
+			Global.posicaoy = $Personagem.position.y
 			get_tree().change_scene("res://cenas/mini_games/mini_game_3/mini_game_3.tscn")
 
 func _on_mini_game_body_entered(body):

@@ -16,7 +16,7 @@
 
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 12.0
-height = 54.0
+height = 46.0
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -406,9 +406,8 @@ extents = Vector2( 11.5, 739.5 )
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 662.5, 22.5 )
 
-[sub_resource type="CapsuleShape2D" id=15]
-radius = 23.0
-height = 2.00012
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 29, 16.4999 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 7 )
@@ -710,8 +709,8 @@ position = Vector2( 200, 292 )
 rotation = -3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mission_sec"]
-position = Vector2( 250, 1.99936 )
-shape = SubResource( 15 )
+position = Vector2( 250, 11.9994 )
+shape = SubResource( 23 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -727,7 +726,6 @@ animation = "direita"
 position = Vector2( -50, 185 )
 rotation = -3.14159
 frames = SubResource( 20 )
-frame = 3
 playing = true
 
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_Area2D_body_entered"]

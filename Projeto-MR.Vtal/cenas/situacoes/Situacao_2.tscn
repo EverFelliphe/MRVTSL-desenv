@@ -486,7 +486,7 @@ position = Vector2( 873, 388 )
 shape = SubResource( 16 )
 
 [node name="exclamacao" parent="." instance=ExtResource( 20 )]
-position = Vector2( 724, 246 )
+position = Vector2( 724, 383 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="excl_mini_game" type="AnimatedSprite" parent="."]

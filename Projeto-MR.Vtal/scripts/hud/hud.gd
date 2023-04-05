@@ -114,7 +114,7 @@ func _process(delta): #atualiza a hud a medida que ganha pontuação
 		
 
 
-	elif  Global.pontuacao <=0:
+	elif  Global.pontuacao <= 0:
 		$VBoxContainer/Node2D2/pont_4.hide()
 		$VBoxContainer/Node2D2/pont_0.show()
 		$VBoxContainer/Node2D2/pont_1.hide()
@@ -136,10 +136,12 @@ func _on_timer_hud_timeout():
 		Global.state_nivel.N2:
 			$VBoxContainer/nome_nivel.texture = load("res://imagens/niveis/MolduraDuquePronta.png")
 			Global.moldura ="res://imagens/niveis/MolduraDuquePronta.png"
+			Global.current_state = Global.State.Situacao2
 			Global.current_area = Global.state_areas.AREA_2
 		Global.state_nivel.N3:
 			$VBoxContainer/nome_nivel.texture = load("res://imagens/niveis/MolduraGeneralPronta.png")
 			Global.moldura = "res://imagens/niveis/MolduraGeneralPronta.png"
+			Global.current_state = Global.State.Situacao3
 			Global.current_area = Global.state_areas.AREA_3
 		Global.state_nivel.N4:
 			$VBoxContainer/nome_nivel.texture = load("res://imagens/niveis/MolduraGeneralPronta.png")
