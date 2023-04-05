@@ -11,6 +11,7 @@ func _ready():
 
 func _on_TextureButton_pressed():
 	$clique_botao.play()
+	get_tree().change_scene("res://cenas/tutorial.tscn")
 	$Timer.start()
 # ao pressionar o botão 1(play) troca para a tela de tutorial com o personagem principal
 
