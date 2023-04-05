@@ -2,6 +2,7 @@ extends Node
 
 export(float) var scroll_speed = 0.03
 var music_status = true
+onready var teste = "teste"
 #faz com que a variavel seja acessivel em outros scripts, como por exemplo no controle da interface grafica da cena
 
 func _ready():
@@ -11,7 +12,6 @@ func _ready():
 
 func _on_TextureButton_pressed():
 	$clique_botao.play()
-#	get_tree().change_scene("res://cenas/tutorial.tscn")
 	$Timer.start()
 # ao pressionar o botão 1(play) troca para a tela de tutorial com o personagem principal
 
@@ -29,8 +29,8 @@ func _on_Volume_pressed(): #ao clicar no botão de volume a música para e ao cl
 
 func _on_Timer_timeout():
 	$"../AnimationPlayer".play("confirm")
-#	$"../VBoxContainer".hide()
-#	$"../Label3".hide()
+	$"../VBoxContainer".hide()
+	$"../Label3".hide()
 
 func _on_sair_pressed():
 	get_tree().quit()
@@ -45,10 +45,10 @@ func _on_CheckBox_pressed():
 func _on_mobile_pressed():
 	Global.mobile = true
 	get_tree().change_scene_to(load("res://cenas/tutorial/Tutorial.tscn"))
-
-	
-
-
+#
+#
+#
+#
 func _on_desktop_pressed():
 	Global.mobile = false
 	get_tree().change_scene("res://cenas/tutorial/Tutorial.tscn")
