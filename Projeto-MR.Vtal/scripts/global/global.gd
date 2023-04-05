@@ -214,7 +214,26 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 	}
 	
 }
-var feedback_final = {}
+var feedback_final = {
+	'situ_1':{
+		0:"",
+		1:"",
+		2:"",
+		3:"",
+	},
+	'situ_2':{
+		0:"",
+		1:"",
+		2:"",
+		3:"",
+	},
+	'situ_3':{
+		0:"",
+		1:"",
+		2:"",
+		3:"",
+	}
+}
 enum state_situations {INIT,SITUATION_1, SITUATION_2,  SITUATION_3}
 enum state_areas {AREA_1, AREA_2,  AREA_3, FINAL}
 enum state_person{FRENTE,TRAS,ESQUERDA,DIREITA,PARADO}
