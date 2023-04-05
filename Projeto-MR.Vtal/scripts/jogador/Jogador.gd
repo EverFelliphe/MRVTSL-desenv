@@ -131,28 +131,36 @@ func _on_Timer2_timeout():
 	pass
 		
 func _on_up_pressed():
-	up = true 
+	if control:
+		up = true 
 
 func _on_up_released():
-	up = false 
+	if control:
+		up = false 
 
 func _on_down_pressed():
-	down = true 
+	if control:
+		down = true 
 
 func _on_down_released():
-	down = false 
+	if control:
+		down = false 
 
 func _on_right_pressed():
-	right = true 
+	if control:
+		right = true 
 
 func _on_left_pressed():
-	left = true
+	if control:
+		left = true
 
 func _on_right_released():
-	right = false 
+	if control:
+		right = false 
 	
 func _on_left_released():
-	left = false 
+	if control:
+		left = false 
 
 func _on_Area2D_body_entered(body):
 	control = false
@@ -209,9 +217,17 @@ func _on_Node2D_blur_on():
 func _on_Node2D_blur_off():
 	$gamepad.show()
 
-
 func _on_mini_game_2_body_entered(body):
 	control = false
 	posicaox = position.x 
 	posicaoy = position.y +30
 	Global.atualizar_posicao(posicaox,posicaoy)
+
+func _on_Node2D_mov_off():
+	control = false
+	print('move_off')
+
+func _on_Node2D_mov_on():
+	control = true
+	print('move_on')
+

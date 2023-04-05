@@ -118,3 +118,5 @@ layer = 3
 [connection signal="timeout" from="timer_hud" to="." method="_on_timer_hud_timeout"]
 [connection signal="blur_off" from="config" to="." method="_on_config_blur_off"]
 [connection signal="blur_on" from="config" to="." method="_on_config_blur_on"]
+[connection signal="mov_off" from="config" to="." method="_on_config_mov_off"]
+[connection signal="mov_on" from="config" to="." method="_on_config_mov_on"]

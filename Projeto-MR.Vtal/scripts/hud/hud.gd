@@ -4,6 +4,8 @@ var imagem = Global.moldura
 
 signal blur_on
 signal blur_off
+signal mov_on
+signal mov_off
 
 func _ready(): #mostra a pontuação zerada ao iniciar o jogo
 	$VBoxContainer/nome_nivel.show()
@@ -158,7 +160,12 @@ func _on_config_blur_on():
 	$VBoxContainer.hide()
 	emit_signal("blur_on")
 
-
 func _on_config_blur_off():
 	$VBoxContainer.show()
 	emit_signal("blur_off")
+
+func _on_config_mov_off():
+	emit_signal("mov_off")
+
+func _on_config_mov_on():
+	emit_signal("mov_on")

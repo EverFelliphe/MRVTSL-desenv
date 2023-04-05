@@ -62,6 +62,6 @@ one_shot = true
 [connection signal="timeout" from="inicioTimer" to="." method="_on_inicioTimer_timeout"]
 [connection signal="timeout" from="pontuacaoTimer" to="." method="_on_pontuacaoTimer_timeout"]
 [connection signal="timeout" from="inimigoTimer" to="." method="_on_inimigoTimer_timeout"]
-[connection signal="start_game" from="HUDMG3" to="." method="novo_jogo"]
 [connection signal="start_game" from="HUDMG3" to="." method="_on_HUDMG3_start_game"]
+[connection signal="start_game" from="HUDMG3" to="." method="novo_jogo"]
 [connection signal="timeout" from="sair" to="." method="_on_sair_timeout"]

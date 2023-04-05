@@ -10,7 +10,7 @@ var j = Global.cutscene_index
 var obj_position
 
 func _ready(): 
-	$Blur.environment.set_dof_blur_near_enabled(false)
+	$Blur/Blur.hide()
 	Global.objective = true
 	$Personagem/Arrow.hide()
 	Global.obj_position = $excl.get_position()
@@ -305,27 +305,22 @@ func _on_sumir_2_3_timeout():
 		$sumir_2.start()
 
 func _on_Node2D_blur_on():
-	$Blur.environment.set_dof_blur_near_enabled(true)
+	$Blur/Blur.show()
 
 func _on_Node2D_blur_off():
-	$Blur.environment.set_dof_blur_near_enabled(false)
-
+	$Blur/Blur.hide()
 
 func _on_casa_1_body_entered(body):
 	get_tree().change_scene("res://cenas/interiores/casa_1.tscn")
 
-
 func _on_restaurant_body_entered(body):
 	get_tree().change_scene("res://cenas/interiores/restaurante.tscn")
-
 
 func _on_casa_2_body_entered(body):
 	get_tree().change_scene("res://cenas/interiores/casa_2.tscn")
 
-
 func _on_casa_3_body_entered(body):
 	get_tree().change_scene("res://cenas/interiores/casa_3.tscn")
-
 
 func _on_Quest_timeout():
 	$Quest.queue_free()
