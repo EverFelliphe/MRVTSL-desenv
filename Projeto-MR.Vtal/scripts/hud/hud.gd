@@ -1,5 +1,5 @@
 extends Node2D
-onready var nivel_imag = $VBoxContainer/nivel
+onready var nivel_imag = $VBoxContainer/moldura
 var imagem = Global.moldura
 
 signal blur_on
