@@ -30,7 +30,7 @@ func _ready(): #mostra a pontuação zerada ao iniciar o jogo
 		$VBoxContainer/Node2D2/pont_0.hide()
 		$VBoxContainer/Node2D2/pont_4.hide()
 		
-	elif Global.pontuacao == 4  :
+	elif Global.pontuacao >= 4  :
 		Global.nivel_index += 1
 		$VBoxContainer/Node2D2/pont_1.hide()
 		$VBoxContainer/Node2D2/pont_0.hide()
@@ -93,7 +93,7 @@ func _process(delta): #atualiza a hud a medida que ganha pontuação
 		$VBoxContainer/Node2D2/pont_0.hide()
 		$VBoxContainer/Node2D2/pont_4.hide()
 
-	elif Global.pontuacao == 4  :
+	elif Global.pontuacao >= 4   :
 		Global.nivel_index += 1
 		$VBoxContainer/Node2D2/pont_1.hide()
 		$VBoxContainer/Node2D2/pont_0.hide()
