@@ -12,7 +12,7 @@ var obj_position
 func _ready(): 
 	$Blur/Blur.hide()
 	Global.objective = true
-	$Personagem/Arrow.hide()
+	$Personagem/Arrow.show()
 	Global.obj_position = $excl.get_position()
 	Global.camera_state = Global.StateCameraClamp.Off
 	$Personagem.position = Global.pos_map
@@ -182,6 +182,7 @@ func _on_passar_pressed(): #carrega dialogo com natalia
 		
 	elif n == 10:
 		Global.current_state = Global.State.Situacao3
+		
 		$Personagem/Camera2D/AnimationPlayer.play("clube")
 		$club.start()
 		$dialogo.hide()

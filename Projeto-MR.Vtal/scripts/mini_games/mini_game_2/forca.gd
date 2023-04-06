@@ -81,9 +81,6 @@ func conferir_letra():
 						
 				else:
 					letras_ausentes.append(letra)
-					$erros.text = ''
-					for i in letras_ausentes:
-						$erros.text += '%s, ' % [str(i)] 
 					if len(letras_ausentes) == 1:
 						$cabeca.show()
 					elif len(letras_ausentes) == 2:

@@ -7,6 +7,7 @@ var timer = Timer.new() #tempo de transição
 onready var imagem = $atencao #carrega a imagem atenção 
 
 func _ready(): #
+	$Personagem.control = false
 	Global.objective = false
 	$Personagem/Arrow.hide()
 	Global.current_state = Global.State.Situacao1_finish

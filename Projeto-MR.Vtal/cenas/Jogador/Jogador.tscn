@@ -140,25 +140,25 @@ scale = Vector2( 2.2, 2.2 )
 frames = SubResource( 1 )
 animation = "parado"
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-pause_mode = 1
-position = Vector2( 1, 4 )
-scale = Vector2( 0.525178, 0.469394 )
-polygon = PoolVector2Array( -22.8494, -6.39122, -26.6576, -29.8257, -22.8494, -40.4777, -17.137, -46.8689, -7.61646, -51.1298, 7.61646, -51.1298, 17.137, -46.8689, 22.8494, -40.4777, 26.6576, -29.8257, 22.8494, -6.39122, 17.137, -4.26081, 28.5617, 12.7824, 28.5617, 23.4345, 26.6576, 25.5649, 19.0412, 27.6953, 19.0412, 40.4777, 15.2329, 40.4777, 15.2329, 46.8689, 3.80823, 46.8689, 3.80823, 40.4777, -3.80823, 40.4777, -3.80823, 46.8689, -17.137, 46.8689, -17.137, 42.6081, -20.9453, 40.4777, -20.9453, 27.6953, -28.5617, 23.4345, -28.5617, 14.9128, -17.137, -4.26081 )
-
 [node name="mouse_pad" type="CanvasLayer" parent="."]
 
 [node name="Animacao_general" type="AnimatedSprite" parent="."]
 position = Vector2( 3, 5 )
-scale = Vector2( 2.2, 2.2 )
+scale = Vector2( 2.3, 2.3 )
 frames = SubResource( 2 )
 animation = "cima"
 
 [node name="Animacao_rei" type="AnimatedSprite" parent="."]
 position = Vector2( 3, 5 )
-scale = Vector2( 2.2, 2.2 )
+scale = Vector2( 2.4, 2.4 )
 frames = SubResource( 3 )
 animation = "cima"
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+pause_mode = 1
+position = Vector2( 1, 4.03265 )
+scale = Vector2( 0.6, 0.4847 )
+polygon = PoolVector2Array( -22.8494, -6.39122, -26.6576, -29.8257, -22.8494, -40.4777, -17.137, -46.8689, -7.61646, -51.1298, 7.61646, -51.1298, 17.137, -46.8689, 22.8494, -40.4777, 26.6576, -29.8257, 22.8494, -6.39122, 17.137, -4.26081, 28.5617, 12.7824, 28.5617, 23.4345, 26.6576, 25.5649, 19.0412, 27.6953, 19.0412, 40.4777, 15.2329, 40.4777, 15.2329, 46.8689, 3.80823, 46.8689, 3.80823, 40.4777, -3.80823, 40.4777, -3.80823, 46.8689, -17.137, 46.8689, -17.137, 42.6081, -20.9453, 40.4777, -20.9453, 27.6953, -28.5617, 23.4345, -28.5617, 14.9128, -17.137, -4.26081 )
 
 [node name="Arrow" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1, 55 )

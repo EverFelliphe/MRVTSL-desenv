@@ -792,7 +792,7 @@ polygon = PoolVector2Array( -721, -1139, -721, -1122, -716, -1106, -714, -1093, 
 position = Vector2( 365, 698 )
 
 [node name="casa_1" type="CollisionShape2D" parent="casa_1"]
-position = Vector2( -95, -3 )
+position = Vector2( -95, 1 )
 shape = SubResource( 38 )
 
 [node name="restaurant" type="Area2D" parent="."]

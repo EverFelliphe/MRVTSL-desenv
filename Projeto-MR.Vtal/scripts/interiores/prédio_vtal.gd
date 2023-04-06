@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	$Personagem/Arrow.hide()
 	Global.camera_state = Global.StateCameraClamp.Off
 	$Transition/Fill/animation.play_backwards("transicao")
 
