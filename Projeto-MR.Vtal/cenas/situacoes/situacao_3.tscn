@@ -726,7 +726,7 @@ animation = "direita"
 position = Vector2( -50, 185 )
 rotation = -3.14159
 frames = SubResource( 20 )
-frame = 3
+frame = 2
 playing = true
 
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_Area2D_body_entered"]

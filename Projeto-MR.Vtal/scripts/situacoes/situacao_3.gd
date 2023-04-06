@@ -72,6 +72,9 @@ func _on_Escolha1_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 	clear() 
 	$CanvasLayer3/atencao/feedback.text = dialogo[8][1]["text"]
 #	controle = false
+	Global.feedback_final['situ_3'][1] = $CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha1.text
+	Global.feedback_final['situ_3'][2] = $CanvasLayer3/atencao/feedback.text
+	Global.feedback_final['situ_3'][3] = 0
 	n += 1
 	$CanvasLayer2/CaixaDialogo/conversa.show()
 	$CanvasLayer2/CaixaDialogo/nome.show()
@@ -89,6 +92,9 @@ func _on_Escolha2_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 	
 func _on_Escolha3_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
 	Global.pontuacao += 2
+	Global.feedback_final['situ_3'][1] = $CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha3.text
+	Global.feedback_final['situ_3'][2] = dialogo[8][3]["text"]
+	Global.feedback_final['situ_3'][3] = 2
 	clear()
 	$CanvasLayer3/parabens/feedback.text = dialogo[8][3]["text"]
 	controle = true
@@ -100,6 +106,9 @@ func _on_Escolha3_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 	 
 func _on_Escolha4_pressed(): #detecta a escolha feita pelo jogador e mostra o feedback respectivo 
 	Global.pontuacao += 0
+	Global.feedback_final['situ_3'][1] = $CanvasLayer2/CaixaDialogo/VBoxContainer/Escolha4.text
+	Global.feedback_final['situ_3'][2] = dialogo[8][4]["text"]
+	Global.feedback_final['situ_3'][3] = 0
 	clear()
 	$CanvasLayer3/atencao/feedback.text = dialogo[8][4]["text"]
 	controle = false

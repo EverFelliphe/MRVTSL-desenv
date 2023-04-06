@@ -59,13 +59,15 @@ margin_right = 448.597
 margin_bottom = -77.1577
 text = "confira no código de ètica "
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Transition" parent="." instance=ExtResource( 4 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
 margin_left = 652.0
 margin_top = 264.0
 margin_right = 780.0
 margin_bottom = 392.0
 texture_normal = ExtResource( 2 )
 
-[node name="Transition" parent="." instance=ExtResource( 4 )]
-
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_TextureButton_pressed"]
