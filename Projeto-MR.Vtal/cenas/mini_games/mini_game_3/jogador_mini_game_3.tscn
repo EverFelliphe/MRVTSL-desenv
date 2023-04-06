@@ -52,27 +52,30 @@ frames = SubResource( 3 )
 animation = "direita"
 
 [node name="touchPad" type="CanvasLayer" parent="."]
+scale = Vector2( 1.5, 1.5 )
+transform = Transform2D( 1.5, 0, 0, 1.5, 0, 0 )
 
 [node name="up" type="TouchScreenButton" parent="touchPad"]
-position = Vector2( 63, 415 )
+position = Vector2( 64, 249.333 )
 normal = ExtResource( 11 )
 pressed = ExtResource( 12 )
 
 [node name="down" type="TouchScreenButton" parent="touchPad"]
-position = Vector2( 124, 547 )
+position = Vector2( 125, 381.333 )
 rotation = 3.14159
 normal = ExtResource( 11 )
 pressed = ExtResource( 12 )
 
 [node name="left" type="TouchScreenButton" parent="touchPad"]
-position = Vector2( 25, 512 )
+position = Vector2( 26, 346.333 )
 rotation = 4.71239
 normal = ExtResource( 11 )
 pressed = ExtResource( 12 )
 
 [node name="right" type="TouchScreenButton" parent="touchPad"]
-position = Vector2( 160, 450 )
+position = Vector2( 161, 284.333 )
 rotation = 1.5708
+scale = Vector2( 1, 1 )
 normal = ExtResource( 11 )
 pressed = ExtResource( 12 )
 

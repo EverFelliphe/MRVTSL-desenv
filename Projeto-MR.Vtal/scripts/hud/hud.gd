@@ -154,6 +154,7 @@ func _on_timer_hud_timeout():
 			Global.call_index_state = true
 			Global.moldura = "res://imagens/niveis/MolduraGeneralPronta.png"
 			Global.current_area = Global.state_areas.FINAL
+			Global.current_state = Global.State.Situacao3_finish
 	print(Global.pontuacao)
 
 func _on_config_blur_on():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://imagens/outros/icon.png" type="Texture" id=1]
 [ext_resource path="res://cenas/Jogador/jogador.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://cenas/mapa_principal/call_nathalia.tscn" type="PackedScene" id=15]
 [ext_resource path="res://imagens/situacoes/exclamação_sec.png" type="Texture" id=16]
 [ext_resource path="res://imagens/menu/Button_mute-removebg-preview (4).png" type="Texture" id=17]
+[ext_resource path="res://imagens/botoes/config_button-removebg-preview.png" type="Texture" id=18]
 
 [sub_resource type="Animation" id=12]
 length = 0.001
@@ -404,6 +405,10 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 435.0 ]
 }
 
+[node name="seta_vtal" type="Sprite" parent="."]
+position = Vector2( 123, 119 )
+texture = ExtResource( 18 )
+
 [node name="seta_clube" type="Sprite" parent="."]
 position = Vector2( 1019, -171 )
 texture = ExtResource( 17 )
@@ -443,6 +448,7 @@ anims/teste-1 = SubResource( 24 )
 
 [node name="hud" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="Node2D" parent="hud" instance=ExtResource( 9 )]
 position = Vector2( 281, 50 )
@@ -525,7 +531,7 @@ shape = SubResource( 5 )
 
 [node name="barreira" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
 position = Vector2( 131, 35 )
-polygon = PoolVector2Array( -31, 111, 21, 111, 21, 113, -31, 113 )
+polygon = PoolVector2Array( -31, 111, 21, 111, 21, 113, 2.46376, 113, -31, 113 )
 
 [node name="Poste11" type="CollisionShape2D" parent="Mapa_detalhes/Colisoes"]
 position = Vector2( -15, 892 )
@@ -745,11 +751,11 @@ polygon = PoolVector2Array( 733, 397, 678, 392, 674, 363, 638, 364, 639, 332, 60
 
 [node name="prédios-3" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
 position = Vector2( 128, 43 )
-polygon = PoolVector2Array( -1185, 767, -1059, 767, -1057, 743, -994, 743, -992, 765, -961, 767, -959, 606, -926, 607, -925, 587, -863, 589, -862, 604, -801, 607, -798, 414, -733, 413, -734, 393, -676, 393, -673, 415, -579, 415, -579, 286, -450, 286, -447, 261, -412, 256, -414, 227, -381, 226, -381, 193, -350, 191, -347, 163, -327, 162, -329, 99, -351, 95, -354, 65, -383, 59, -386, 29, -414, 31, -1184, 31, -1184, 387, -1153, 384, -1152, 417, -1184, 416 )
+polygon = PoolVector2Array( -1185, 767, -1059, 767, -992, 765, -961, 767, -959, 606, -926, 607, -862, 604, -801, 607, -798, 414, -733, 413, -673, 415, -579, 415, -579, 286, -450, 286, -447, 261, -412, 256, -414, 227, -381, 226, -381, 193, -350, 191, -347, 163, -327, 162, -329, 99, -351, 95, -354, 65, -383, 59, -386, 29, -414, 31, -1184, 31, -1184, 387, -1153, 384, -1152, 417, -1184, 416 )
 
 [node name="predio1" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
 position = Vector2( 128, 43 )
-polygon = PoolVector2Array( -225, 663, -289, 665, -288, 335, -98, 333, -96, 663, -159, 662, -163, 637, -226, 643 )
+polygon = PoolVector2Array( -225, 663, -289, 665, -288, 335, -98, 333, -96, 663, -159, 662 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
 position = Vector2( 128, 34 )
@@ -780,8 +786,11 @@ polygon = PoolVector2Array( -721, -1139, -721, -1122, -716, -1106, -714, -1093, 
 
 [node name="mercado2" type="Area2D" parent="Mapa_detalhes/Colisoes"]
 position = Vector2( -863, -156 )
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mapa_detalhes/Colisoes/mercado2"]
+position = Vector2( 0, 13 )
 shape = SubResource( 29 )
 
 [node name="Mesa2" type="CollisionPolygon2D" parent="Mapa_detalhes/Colisoes"]
@@ -824,6 +833,8 @@ shape = SubResource( 30 )
 
 [node name="vtal" type="Area2D" parent="."]
 position = Vector2( 123, 118 )
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vtal"]
 position = Vector2( 0, 19 )
@@ -931,7 +942,7 @@ position = Vector2( 336, 691 )
 rotation = 3.14159
 scale = Vector2( 0.990868, 0.990868 )
 frames = SubResource( 23 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="situation_2" type="Area2D" parent="."]
@@ -983,7 +994,6 @@ wait_time = 2.0
 one_shot = true
 
 [node name="sumir_2_3" type="Timer" parent="."]
-wait_time = 4.0
 one_shot = true
 
 [node name="final" type="Timer" parent="."]
@@ -1003,6 +1013,7 @@ polygon = PoolVector2Array( 215, -1316, 193, -1282.69, 193, -287, 364, -286, 379
 [node name="Blur" type="CanvasLayer" parent="."]
 
 [node name="Blur" type="ColorRect" parent="Blur"]
+visible = false
 material = SubResource( 41 )
 margin_left = -10.0
 margin_top = -10.0

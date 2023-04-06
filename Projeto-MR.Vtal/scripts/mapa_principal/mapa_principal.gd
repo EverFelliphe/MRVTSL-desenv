@@ -90,6 +90,9 @@ func _ready():
 			$Sprite2.queue_free()
 			Global.obj_position = $seta_clube.get_position()
 			
+		Global.State.Situacao3_finish:
+			Global.obj_position = $seta_vtal.get_position()
+			
 	match Global.current_nivel:
 				Global.state_nivel.N2:
 					if j == 0 :
@@ -182,7 +185,7 @@ func _on_passar_pressed(): #carrega dialogo com natalia
 		
 	elif n == 10:
 		Global.current_state = Global.State.Situacao3
-		
+		Global.obj_position = $seta_clube.get_position()
 		$Personagem/Camera2D/AnimationPlayer.play("clube")
 		$club.start()
 		$dialogo.hide()
@@ -191,6 +194,7 @@ func _on_passar_pressed(): #carrega dialogo com natalia
 		$Personagem/Camera2D/AnimationPlayer.play("final_1")
 		$final.start()
 		$dialogo.hide()
+		Global.obj_position = $seta_vtal.get_position()
 		
 	elif n == 4:
 		$dialogo.hide()
