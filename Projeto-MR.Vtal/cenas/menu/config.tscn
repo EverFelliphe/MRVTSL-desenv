@@ -47,7 +47,7 @@ font_data = ExtResource( 6 )
 size = 20
 font_data = ExtResource( 6 )
 
-[node name="Node2D" type="CanvasLayer"]
+[node name="Node2D2" type="CanvasLayer"]
 script = ExtResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
