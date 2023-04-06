@@ -36,10 +36,10 @@ autowrap = true
 
 [node name="resposta" type="Label" parent="TextureRect"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 422.064
-margin_top = 222.83
-margin_right = 575.064
-margin_bottom = 253.83
+margin_left = 422.0
+margin_top = 223.0
+margin_right = 659.0
+margin_bottom = 315.0
 text = "A)abcdef-- +2pts"
 autowrap = true
 
@@ -60,6 +60,7 @@ margin_bottom = -77.1577
 text = "confira no código de ètica "
 
 [node name="Transition" parent="." instance=ExtResource( 4 )]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

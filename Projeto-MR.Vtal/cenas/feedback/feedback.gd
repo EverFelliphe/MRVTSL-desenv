@@ -20,7 +20,7 @@ func _process(delta):
 		$"TextureRect/pontuação".text =str(feedback['situ_1'][3])
 	elif n == 1:
 		$TextureRect/pergunta.text = feedback['situ_2'][0]
-		$TextureRect/resposta.text= feedback['situ_2'][2]
+		$TextureRect/resposta.text= feedback['situ_2'][1]
 		$TextureRect/explicacao.text= feedback['situ_2'][2]
 		$"TextureRect/pontuação".text = str(feedback['situ_2'][3])
 	elif n == 2:

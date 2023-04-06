@@ -216,19 +216,19 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 }
 var feedback_final = {
 	'situ_1':{
-		0:"a",
+		0:"Um funcionario de outra compania o abordou e ofereceu uma propina para que você instalasse a fibra da empresa deles.",
 		1:"a",
 		2:"a",
 		3:"a",
 	},
 	'situ_2':{
-		0:"b",
+		0:"Um amigo de longa data o encontra em um bar e despretenciosamente tenta obter informações sigilosas do seu trabalho",
 		1:"bb",
 		2:"bbb",
 		3:"bbbb",
 	},
 	'situ_3':{
-		0:"cc",
+		0:"Um cliente te aborda em um clube de luxo que você foi e pede informações privilegiadas para que ele feche o contrato ",
 		1:"cccc",
 		2:"cccccc",
 		3:"cccccccc",
