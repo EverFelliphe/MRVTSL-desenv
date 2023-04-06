@@ -48,7 +48,6 @@ func _ready() -> void:
 
 func _physics_process(delta): #define os controles do jogo
 	if Global.objective:
-		$Arrow.show()
 		arrow_pos = arrow.get_global_position()
 		objetivo_pos = Global.obj_position
 		arrow.set_rotation((arrow_pos - objetivo_pos).angle())
