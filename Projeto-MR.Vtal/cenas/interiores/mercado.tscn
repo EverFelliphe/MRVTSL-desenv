@@ -65,20 +65,19 @@ position = Vector2( -385, 337 )
 
 [node name="Camera2D" type="Camera2D" parent="Personagem"]
 position = Vector2( 8, -15.0001 )
-current = true
 limit_smoothed = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -358.438, 130.437 )
 scale = Vector2( 2.52734, 2.52734 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="asiatico" type="AnimatedSprite" parent="."]
 position = Vector2( 622, -233 )
 scale = Vector2( 2.29688, 2.29688 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
