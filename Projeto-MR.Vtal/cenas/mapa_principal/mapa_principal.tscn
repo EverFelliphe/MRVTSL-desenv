@@ -1042,6 +1042,7 @@ margin_bottom = 617.0
 [connection signal="timeout" from="Quest" to="smaho/Node2D" method="_on_Quest_timeout"]
 [connection signal="timeout" from="sit_2" to="." method="_on_sit_2_timeout"]
 [connection signal="body_entered" from="situation_2" to="." method="_on_situation_2_body_entered"]
+[connection signal="body_entered" from="situation_2" to="Personagem" method="_on_situation_2_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="." method="_on_mini_game_1_body_entered"]
 [connection signal="body_entered" from="mini_game_1" to="." method="_on_Area2D2_body_entered"]
 [connection signal="timeout" from="bar_desbloq" to="." method="_on_bar_desbloq_timeout"]
