@@ -88,7 +88,7 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 	3:"Obrigado pela sua atenção e desculpe pelo transtorno",
 	},
 	"NPC_2":{
-	'nome':"Amimir",
+	'nome':"Jackie",
 	0:"Oi moço, estava olhando os congelados e achei alguns vencidos",
 	1:"Posso leva-los de graça, ou ter algum desconto?",
 	2:{
