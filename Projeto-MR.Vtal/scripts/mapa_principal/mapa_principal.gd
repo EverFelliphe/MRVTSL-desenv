@@ -181,6 +181,7 @@ func _on_passar_pressed(): #carrega dialogo com natalia
 		$bar_desbloq.start()
 		
 	elif n == 10:
+		Global.current_state = Global.State.Situacao3
 		$Personagem/Camera2D/AnimationPlayer.play("clube")
 		$club.start()
 		$dialogo.hide()
@@ -260,6 +261,8 @@ func _on_mini_game_1_body_entered(body):
 	get_tree().change_scene("res://cenas/mini_games/mini_game_1/flappy.tscn")
 
 func _on_situation_2_body_entered(body):
+	Global.posicaox = $Personagem.position.x
+	Global.posicaoy = $Personagem.position.y
 	get_tree().change_scene("res://cenas/situacoes/Situacao_2.tscn")
 	
 func _on_bar_desbloq_timeout():
