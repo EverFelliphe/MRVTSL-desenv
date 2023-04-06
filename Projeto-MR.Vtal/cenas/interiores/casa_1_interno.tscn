@@ -5,7 +5,7 @@
 [ext_resource path="res://cenas/hud/hud.tscn" type="PackedScene" id=3]
 [ext_resource path="res://imagens/interiores/casa.png" type="Texture" id=4]
 [ext_resource path="res://imagens/outros/Captura de tela 2023-03-08 141234.png" type="Texture" id=5]
-[ext_resource path="res://cenas/Jogador/jogador.tscn" type="PackedScene" id=6]
+[ext_resource path="res://cenas/Jogador/Jogador.tscn" type="PackedScene" id=6]
 [ext_resource path="res://imagens/interiores/fundo.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -48,11 +48,11 @@ rotation = 1.5708
 texture = ExtResource( 5 )
 
 [node name="Personagem" parent="." instance=ExtResource( 6 )]
-position = Vector2( 449, 477 )
+position = Vector2( 447, 478 )
 scale = Vector2( 1.3, 1.3 )
 
 [node name="Camera2D" type="Camera2D" parent="Personagem"]
-position = Vector2( 9.23077, 2.30768 )
+position = Vector2( 10.7692, 1.53839 )
 current = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

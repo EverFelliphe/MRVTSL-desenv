@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://imagens/interiores/CASA_1.png" type="Texture" id=1]
-[ext_resource path="res://cenas/Jogador/jogador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://cenas/Jogador/Jogador.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cenas/interiores/casa_1.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -18,7 +18,7 @@ texture = ExtResource( 1 )
 position = Vector2( 518, 304 )
 
 [node name="Personagem" parent="." instance=ExtResource( 2 )]
-position = Vector2( 537, 546 )
+position = Vector2( 540, 540 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

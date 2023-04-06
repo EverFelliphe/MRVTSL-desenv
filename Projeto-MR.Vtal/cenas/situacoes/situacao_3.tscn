@@ -11,7 +11,7 @@
 [ext_resource path="res://scripts/situacoes/situacao_3.gd" type="Script" id=9]
 [ext_resource path="res://imagens/situacoes/situacao_3/clube.png" type="Texture" id=10]
 [ext_resource path="res://cenas/mapa_principal/excl.tscn" type="PackedScene" id=11]
-[ext_resource path="res://cenas/Jogador/jogador.tscn" type="PackedScene" id=12]
+[ext_resource path="res://cenas/Jogador/Jogador.tscn" type="PackedScene" id=12]
 [ext_resource path="res://cenas/hud/hud.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CapsuleShape2D" id=5]
@@ -440,10 +440,10 @@ scale = Vector2( 0.371769, 0.356362 )
 texture = ExtResource( 2 )
 
 [node name="Personagem" parent="." instance=ExtResource( 12 )]
-position = Vector2( 390, 541 )
+position = Vector2( 390, 532 )
 
 [node name="Camera2D" type="Camera2D" parent="Personagem"]
-position = Vector2( -66, 228 )
+position = Vector2( -66, 237 )
 current = true
 limit_left = -250
 limit_top = -845
@@ -715,6 +715,7 @@ flip_h = true
 position = Vector2( -50, 185 )
 rotation = -3.14159
 frames = SubResource( 20 )
+frame = 1
 playing = true
 
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_Area2D_body_entered"]
