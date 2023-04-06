@@ -149,7 +149,7 @@ tracks/4/keys = {
 "values": [ Vector2( -197, 387 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("CanvasLayer:visible")
+tracks/5/path = NodePath("NPC:flip_h")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -161,7 +161,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("NPC:playing")
+tracks/6/path = NodePath("NPC:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -170,7 +170,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ 0 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("NPC:animation")
@@ -185,7 +185,7 @@ tracks/7/keys = {
 "values": [ "direita" ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("NPC:frame")
+tracks/8/path = NodePath("NPC:playing")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -194,10 +194,10 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0 ]
+"values": [ false ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("NPC:flip_h")
+tracks/9/path = NodePath("CanvasLayer:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -213,28 +213,28 @@ tracks/9/keys = {
 resource_name = "npc_enemy"
 length = 1.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("NPC:position")
+tracks/0/path = NodePath("NPC:flip_h")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -197, 387 ), Vector2( -94, 379 ) ]
+"values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("NPC:playing")
+tracks/1/path = NodePath("NPC:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
+"times": PoolRealArray( 1.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("NPC:animation")
@@ -245,51 +245,51 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ "direita", "direita" ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("NPC:frame")
+tracks/3/path = NodePath("NPC:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1.3 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("NPC:flip_h")
+tracks/4/path = NodePath("NPC:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -197, 387 ), Vector2( -94, 379 ) ]
 }
 
 [sub_resource type="Animation" id=21]
 resource_name = "npc_enemy_backwards"
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("NPC:position")
+tracks/0/path = NodePath("NPC:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -94, 379 ), Vector2( -197, 387 ) ]
+"values": [ 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("NPC:playing")
+tracks/1/path = NodePath("NPC:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -297,11 +297,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
+"update": 0,
+"values": [ false, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("NPC:flip_h")
+tracks/2/path = NodePath("NPC:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -309,20 +309,20 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"update": 0,
+"values": [ true, false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("NPC:frame")
+tracks/3/path = NodePath("NPC:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1.5 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -94, 379 ), Vector2( -197, 387 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -739,7 +739,7 @@ flip_h = true
 position = Vector2( -50, 185 )
 rotation = -3.14159
 frames = SubResource( 20 )
-frame = 3
+frame = 1
 playing = true
 
 [connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_Area2D_body_entered"]

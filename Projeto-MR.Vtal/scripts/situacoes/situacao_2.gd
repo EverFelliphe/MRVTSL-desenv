@@ -23,7 +23,7 @@ func _ready():
 	$dialogo/CaixaDialogo/VBoxContainer/Escolha4.hide()
 	$dialogo/CaixaDialogo.hide()
 	$NPC.position = Vector2(0,0)
-	$NPC/NPC.stop()
+	$NPC/NPC/AnimationPlayer.stop()
 	$NPC.show()
 	$atencao.hide()
 	$parabens.hide()
@@ -182,7 +182,7 @@ func _on_saida_body_entered(body):
 	get_tree().change_scene("res://cenas/mapa_principal/mapa_principal.tscn") 
 
 func _on_npc_timeout():
-	$NPC/NPC/AnimationPlayer.play("sit_2")
+	$NPC/NPC/AnimationPlayer/AnimationPlayer.play("sit_2")
 	$enemy.start()
 
 func _on_enemy_timeout():
