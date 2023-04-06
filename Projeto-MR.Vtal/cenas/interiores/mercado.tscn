@@ -65,6 +65,7 @@ position = Vector2( -387, 333 )
 
 [node name="Camera2D" type="Camera2D" parent="Personagem"]
 position = Vector2( 10, -11.0001 )
+current = true
 limit_smoothed = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

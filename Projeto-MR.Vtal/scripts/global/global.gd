@@ -13,7 +13,7 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 	},
 	'diamante': {
 		0: "Use as setas no canto inferior esquerdo para se movimentar pelo mapa!",
-		1: "Aperte o botão A para interagir com os personagens no jogo ",
+		1: "Encoste nos personagens para interagir com eles no jogo ",
 	},
 	'situacao1': {
 		"nome":"Robert",
