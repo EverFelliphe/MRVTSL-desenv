@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://imagens/interiores/mercadopronto.png" type="Texture" id=1]
 [ext_resource path="res://cenas/Jogador/jogador.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://imagens/npcs/npc_asiatico.png" type="Texture" id=6]
 [ext_resource path="res://imagens/npcs/npc_asiatico1.png" type="Texture" id=7]
 [ext_resource path="res://imagens/interiores/fundo.png" type="Texture" id=8]
+[ext_resource path="res://imagens/spritesheet_player/arrow_right_icon_133719.png" type="Texture" id=9]
+[ext_resource path="res://fontes/PTSansNarrow-Regular.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -27,6 +29,24 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 108, 10 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 19
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 35
+font_data = ExtResource( 10 )
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 14.0
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 12.0
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 866, 216 )
@@ -52,13 +72,13 @@ limit_smoothed = true
 position = Vector2( -358.438, 130.437 )
 scale = Vector2( 2.52734, 2.52734 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="asiatico" type="AnimatedSprite" parent="."]
 position = Vector2( 622, -233 )
 scale = Vector2( 2.29688, 2.29688 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -113,4 +133,106 @@ polygon = PoolVector2Array( -435, 137, -388, 137, -390, 127, -385, 124, -385, 11
 position = Vector2( -391, 394 )
 shape = SubResource( 3 )
 
+[node name="dialogo" type="CanvasLayer" parent="."]
+
+[node name="CaixaDialogo" type="ColorRect" parent="dialogo"]
+visible = false
+margin_top = 419.0
+margin_right = 1024.0
+margin_bottom = 602.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="dialogo/CaixaDialogo"]
+visible = false
+margin_left = 11.0
+margin_top = 9.0
+margin_right = 950.0
+margin_bottom = 133.0
+rect_scale = Vector2( 1.4, 1.4 )
+
+[node name="Escolha1" type="LinkButton" parent="dialogo/CaixaDialogo/VBoxContainer"]
+modulate = Color( 0.541176, 0.160784, 0.160784, 1 )
+margin_right = 939.0
+margin_bottom = 26.0
+focus_mode = 2
+custom_fonts/font = SubResource( 4 )
+text = "a) Recusar a oferta e informar o Compliance sobre o acontecimento"
+underline = 1
+
+[node name="Escolha2" type="LinkButton" parent="dialogo/CaixaDialogo/VBoxContainer"]
+modulate = Color( 0.541176, 0.160784, 0.160784, 1 )
+margin_top = 30.0
+margin_right = 939.0
+margin_bottom = 56.0
+focus_mode = 2
+custom_fonts/font = SubResource( 4 )
+text = "b) Recusar a oferta e instalar a fibra da Tim"
+underline = 1
+
+[node name="Escolha3" type="LinkButton" parent="dialogo/CaixaDialogo/VBoxContainer"]
+modulate = Color( 0.541176, 0.160784, 0.160784, 1 )
+margin_top = 60.0
+margin_right = 939.0
+margin_bottom = 86.0
+focus_mode = 2
+custom_fonts/font = SubResource( 4 )
+text = "c) Estamos trabalhando para conseguir oferecer um pacote de 1 GB para nossos cliente"
+underline = 1
+
+[node name="Escolha4" type="LinkButton" parent="dialogo/CaixaDialogo/VBoxContainer"]
+modulate = Color( 0.541176, 0.160784, 0.160784, 1 )
+margin_top = 90.0
+margin_right = 939.0
+margin_bottom = 116.0
+focus_mode = 2
+custom_fonts/font = SubResource( 4 )
+text = "d) Aceitar o dinheiro e instalar a fibra"
+underline = 1
+
+[node name="conversa" type="Label" parent="dialogo/CaixaDialogo"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 9.0
+margin_top = 46.0
+margin_right = 964.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 5 )
+text = "tttttttttttttttt"
+align = 3
+autowrap = true
+
+[node name="Button" type="TextureButton" parent="dialogo/CaixaDialogo"]
+margin_left = 956.0
+margin_top = 121.0
+margin_right = 1033.0
+margin_bottom = 183.0
+texture_normal = ExtResource( 9 )
+expand = true
+
+[node name="nome" type="Label" parent="dialogo/CaixaDialogo"]
+margin_left = 7.0
+margin_top = 1.0
+margin_right = 98.0
+margin_bottom = 47.0
+custom_colors/font_color = Color( 0.482353, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Cláudio"
+
+[node name="NPC_1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_1"]
+position = Vector2( -361, 130 )
+shape = SubResource( 7 )
+
+[node name="NPC_2" type="Area2D" parent="."]
+position = Vector2( 619, -234 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_2"]
+shape = SubResource( 8 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="pressed" from="dialogo/CaixaDialogo/VBoxContainer/Escolha1" to="." method="_on_Escolha1_pressed"]
+[connection signal="pressed" from="dialogo/CaixaDialogo/VBoxContainer/Escolha2" to="." method="_on_Escolha2_pressed"]
+[connection signal="pressed" from="dialogo/CaixaDialogo/VBoxContainer/Escolha3" to="." method="_on_Escolha3_pressed"]
+[connection signal="pressed" from="dialogo/CaixaDialogo/VBoxContainer/Escolha4" to="." method="_on_Escolha4_pressed"]
+[connection signal="pressed" from="dialogo/CaixaDialogo/Button" to="." method="_on_Button_pressed"]
+[connection signal="body_entered" from="NPC_1" to="." method="_on_NPC_1_body_entered"]
+[connection signal="body_entered" from="NPC_2" to="." method="_on_NPC_2_body_entered"]

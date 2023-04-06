@@ -421,6 +421,7 @@ scale = Vector2( 0.8, 0.8 )
 [node name="excl_mini_game" type="AnimatedSprite" parent="."]
 position = Vector2( 873, 366 )
 frames = SubResource( 21 )
+frame = 2
 playing = true
 flip_v = true
 
