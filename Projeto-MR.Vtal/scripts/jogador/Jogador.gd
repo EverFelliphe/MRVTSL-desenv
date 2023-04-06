@@ -231,3 +231,23 @@ func _on_Node2D_mov_on():
 	control = true
 	print('move_on')
 
+
+
+func _on_mercado2_body_entered(body):
+	Global.pos_map = Vector2(position.x , position.y +30)
+
+
+func _on_casa_1_body_entered(body):
+	Global.pos_map = Vector2(position.x , position.y +30)
+
+
+func _on_restaurant_body_entered(body):
+	Global.pos_map = Vector2(position.x , position.y +30)
+
+
+func _on_casa_2_body_entered(body):
+	Global.pos_map = Vector2(position.x , position.y +30)
+
+
+func _on_casa_3_body_entered(body):
+	Global.pos_map = Vector2(position.x , position.y +30)

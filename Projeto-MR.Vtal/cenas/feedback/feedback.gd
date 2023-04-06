@@ -15,18 +15,19 @@ func _ready():
 func _process(delta):
 	if n ==0:
 		$TextureRect/pergunta.text = feedback['situ_1'][0]
-		$TextureRect/resposta.text= feedback['situ_1'][2]
-		$TextureRect/explicacao.text= feedback['situ_1'][1]
+		$TextureRect/resposta.text= feedback['situ_1'][1]
+		$TextureRect/explicacao.text= feedback['situ_1'][2]
 		$"TextureRect/pontuação".text = feedback['situ_1'][3]
 	elif n == 1:
 		$TextureRect/pergunta.text = feedback['situ_2'][0]
 		$TextureRect/resposta.text= feedback['situ_2'][2]
-		$TextureRect/explicacao.text= feedback['situ_2'][1]
+		$TextureRect/explicacao.text= feedback['situ_2'][2]
 		$"TextureRect/pontuação".text = feedback['situ_2'][3]
 	elif n == 2:
 		$TextureRect/pergunta.text = feedback['situ_3'][0]
-		$TextureRect/resposta.text= feedback['situ_3'][2]
-		$TextureRect/explicacao.text= feedback['situ_3'][1]
+		$TextureRect/resposta.text= feedback['situ_3'][1]
+		$TextureRect/explicacao.text= feedback['situ_3'][2]
 		$"TextureRect/pontuação".text = feedback['situ_3'][3]
 func _on_TextureButton_pressed():
+	print("tt")
 	n+=1

@@ -91,6 +91,9 @@ func _on_Escolha1_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 	n += 1
 	dialogo = dialogo[n][1]
 	Global.pontuacao += 2
+	Global.feedback_final['situ_2'][1] = $dialogo/CaixaDialogo/VBoxContainer/Escolha1.text
+	Global.feedback_final['situ_2'][2] = dialogo
+	Global.feedback_final['situ_2'][3] = 2
 	clear() 
 	$dialogo/CaixaDialogo.hide()
 	$parabens.visible = true
@@ -101,6 +104,9 @@ func _on_Escolha2_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 	n += 1
 	dialogo = dialogo[n][2]
 	Global.pontuacao += 2
+	Global.feedback_final['situ_2'][1] = $dialogo/CaixaDialogo/VBoxContainer/Escolha2.text
+	Global.feedback_final['situ_2'][2] = dialogo
+	Global.feedback_final['situ_2'][3] = 2
 	clear()
 	$dialogo/CaixaDialogo.hide()
 	$parabens.show()
@@ -111,6 +117,9 @@ func _on_Escolha3_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 	n += 1
 	dialogo = dialogo[n][3]
 	Global.pontuacao += 0
+	Global.feedback_final['situ_2'][1] = $dialogo/CaixaDialogo/VBoxContainer/Escolha3.text
+	Global.feedback_final['situ_2'][2] = dialogo
+	Global.feedback_final['situ_2'][3] = 0
 	clear()
 	$dialogo/CaixaDialogo.hide()
 	$atencao.show()
@@ -121,7 +130,9 @@ func _on_Escolha4_pressed(): #detecta a escolha feita pelo jogador e mostra o fe
 	n += 1
 	dialogo = dialogo[n][4]
 	Global.pontuacao += -1
-	
+	Global.feedback_final['situ_2'][1] = $dialogo/CaixaDialogo/VBoxContainer/Escolha4.text
+	Global.feedback_final['situ_2'][2] = dialogo
+	Global.feedback_final['situ_2'][3] = 1
 	
 	clear()
 	$dialogo/CaixaDialogo.hide()

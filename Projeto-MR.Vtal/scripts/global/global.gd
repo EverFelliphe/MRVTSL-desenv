@@ -216,22 +216,22 @@ var falas = {#dicionario contendo o diálogo inicial com o guia fabricio e do di
 }
 var feedback_final = {
 	'situ_1':{
-		0:"",
-		1:"",
-		2:"",
-		3:"",
+		0:"a",
+		1:"a",
+		2:"a",
+		3:"a",
 	},
 	'situ_2':{
-		0:"",
-		1:"",
-		2:"",
-		3:"",
+		0:"b",
+		1:"bb",
+		2:"bbb",
+		3:"bbbb",
 	},
 	'situ_3':{
-		0:"",
-		1:"",
-		2:"",
-		3:"",
+		0:"cc",
+		1:"cccc",
+		2:"cccccc",
+		3:"cccccccc",
 	}
 }
 enum state_situations {INIT,SITUATION_1, SITUATION_2,  SITUATION_3}

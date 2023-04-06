@@ -356,7 +356,6 @@ position = Vector2( 460, 563 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 4 )
 animation = "direita"
-frame = 3
 playing = true
 flip_h = true
 
@@ -491,7 +490,7 @@ scale = Vector2( 0.8, 0.8 )
 [node name="excl_mini_game" type="AnimatedSprite" parent="."]
 position = Vector2( 873, 366 )
 frames = SubResource( 21 )
-frame = 2
+frame = 6
 playing = true
 flip_v = true
 

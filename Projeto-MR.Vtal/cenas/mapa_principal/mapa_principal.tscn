@@ -931,7 +931,7 @@ position = Vector2( 336, 691 )
 rotation = 3.14159
 scale = Vector2( 0.990868, 0.990868 )
 frames = SubResource( 23 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="situation_2" type="Area2D" parent="."]
@@ -1012,13 +1012,21 @@ margin_bottom = 617.0
 [connection signal="blur_off" from="hud/Node2D" to="." method="_on_Node2D_blur_off"]
 [connection signal="blur_on" from="hud/Node2D" to="." method="_on_Node2D_blur_on"]
 [connection signal="body_entered" from="Mapa_detalhes/Colisoes/mercado2" to="." method="_on_mercado2_body_entered"]
+[connection signal="body_entered" from="Mapa_detalhes/Colisoes/mercado2" to="Personagem" method="_on_mercado2_body_entered"]
 [connection signal="body_entered" from="casa_1" to="." method="_on_casa_1_body_entered"]
+[connection signal="body_entered" from="casa_1" to="Personagem" method="_on_casa_1_body_entered"]
 [connection signal="body_entered" from="restaurant" to="." method="_on_restaurant_body_entered"]
+[connection signal="body_entered" from="restaurant" to="Personagem" method="_on_restaurant_body_entered"]
 [connection signal="body_entered" from="casa_2" to="." method="_on_casa_2_body_entered"]
+[connection signal="body_entered" from="casa_2" to="Personagem" method="_on_casa_2_body_entered"]
 [connection signal="body_entered" from="casa_3" to="." method="_on_casa_3_body_entered"]
+[connection signal="body_entered" from="casa_3" to="Personagem" method="_on_casa_3_body_entered"]
 [connection signal="body_entered" from="clube2" to="." method="_on_clube2_body_entered"]
+[connection signal="body_entered" from="clube2" to="Personagem" method="_on_clube2_body_entered"]
 [connection signal="body_entered" from="vtal" to="." method="_on_vtal_body_entered"]
+[connection signal="body_entered" from="vtal" to="Personagem" method="_on_vtal_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Personagem" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Situacao" to="." method="_on_Situacao_body_entered"]
 [connection signal="body_exited" from="Situacao" to="." method="_on_Situacao_body_exited"]
 [connection signal="pressed" from="dialogo/Dialogo/passar" to="." method="_on_passar_pressed"]
